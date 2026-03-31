@@ -1,0 +1,2381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ariel IBABA — Data Science & AI Director. Bridging strategy, innovation, and execution to industrialize AI at scale. Paris, France." />
+  <meta name="author" content="Ariel IBABA" />
+  <title>Ariel IBABA — Data Science & AI Director</title>
+
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM
+    ============================================================ */
+    :root {
+      --navy:       #304263;
+      --navy-deep:  #1e2d44;
+      --navy-mid:   #253452;
+      --accent:     #4A90D9;
+      --accent-dim: #3a75b8;
+      --white:      #ffffff;
+      --off-white:  #f7f8fa;
+      --grey-100:   #eef0f4;
+      --grey-200:   #d8dde6;
+      --grey-400:   #8e9ab0;
+      --grey-600:   #5a6478;
+      --text:       #1a2236;
+      --text-muted: #536080;
+
+      --font-serif:   Georgia, 'Times New Roman', serif;
+      --font-sans:    'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      --font-mono:    'Courier New', Courier, monospace;
+
+      --max-w: 1160px;
+      --section-pad: 96px;
+
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
+      --shadow-sm:  0 1px 4px rgba(30, 45, 68, 0.08);
+      --shadow-md:  0 4px 24px rgba(30, 45, 68, 0.12);
+      --shadow-lg:  0 12px 48px rgba(30, 45, 68, 0.18);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    /* ============================================================
+       SCROLL ANIMATIONS
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--grey-200);
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: normal;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      transition: color 0.35s ease;
+    }
+
+    nav.scrolled .nav-logo {
+      color: var(--navy);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgba(255,255,255,0.82);
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+
+    nav.scrolled .nav-links a { color: var(--grey-600); }
+    nav.scrolled .nav-links a:hover { color: var(--navy); }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s ease;
+    }
+    nav.scrolled .nav-toggle span { background: var(--navy); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: var(--white);
+        padding: 20px 24px 32px;
+        gap: 0;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-120%);
+        opacity: 0;
+        transition: transform 0.35s var(--ease-out), opacity 0.35s ease;
+        pointer-events: none;
+      }
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+      .nav-links li { border-bottom: 1px solid var(--grey-100); }
+      .nav-links a {
+        display: block;
+        padding: 14px 0;
+        color: var(--grey-600) !important;
+        font-size: 0.85rem;
+      }
+      .nav-links a:hover { color: var(--navy) !important; }
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--navy-deep);
+      overflow: hidden;
+    }
+
+    /* Geometric background pattern */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, var(--navy-mid) 100%);
+    }
+
+    /* Diagonal accent slab */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 48%;
+      height: 130%;
+      background: linear-gradient(160deg, rgba(74,144,217,0.08) 0%, rgba(74,144,217,0.03) 100%);
+      border-left: 1px solid rgba(74,144,217,0.18);
+      transform: skewX(-8deg);
+    }
+
+    /* Grid lines */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(74,144,217,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74,144,217,0.04) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+
+    /* Floating circles */
+    .hero-circle-1,
+    .hero-circle-2 {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(74,144,217,0.12);
+    }
+    .hero-circle-1 {
+      width: 480px;
+      height: 480px;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: rotate-slow 32s linear infinite;
+    }
+    .hero-circle-2 {
+      width: 320px;
+      height: 320px;
+      right: 14%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-color: rgba(74,144,217,0.18);
+      animation: rotate-slow 20s linear infinite reverse;
+    }
+
+    @keyframes rotate-slow {
+      from { transform: translateY(-50%) rotate(0deg); }
+      to   { transform: translateY(-50%) rotate(360deg); }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fade-up 0.8s var(--ease-out) 0.2s forwards;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1.5px;
+      background: var(--accent);
+    }
+
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: normal;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fade-up 0.9s var(--ease-out) 0.35s forwards;
+    }
+
+    .hero-name em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      font-weight: 400;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fade-up 0.9s var(--ease-out) 0.5s forwards;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      color: rgba(255,255,255,0.78);
+      max-width: 540px;
+      line-height: 1.55;
+      font-style: italic;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fade-up 0.9s var(--ease-out) 0.65s forwards;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 16px 36px;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+      opacity: 0;
+      animation: fade-up 0.9s var(--ease-out) 0.8s forwards;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(74,144,217,0.35);
+    }
+
+    .hero-cta svg {
+      transition: transform 0.25s ease;
+    }
+    .hero-cta:hover svg {
+      transform: translateX(4px);
+    }
+
+    .hero-location {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fade-up 0.8s var(--ease-out) 1s forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      animation: fade-in 1s ease 1.2s forwards;
+    }
+
+    .hero-scroll span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      writing-mode: vertical-rl;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(74,144,217,0.6), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-pulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50%       { opacity: 1;   transform: scaleY(1.15); }
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-circle-1, .hero-circle-2 { display: none; }
+      .hero-inner { padding: 100px 24px 80px; }
+      .hero-scroll { display: none; }
+      .hero-location { left: 24px; }
+    }
+
+    /* ============================================================
+       SECTION COMMONS
+    ============================================================ */
+    section {
+      padding: var(--section-pad) 40px;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--accent);
+    }
+
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: normal;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 48px;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--grey-400);
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 64px 24px; }
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    #about {
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-left {}
+
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .about-text strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .about-highlights {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--grey-100);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .highlight-item:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .highlight-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .highlight-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey-400);
+      margin-bottom: 4px;
+    }
+
+    .highlight-value {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .about-right {
+      padding-top: 8px;
+    }
+
+    .about-deco-number {
+      font-family: var(--font-serif);
+      font-size: 7rem;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--grey-200);
+      margin-bottom: 8px;
+      user-select: none;
+    }
+
+    .about-stat-block {
+      border-left: 2px solid var(--accent);
+      padding: 20px 0 20px 28px;
+      margin-bottom: 28px;
+    }
+
+    .about-stat-number {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .about-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .about-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--grey-200);
+      margin-top: 8px;
+    }
+
+    .about-stats-row .about-stat-block {
+      border-left: none;
+      border-right: 1px solid var(--grey-200);
+      padding: 24px 24px 24px 0;
+      margin-bottom: 0;
+    }
+
+    .about-stats-row .about-stat-block:last-child {
+      border-right: none;
+      padding-left: 24px;
+    }
+
+    .clients-row {
+      margin-top: 40px;
+    }
+
+    .clients-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey-400);
+      margin-bottom: 16px;
+    }
+
+    .clients-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .client-tag {
+      padding: 7px 16px;
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .client-tag:hover {
+      border-color: var(--accent);
+      color: var(--navy);
+    }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-deco-number { display: none; }
+    }
+
+    /* ============================================================
+       EXPERTISE
+    ============================================================ */
+    #expertise {
+      background: var(--white);
+    }
+
+    .expertise-intro {
+      max-width: 600px;
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--grey-200);
+      border: 1px solid var(--grey-200);
+    }
+
+    .expertise-card {
+      background: var(--white);
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+      cursor: default;
+    }
+
+    .expertise-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+      transition: width 0.4s var(--ease-out);
+    }
+
+    .expertise-card:hover { background: var(--off-white); }
+    .expertise-card:hover::before { width: 100%; }
+
+    .expertise-card-number {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      color: var(--grey-100);
+      line-height: 1;
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .expertise-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: background 0.3s ease;
+    }
+
+    .expertise-card:hover .expertise-icon {
+      background: var(--accent);
+    }
+
+    .expertise-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .expertise-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .expertise-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .expertise-tags {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .expertise-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: rgba(74,144,217,0.07);
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 580px) {
+      .expertise-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       EXPERIENCE
+    ============================================================ */
+    #experience {
+      background: var(--navy-deep);
+      color: var(--white);
+    }
+
+    #experience .section-heading {
+      color: var(--white);
+    }
+
+    #experience .section-heading em {
+      color: rgba(255,255,255,0.3);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent), rgba(74,144,217,0.1));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 52px 44px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(74,144,217,0.15);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .timeline-item:hover .timeline-dot {
+      box-shadow: 0 0 0 8px rgba(74,144,217,0.2);
+    }
+
+    .timeline-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-period {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .timeline-company {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      padding-left: 16px;
+      border-left: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .timeline-role {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--white);
+      font-weight: normal;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+      max-width: 680px;
+    }
+
+    .timeline-achievements {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .achievement-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.65);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 5px 14px;
+      transition: border-color 0.2s ease;
+    }
+
+    .achievement-pill:hover {
+      border-color: var(--accent);
+      color: var(--white);
+    }
+
+    .achievement-pill::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 48px 0;
+    }
+
+    /* ============================================================
+       PROJECTS
+    ============================================================ */
+    #projects {
+      background: var(--off-white);
+      border-top: 1px solid var(--grey-100);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      padding: 36px 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s var(--ease-out);
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .project-card-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      gap: 12px;
+    }
+
+    .project-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .project-card-client {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .project-card-problem {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .project-card-approach {
+      font-size: 0.82rem;
+      color: var(--grey-600);
+      line-height: 1.55;
+      margin-bottom: 18px;
+      padding-left: 14px;
+      border-left: 2px solid var(--accent);
+    }
+
+    .project-card-result {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      letter-spacing: 0.03em;
+      margin-bottom: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .project-card:hover .project-card-result {
+      background: var(--accent);
+    }
+
+    .project-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .project-tag {
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border: 1px solid var(--grey-200);
+      color: var(--grey-600);
+      letter-spacing: 0.04em;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .project-card:hover .project-tag {
+      border-color: rgba(74,144,217,0.3);
+      color: var(--navy);
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       IMPACT
+    ============================================================ */
+    #impact {
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #impact::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 1px solid var(--grey-200);
+      pointer-events: none;
+    }
+
+    .impact-intro {
+      max-width: 560px;
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--grey-200);
+      border: 1px solid var(--grey-200);
+    }
+
+    .impact-card {
+      background: var(--white);
+      padding: 44px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .impact-card:hover { background: var(--navy-deep); }
+
+    .impact-card-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 60%, rgba(74,144,217,0.05));
+      pointer-events: none;
+    }
+
+    .impact-number {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .impact-number sup {
+      font-size: 0.45em;
+      vertical-align: top;
+      margin-top: 0.3em;
+    }
+
+    .impact-card:hover .impact-number { color: var(--accent); }
+
+    .impact-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      transition: color 0.3s ease;
+    }
+
+    .impact-card:hover .impact-label { color: rgba(255,255,255,0.6); }
+
+    .impact-icon {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 1.8rem;
+      opacity: 0.06;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .impact-card:hover .impact-icon { opacity: 0.25; }
+
+    @media (max-width: 900px) {
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .impact-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact {
+      background: var(--white);
+      border-top: 1px solid var(--grey-100);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      border: 1px solid var(--grey-200);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .contact-item:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.25s ease;
+    }
+
+    .contact-item:hover .contact-item-icon { background: var(--accent); }
+
+    .contact-item-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-item-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey-400);
+      margin-bottom: 4px;
+    }
+
+    .contact-item-value {
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .contact-item-link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-item-link:hover {
+      text-decoration: underline;
+    }
+
+    .contact-right {
+      padding-top: 8px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-600);
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      border: 1px solid var(--grey-200);
+      background: var(--off-white);
+      padding: 13px 16px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: var(--white);
+    }
+
+    .form-group textarea { min-height: 130px; }
+
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 15px 36px;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.25s ease, transform 0.25s ease;
+      align-self: flex-start;
+    }
+
+    .form-submit:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--grey-400);
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.35);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-name {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.02em;
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      footer { padding: 24px; flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ============================================================
+       BACK TO TOP
+    ============================================================ */
+    .back-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 50;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+      pointer-events: none;
+      border: none;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .back-top:hover { background: var(--accent); }
+
+    .back-top svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ============================================================
+       DELAY UTILITIES FOR STAGGERED REVEALS
+    ============================================================ */
+    .delay-1 { transition-delay: 0.1s !important; }
+    .delay-2 { transition-delay: 0.2s !important; }
+    .delay-3 { transition-delay: 0.3s !important; }
+    .delay-4 { transition-delay: 0.4s !important; }
+    .delay-5 { transition-delay: 0.5s !important; }
+    .delay-6 { transition-delay: 0.6s !important; }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <nav id="main-nav">
+    <a href="#hero" class="nav-logo">Ariel IBABA</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-circle-1"></div>
+    <div class="hero-circle-2"></div>
+
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Data Science &amp; Artificial Intelligence</div>
+      <h1 class="hero-name">Ariel <em>IBABA</em></h1>
+      <div class="hero-title">Data Science &amp; AI Director</div>
+      <p class="hero-tagline">"Bridging strategy, innovation, and execution<br>to industrialize AI at scale."</p>
+      <a href="#contact" class="hero-cta">
+        Get in Touch
+        <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <div class="hero-location">
+      <svg width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      Paris, France
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-left">
+          <div class="section-label reveal">About</div>
+          <h2 class="section-heading reveal delay-1">A hybrid profile <em>built at the intersection of</em> science and industry.</h2>
+
+          <p class="about-text reveal delay-2">
+            With <strong>10 years in Data Science & AI</strong> and a prior career of <strong>8 years in aerospace engineering</strong>, Ariel IBABA brings a rare combination: the scientific rigour of an engineer and the strategic vision of a technology leader.
+          </p>
+
+          <p class="about-text reveal delay-3">
+            He specialises in turning complex AI challenges into concrete, industrialised solutions — from ideation to production. His toolkit spans <strong>Machine Learning, Deep Learning, Generative AI, RAG architectures, and LLMs</strong>, applied across regulated industries including banking, FMCG, energy, and manufacturing.
+          </p>
+
+          <p class="about-text reveal delay-4">
+            Beyond delivery, Ariel leads and upskills teams, advises executives on AI strategy, and lectures on Artificial Intelligence at <strong>École Polytechnique</strong> and Webstart — shaping the next generation of practitioners.
+          </p>
+
+          <div class="about-highlights reveal delay-5">
+            <div class="highlight-item">
+              <div class="highlight-icon">🎓</div>
+              <div>
+                <div class="highlight-label">Academic</div>
+                <div class="highlight-value">Lecturer in AI — École Polytechnique & Webstart</div>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">✈️</div>
+              <div>
+                <div class="highlight-label">Engineering Background</div>
+                <div class="highlight-value">8 years in Aerospace — Airbus, Boeing, Bombardier structures</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right reveal-right">
+          <div class="about-deco-number">18+</div>
+
+          <div class="about-stat-block">
+            <div class="about-stat-number">18+</div>
+            <div class="about-stat-label">Years of combined engineering & data science expertise</div>
+          </div>
+
+          <div class="about-stats-row">
+            <div class="about-stat-block">
+              <div class="about-stat-number">10</div>
+              <div class="about-stat-label">Years in Data Science & AI</div>
+            </div>
+            <div class="about-stat-block">
+              <div class="about-stat-number">8</div>
+              <div class="about-stat-label">Years in Aerospace Engineering</div>
+            </div>
+          </div>
+
+          <div class="clients-row">
+            <div class="clients-label">Notable Clients & Employers</div>
+            <div class="clients-list">
+              <span class="client-tag">Groupe BPCE</span>
+              <span class="client-tag">Danone</span>
+              <span class="client-tag">Schlumberger SLB</span>
+              <span class="client-tag">Airbus</span>
+              <span class="client-tag">Boeing</span>
+              <span class="client-tag">ERAMET</span>
+              <span class="client-tag">BOBST</span>
+              <span class="client-tag">Capgemini Invent</span>
+              <span class="client-tag">École Polytechnique</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXPERTISE
+  ============================================================ -->
+  <section id="expertise">
+    <div class="container">
+      <div class="section-label reveal">Expertise</div>
+      <h2 class="section-heading reveal delay-1">Five domains, <em>one integrated</em> practice.</h2>
+
+      <div class="expertise-grid">
+
+        <!-- Card 1 -->
+        <div class="expertise-card reveal delay-1">
+          <div class="expertise-card-number">01</div>
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <div class="expertise-title">Machine Learning &amp; Deep Learning</div>
+          <div class="expertise-desc">End-to-end ML pipelines for complex industrial problems — from feature engineering to production deployment at scale.</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag">NLP</span>
+            <span class="expertise-tag">Computer Vision</span>
+            <span class="expertise-tag">Time Series</span>
+            <span class="expertise-tag">Predictive Maintenance</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="expertise-card reveal delay-2">
+          <div class="expertise-card-number">02</div>
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"></path>
+            </svg>
+          </div>
+          <div class="expertise-title">Generative AI</div>
+          <div class="expertise-desc">Design and deployment of LLM-based solutions — from architecture to fine-tuning and production-grade RAG pipelines.</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag">LLMs</span>
+            <span class="expertise-tag">RAG</span>
+            <span class="expertise-tag">Fine-Tuning</span>
+            <span class="expertise-tag">Chatbots & Assistants</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="expertise-card reveal delay-3">
+          <div class="expertise-card-number">03</div>
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+              <polyline points="2 17 6 13 10 17 14 9 18 15 22 10"></polyline>
+            </svg>
+          </div>
+          <div class="expertise-title">AI Strategy &amp; Governance</div>
+          <div class="expertise-desc">Identifying high-value use cases, building AI roadmaps, and managing the full lifecycle from prototype to industrialisation.</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag">Use Case Identification</span>
+            <span class="expertise-tag">Roadmap</span>
+            <span class="expertise-tag">MLOps</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="expertise-card reveal delay-2">
+          <div class="expertise-card-number">04</div>
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="expertise-title">Team Leadership</div>
+          <div class="expertise-desc">Building and leading high-performance data science teams — from recruitment and onboarding to delivery excellence.</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag">Recruitment</span>
+            <span class="expertise-tag">Mentoring</span>
+            <span class="expertise-tag">Up to 15 people</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="expertise-card reveal delay-3">
+          <div class="expertise-card-number">05</div>
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <div class="expertise-title">Training &amp; Upskilling</div>
+          <div class="expertise-desc">Designing and delivering AI training programmes for developers, data teams, and executive audiences.</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag">Developer Training</span>
+            <span class="expertise-tag">Executive Awareness</span>
+            <span class="expertise-tag">École Polytechnique</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXPERIENCE
+  ============================================================ -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label reveal">Experience</div>
+      <h2 class="section-heading reveal delay-1">A career defined by <em>impact,</em> not just titles.</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2025 — Present</span>
+            <span class="timeline-company">SOFTEAM · Mission at Groupe BPCE</span>
+          </div>
+          <div class="timeline-role">Senior Manager / Head of Data Science &amp; AI</div>
+          <div class="timeline-desc">
+            Leading the AI practice within a major French banking group. Responsible for AI strategy, team management, and the end-to-end deployment of production-grade AI solutions.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">200+ developers trained on AI</span>
+            <span class="achievement-pill">5 AI assistants deployed</span>
+            <span class="achievement-pill">1 chatbot in production</span>
+            <span class="achievement-pill">1 auto-documentation tool</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2024 — 2025</span>
+            <span class="timeline-company">Schlumberger SLB</span>
+          </div>
+          <div class="timeline-role">Generative AI Expert</div>
+          <div class="timeline-desc">
+            Designed and built a production-ready end-to-end multimodal RAG chatbot for one of the world's leading oilfield services companies, integrating complex document understanding and multi-source retrieval.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">Multimodal RAG architecture</span>
+            <span class="achievement-pill">End-to-end delivery</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2024 — 2025</span>
+            <span class="timeline-company">DCO2</span>
+          </div>
+          <div class="timeline-role">Director of Data Science</div>
+          <div class="timeline-desc">
+            Created the Data Science department from scratch. Led the research and deployment of three distinct AI solutions for carbon emission estimation in the energy sector.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">DS department created from 0</span>
+            <span class="achievement-pill">3 AI solutions deployed</span>
+            <span class="achievement-pill">Carbon emission estimation</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2023 — 2024</span>
+            <span class="timeline-company">BOBST</span>
+          </div>
+          <div class="timeline-role">Senior Expert — Generative AI &amp; Data Science</div>
+          <div class="timeline-desc">
+            Developed a RAG-based chatbot for industrial maintenance documentation and built predictive models for energy consumption optimisation in packaging manufacturing.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">RAG chatbot for maintenance</span>
+            <span class="achievement-pill">Energy optimisation</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2022 — 2023</span>
+            <span class="timeline-company">DANONE</span>
+          </div>
+          <div class="timeline-role">Data Science Manager</div>
+          <div class="timeline-desc">
+            Led AI-driven cost optimisation initiatives across production and supply chain, delivering substantial financial impact for the global FMCG leader.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">€4M/year combined savings</span>
+            <span class="achievement-pill">AI-driven cost reduction</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2017 — 2020</span>
+            <span class="timeline-company">Capgemini Invent</span>
+          </div>
+          <div class="timeline-role">Lead Data Scientist</div>
+          <div class="timeline-desc">
+            Built and led a team of 10–15 data scientists. Delivered high-impact projects in predictive maintenance (mining industry, ERAMET) and fraud detection for financial services clients.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">80% reduction in service stops</span>
+            <span class="achievement-pill">&gt;€500K fraud detection project</span>
+            <span class="achievement-pill">Team of 10–15 DS</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal delay-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2007 — 2015</span>
+            <span class="timeline-company">Latécoère</span>
+          </div>
+          <div class="timeline-role">Mechanical Engineer Team Lead</div>
+          <div class="timeline-desc">
+            Led structural engineering on aircraft programmes for Airbus, Boeing, and Bombardier. Eight years of precision engineering in one of the most demanding industries in the world — the foundation for a data-driven mindset.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">Airbus programmes</span>
+            <span class="achievement-pill">Boeing structures</span>
+            <span class="achievement-pill">Bombardier</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label reveal">Projects</div>
+      <h2 class="section-heading reveal delay-1">Selected work that <em>demonstrates expertise.</em></h2>
+
+      <div class="projects-grid">
+
+        <!-- 1. CodeGraphAI — flagship GenAI + GraphRAG -->
+        <div class="project-card reveal delay-1">
+          <div class="project-card-header">
+            <div class="project-card-title">CodeGraphAI</div>
+            <div class="project-card-client">Personal Project</div>
+          </div>
+          <div class="project-card-problem">
+            Developers waste hours understanding unfamiliar codebases. Existing documentation tools are shallow and miss structural relationships between components.
+          </div>
+          <div class="project-card-approach">
+            Built a GraphRAG-powered code documentation and Q&amp;A system. AST parsing extracts entities into a knowledge graph (Kuzu DB), then 4 expert LLM agents (Architect, Business, Technical, Security) analyse the code. Supports 19 languages with incremental analysis saving 90-95% compute on re-runs.
+          </div>
+          <div class="project-card-result">19 languages &middot; 90-95% compute savings &middot; MCP server for Claude Code</div>
+          <div class="project-card-tags">
+            <span class="project-tag">GraphRAG</span>
+            <span class="project-tag">Kuzu DB</span>
+            <span class="project-tag">AST Parsing</span>
+            <span class="project-tag">Multi-Agent</span>
+            <span class="project-tag">MCP</span>
+          </div>
+        </div>
+
+        <!-- 2. Enterprise AI Platform — BPCE -->
+        <div class="project-card reveal delay-2">
+          <div class="project-card-header">
+            <div class="project-card-title">Enterprise AI Platform at Scale</div>
+            <div class="project-card-client">Groupe BPCE</div>
+          </div>
+          <div class="project-card-problem">
+            France's 2nd largest banking group needed to move from AI experimentation to production-grade tools — and build AI literacy across its developer workforce.
+          </div>
+          <div class="project-card-approach">
+            Designed a full GenAI toolchain: 1 project-management chatbot, 5 specialized AI assistants (from requirements writing to compliance analysis), and an automated code-documentation engine. Ran a large-scale training programme in parallel.
+          </div>
+          <div class="project-card-result">200+ developers trained &middot; 6 AI tools in production</div>
+          <div class="project-card-tags">
+            <span class="project-tag">LangChain</span>
+            <span class="project-tag">RAG</span>
+            <span class="project-tag">Azure OpenAI</span>
+            <span class="project-tag">AI Agents</span>
+            <span class="project-tag">LlamaIndex</span>
+          </div>
+        </div>
+
+        <!-- 3. CogniDoc — open-source Hybrid RAG framework -->
+        <div class="project-card reveal delay-3">
+          <div class="project-card-header">
+            <div class="project-card-title">CogniDoc</div>
+            <div class="project-card-client">Open Source</div>
+          </div>
+          <div class="project-card-problem">
+            Organizations sit on massive document collections that are unsearchable and underutilized. Standard RAG misses structural relationships between concepts.
+          </div>
+          <div class="project-card-approach">
+            Built a Hybrid RAG framework combining vector search with knowledge graph traversal. Features an agentic query router with 9 specialized tools, auto schema generation (2-stage LLM pipeline), semantic entity resolution, and incremental ingestion. Supports PDF, DOCX, PPTX, XLSX, HTML, and images.
+          </div>
+          <div class="project-card-result">Open-source (MIT) &middot; Hybrid RAG &middot; 9 agentic tools</div>
+          <div class="project-card-tags">
+            <span class="project-tag">GraphRAG</span>
+            <span class="project-tag">Agentic RAG</span>
+            <span class="project-tag">ChromaDB</span>
+            <span class="project-tag">Gradio</span>
+            <span class="project-tag">YOLO</span>
+          </div>
+        </div>
+
+        <!-- 4. Bad News Monitoring — RegTech -->
+        <div class="project-card reveal delay-4">
+          <div class="project-card-header">
+            <div class="project-card-title">Bad News Monitoring</div>
+            <div class="project-card-client">Personal Project</div>
+          </div>
+          <div class="project-card-problem">
+            Financial institutions must continuously screen adverse media across hundreds of multilingual sources for KYC/AML compliance. Manual monitoring is unscalable and error-prone.
+          </div>
+          <div class="project-card-approach">
+            Built an event-driven platform: automated collection from 40+ RSS sources and GDELT global news, LLM-powered entity extraction and risk classification, fuzzy matching against watchlists, and automated alert generation with risk scoring. Full React dashboard + FastAPI backend + Celery workers.
+          </div>
+          <div class="project-card-result">40+ sources &middot; Automated KYC/AML alerts &middot; Full-stack platform</div>
+          <div class="project-card-tags">
+            <span class="project-tag">FastAPI</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">Celery</span>
+            <span class="project-tag">NLP</span>
+            <span class="project-tag">PostgreSQL</span>
+          </div>
+        </div>
+
+        <!-- 5. Agent Evaluation & Monitoring -->
+        <div class="project-card reveal delay-1">
+          <div class="project-card-header">
+            <div class="project-card-title">Agent Evaluation &amp; Monitoring</div>
+            <div class="project-card-client">Personal Project</div>
+          </div>
+          <div class="project-card-problem">
+            Evaluating agentic AI in production is harder than simple Q&amp;A — agents orchestrate multi-step reasoning, tool calls, and feedback loops. Most solutions lock you into a SaaS or cover only a narrow slice.
+          </div>
+          <div class="project-card-approach">
+            Designed a 6-layer hybrid evaluation pipeline: instrumentation (LangFuse/OpenTelemetry), trace storage, cost-optimized evaluator cascade (programmatic &rarr; LLM-as-Judge generic &rarr; domain-specific), test harness with golden datasets, human annotation (Argilla), and Grafana dashboarding with alerting. 100% open-source, zero vendor lock-in.
+          </div>
+          <div class="project-card-result">6-layer pipeline &middot; 7 evaluation dimensions &middot; 100% open-source</div>
+          <div class="project-card-tags">
+            <span class="project-tag">LangFuse</span>
+            <span class="project-tag">RAGAS</span>
+            <span class="project-tag">Inspect AI</span>
+            <span class="project-tag">Grafana</span>
+            <span class="project-tag">OpenTelemetry</span>
+          </div>
+        </div>
+
+        <!-- 6. UBO — Compliance / AML -->
+        <div class="project-card reveal delay-2">
+          <div class="project-card-header">
+            <div class="project-card-title">UBO Identification System</div>
+            <div class="project-card-client">Personal Project</div>
+          </div>
+          <div class="project-card-problem">
+            European anti-money laundering directives (AMLD5/6) require identifying Ultimate Beneficial Owners through complex multi-level ownership chains — often indirect, circular, or spanning opaque jurisdictions.
+          </div>
+          <div class="project-card-approach">
+            Modeled ownership structures as directed graphs with automated calculation of direct and indirect holdings. Built cycle detection, shell company identification, risk scoring (PEP, sanctions, high-risk jurisdictions), and interactive ownership chain visualization with an AI-powered chat interface.
+          </div>
+          <div class="project-card-result">Automated AMLD5/6 compliance &middot; Graph-based ownership analysis</div>
+          <div class="project-card-tags">
+            <span class="project-tag">FastAPI</span>
+            <span class="project-tag">React</span>
+            <span class="project-tag">Graph Algorithms</span>
+            <span class="project-tag">React Flow</span>
+            <span class="project-tag">LLM</span>
+          </div>
+        </div>
+
+        <!-- 7. Predictive Maintenance — ERAMET -->
+        <div class="project-card reveal delay-3">
+          <div class="project-card-header">
+            <div class="project-card-title">Predictive Maintenance for Mining Rail</div>
+            <div class="project-card-client">ERAMET</div>
+          </div>
+          <div class="project-card-problem">
+            ERAMET operates 600 km of mining rail in New Caledonia. Unplanned rail failures caused costly service stops and million-euro-per-kilometre repair bills.
+          </div>
+          <div class="project-card-approach">
+            Built a predictive maintenance platform using sensor data and machine learning to forecast incidents and trigger proactive repairs before failure occurs.
+          </div>
+          <div class="project-card-result">80% reduction in unplanned stops &middot; M&euro;/year saved</div>
+          <div class="project-card-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">TensorFlow</span>
+            <span class="project-tag">Time Series</span>
+            <span class="project-tag">Predictive Modeling</span>
+          </div>
+        </div>
+
+        <!-- 8. Cost Optimization — Danone -->
+        <div class="project-card reveal delay-4">
+          <div class="project-card-header">
+            <div class="project-card-title">Recipe &amp; Supplier Cost Optimization</div>
+            <div class="project-card-client">Danone</div>
+          </div>
+          <div class="project-card-problem">
+            Danone's European operations needed to reduce industrial costs without impacting product quality — across thousands of product recipes and supplier contracts.
+          </div>
+          <div class="project-card-approach">
+            Developed two optimization engines: one for algorithmic recipe harmonization across product lines, another for supplier selection and negotiation. Both validated and adopted by R&amp;D and Procurement teams.
+          </div>
+          <div class="project-card-result">&euro;2M/year on recipes &middot; &euro;2M/year on suppliers</div>
+          <div class="project-card-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Combinatorial Optimization</span>
+            <span class="project-tag">Cost Modeling</span>
+            <span class="project-tag">SQL</span>
+          </div>
+        </div>
+
+        <!-- 9. Vigile — Strategic Intelligence -->
+        <div class="project-card reveal delay-1">
+          <div class="project-card-header">
+            <div class="project-card-title">Vigile — Strategic Intelligence</div>
+            <div class="project-card-client">Personal Project</div>
+          </div>
+          <div class="project-card-problem">
+            Strategic intelligence is either manual and time-consuming, or delegated to expensive enterprise tools costing thousands per month. No affordable middle ground exists.
+          </div>
+          <div class="project-card-approach">
+            Built a hybrid intelligence system: automated RSS/Atom collection, AI enrichment (entities, sentiment, themes), agentic RAG chatbot (LangGraph, 7 tools, 4 query modes) with Perplexity-style citations, and automated synthesis reports. Auto-discovery of new sources via DuckDuckGo + LLM scoring.
+          </div>
+          <div class="project-card-result">Agentic chatbot &middot; Automated reports &middot; Replaces enterprise tools</div>
+          <div class="project-card-tags">
+            <span class="project-tag">LangGraph</span>
+            <span class="project-tag">Streamlit</span>
+            <span class="project-tag">ChromaDB</span>
+            <span class="project-tag">Gemini</span>
+            <span class="project-tag">Docker</span>
+          </div>
+        </div>
+
+        <!-- 10. REMS — RAG Evaluation -->
+        <div class="project-card reveal delay-2">
+          <div class="project-card-header">
+            <div class="project-card-title">REMS — RAG Quality Monitor</div>
+            <div class="project-card-client">Personal Project</div>
+          </div>
+          <div class="project-card-problem">
+            In regulatory domains, RAG chatbot errors have legal consequences. No lightweight external tool existed to continuously evaluate quality and detect hallucinations — without modifying the chatbot itself.
+          </div>
+          <div class="project-card-approach">
+            Built an external evaluation module that plugs into any RAG chatbot via API. Uses RAGAS metrics (faithfulness, context precision, answer relevancy) to detect hallucinations, diagnose root causes, and generate actionable recommendations. Automated weekly evaluations via cron.
+          </div>
+          <div class="project-card-result">Hallucination detection &middot; Automated diagnostics &middot; PDF/HTML reports</div>
+          <div class="project-card-tags">
+            <span class="project-tag">RAGAS</span>
+            <span class="project-tag">Streamlit</span>
+            <span class="project-tag">Gemini</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">Cron</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       IMPACT
+  ============================================================ -->
+  <section id="impact">
+    <div class="container">
+      <div class="section-label reveal">Impact</div>
+      <h2 class="section-heading reveal delay-1">Results that <em>speak for themselves.</em></h2>
+
+      <p class="impact-intro reveal delay-2">
+        Every engagement is measured against real outcomes. Here are the numbers that matter.
+      </p>
+
+      <div class="impact-grid">
+
+        <div class="impact-card reveal delay-1">
+          <div class="impact-card-bg"></div>
+          <div class="impact-number">200<sup>+</sup></div>
+          <div class="impact-label">Developers trained on AI at Groupe BPCE</div>
+          <div class="impact-icon">🎓</div>
+        </div>
+
+        <div class="impact-card reveal delay-2">
+          <div class="impact-card-bg"></div>
+          <div class="impact-number">€4M<sup>+</sup></div>
+          <div class="impact-label">Per year in documented cost savings — Danone</div>
+          <div class="impact-icon">💶</div>
+        </div>
+
+        <div class="impact-card reveal delay-3">
+          <div class="impact-card-bg"></div>
+          <div class="impact-number">15<sup>+</sup></div>
+          <div class="impact-label">AI prototypes and solutions deployed in production</div>
+          <div class="impact-icon">🚀</div>
+        </div>
+
+        <div class="impact-card reveal delay-2">
+          <div class="impact-card-bg"></div>
+          <div class="impact-number">15</div>
+          <div class="impact-label">Data scientists managed and mentored</div>
+          <div class="impact-icon">👥</div>
+        </div>
+
+        <div class="impact-card reveal delay-3">
+          <div class="impact-card-bg"></div>
+          <div class="impact-number">80<sup>%</sup></div>
+          <div class="impact-label">Reduction in unplanned service stops — ERAMET predictive maintenance</div>
+          <div class="impact-icon">⚙️</div>
+        </div>
+
+        <div class="impact-card reveal delay-4">
+          <div class="impact-card-bg"></div>
+          <div class="impact-number">X</div>
+          <div class="impact-label">Lecturer in AI at École Polytechnique</div>
+          <div class="impact-icon">🏛️</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label reveal">Contact</div>
+      <h2 class="section-heading reveal delay-1">Let's build something <em>significant</em> together.</h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-left reveal-left">
+          <p class="contact-intro">
+            Whether you're looking to industrialise AI within your organisation, need strategic guidance on a complex data challenge, or want to discuss a collaboration — I'd be glad to connect.
+          </p>
+
+          <div class="contact-items">
+
+            <a href="mailto:ariel.ibaba@outlook.com" class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">ariel.ibaba@outlook.com</div>
+              </div>
+            </a>
+
+            <a href="tel:+33652405159" class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value">+33 (0)6 52 40 51 59</div>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ariel-ibaba-263507107" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-item-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div>
+                <div class="contact-item-label">LinkedIn</div>
+                <div class="contact-item-value contact-item-link">linkedin.com/in/ariel-ibaba-263507107</div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="contact-right reveal-right">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name">Name</label>
+                <input type="text" id="f-name" name="name" placeholder="Your name" autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="f-email">Email</label>
+                <input type="email" id="f-email" name="email" placeholder="your@email.com" autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f-subject">Subject</label>
+              <input type="text" id="f-subject" name="subject" placeholder="How can I help?" />
+            </div>
+            <div class="form-group">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" placeholder="Tell me about your project or challenge..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">
+              Send Message
+              <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+            <p class="form-note">I typically respond within 24 hours.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-name">Ariel IBABA</div>
+    <span class="footer-copy">&copy; 2025 — Paris, France</span>
+    <div class="footer-links">
+      <a href="mailto:ariel.ibaba@outlook.com">Email</a>
+      <a href="https://www.linkedin.com/in/ariel-ibaba-263507107" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-top" id="back-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* ---- NAV SCROLL STATE ---- */
+    const nav = document.getElementById('main-nav');
+    const backTop = document.getElementById('back-top');
+
+    function onScroll() {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      if (window.scrollY > 400) {
+        backTop.classList.add('visible');
+      } else {
+        backTop.classList.remove('visible');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ---- MOBILE NAV ---- */
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks  = document.getElementById('nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    /* ---- BACK TO TOP ---- */
+    backTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ---- INTERSECTION OBSERVER — SCROLL REVEALS ---- */
+    const revealEls = document.querySelectorAll(
+      '.reveal, .reveal-left, .reveal-right'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ---- CONTACT FORM (display only — mailto fallback) ---- */
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name    = document.getElementById('f-name').value.trim();
+      const email   = document.getElementById('f-email').value.trim();
+      const subject = document.getElementById('f-subject').value.trim();
+      const message = document.getElementById('f-message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill in your name, email, and message.');
+        return;
+      }
+
+      const mailtoSubject = encodeURIComponent(subject || 'Contact from arielibaba.com');
+      const mailtoBody    = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\n${message}`
+      );
+      window.location.href =
+        `mailto:ariel.ibaba@outlook.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+    });
+
+    /* ---- IMPACT NUMBER COUNTER ANIMATION ---- */
+    function animateCounter(el, target, suffix, duration) {
+      const start = 0;
+      const startTime = performance.now();
+      const step = (timestamp) => {
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        const current = Math.floor(eased * target);
+        el.textContent = current + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    // Only animate numbers that have a numeric value
+    const impactNumbers = document.querySelectorAll('.impact-number');
+
+    const numberObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const text = el.textContent;
+
+          // Parse numeric configs
+          const configs = [
+            { match: /^200/, value: 200, suffix: '+' },
+            { match: /^€4M/, value: 4, prefix: '€', suffix: 'M+' },
+            { match: /^15\+$/, value: 15, suffix: '+' },
+            { match: /^15$/, value: 15, suffix: '' },
+            { match: /^80/, value: 80, suffix: '%' },
+          ];
+
+          const config = configs.find(c => c.match.test(text));
+          if (config) {
+            const prefix = config.prefix || '';
+            const sup = el.querySelector('sup');
+            const supContent = sup ? sup.textContent : '';
+            // Remove sup content from target text calc
+            el.innerHTML = prefix + '0' + (sup ? `<sup>${supContent}</sup>` : '');
+
+            let frame = 0;
+            const totalFrames = 60;
+            const interval = setInterval(() => {
+              frame++;
+              const progress = frame / totalFrames;
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const current = Math.floor(eased * config.value);
+              el.innerHTML = prefix + current + (sup ? `<sup>${supContent}</sup>` : config.suffix);
+              if (frame >= totalFrames) {
+                clearInterval(interval);
+                el.innerHTML = prefix + config.value + (sup ? `<sup>${supContent}</sup>` : config.suffix);
+              }
+            }, 16);
+          }
+
+          numberObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    impactNumbers.forEach(el => numberObserver.observe(el));
+
+  </script>
+
+</body>
+</html>
