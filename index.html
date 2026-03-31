@@ -1171,6 +1171,61 @@
     }
 
     /* ============================================================
+       CERTIFICATIONS
+    ============================================================ */
+    #certifications {
+      background: var(--navy-deep);
+      color: var(--white);
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .cert-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 20px 24px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .cert-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--accent);
+    }
+
+    .cert-year {
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      min-width: 42px;
+    }
+
+    .cert-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    .cert-issuer {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .certifications-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
        CONTACT
     ============================================================ */
     #contact {
@@ -1461,6 +1516,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#impact">Impact</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -1786,7 +1842,39 @@
           </div>
         </div>
 
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2022</span>
+            <span class="timeline-company">GRIPS Intelligence</span>
+          </div>
+          <div class="timeline-role">Head of Data Science</div>
+          <div class="timeline-desc">
+            Managed the Data Science team and developed a volatility index for web ranking analysis at this e-commerce competitive intelligence startup.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">DS team management</span>
+            <span class="achievement-pill">Web ranking volatility index</span>
+          </div>
+        </div>
+
         <div class="timeline-item reveal delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2020 — 2022</span>
+            <span class="timeline-company">ActiveViam</span>
+          </div>
+          <div class="timeline-role">Lead Data Scientist</div>
+          <div class="timeline-desc">
+            Built ML models for financial asset value prediction at a real-time financial analytics software company. Speaker at Big Data &amp; AI Paris conferences.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">Financial ML models</span>
+            <span class="achievement-pill">Big Data &amp; AI Paris speaker</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal delay-2">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2017 — 2020</span>
@@ -1803,13 +1891,30 @@
           </div>
         </div>
 
-        <div class="timeline-item reveal delay-2">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-period">2016 — 2017</span>
+            <span class="timeline-company">Groupe Open</span>
+          </div>
+          <div class="timeline-role">Lead Data Scientist</div>
+          <div class="timeline-desc">
+            Built a Big Data platform for real-time financial reporting and Basel II/III regulatory compliance. Led Open's Data Lab, prototyping exploratory AI solutions for business development.
+          </div>
+          <div class="timeline-achievements">
+            <span class="achievement-pill">Real-time financial reporting</span>
+            <span class="achievement-pill">Basel II/III compliance</span>
+            <span class="achievement-pill">Data Lab lead</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal delay-1">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2007 — 2015</span>
             <span class="timeline-company">Latécoère</span>
           </div>
-          <div class="timeline-role">Mechanical Engineer Team Lead</div>
+          <div class="timeline-role">Mechanical Engineer / Team Lead</div>
           <div class="timeline-desc">
             Led structural engineering on aircraft programmes for Airbus, Boeing, and Bombardier. Eight years of precision engineering in one of the most demanding industries in the world — the foundation for a data-driven mindset.
           </div>
@@ -2110,6 +2215,100 @@
           <div class="impact-number">X</div>
           <div class="impact-label">Lecturer in AI at École Polytechnique</div>
           <div class="impact-icon">🏛️</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CERTIFICATIONS
+  ============================================================ -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-label reveal">Certifications</div>
+      <h2 class="section-heading reveal delay-1">Continuous learning, <em>validated expertise.</em></h2>
+
+      <div class="certifications-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-year">2024</div>
+          <div class="cert-body">
+            <div class="cert-name">Building Agentic RAG with LlamaIndex</div>
+            <div class="cert-issuer">DeepLearning.AI</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-year">2024</div>
+          <div class="cert-body">
+            <div class="cert-name">Fine-Tuning Large Language Models</div>
+            <div class="cert-issuer">DeepLearning.AI</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal delay-2">
+          <div class="cert-year">2024</div>
+          <div class="cert-body">
+            <div class="cert-name">Functions, Tools &amp; Agents with LangChain</div>
+            <div class="cert-issuer">DeepLearning.AI</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal delay-3">
+          <div class="cert-year">2024</div>
+          <div class="cert-body">
+            <div class="cert-name">LangChain for LLM Application Development</div>
+            <div class="cert-issuer">DeepLearning.AI</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-year">2023</div>
+          <div class="cert-body">
+            <div class="cert-name">Generative AI for Everyone</div>
+            <div class="cert-issuer">DeepLearning.AI</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-year">2023</div>
+          <div class="cert-body">
+            <div class="cert-name">Generative AI with Large Language Models</div>
+            <div class="cert-issuer">DeepLearning.AI</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal delay-2">
+          <div class="cert-year">2020</div>
+          <div class="cert-body">
+            <div class="cert-name">AWS Certified Solutions Architect &mdash; Associate</div>
+            <div class="cert-issuer">Udemy</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal delay-3">
+          <div class="cert-year">2020</div>
+          <div class="cert-body">
+            <div class="cert-name">Deep Learning Specialization</div>
+            <div class="cert-issuer">DeepLearning.AI</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-year">2019</div>
+          <div class="cert-body">
+            <div class="cert-name">Neural Networks and Deep Learning</div>
+            <div class="cert-issuer">Coursera</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal delay-1">
+          <div class="cert-year">2016</div>
+          <div class="cert-body">
+            <div class="cert-name">Machine Learning</div>
+            <div class="cert-issuer">Coursera (Stanford)</div>
+          </div>
         </div>
 
       </div>
