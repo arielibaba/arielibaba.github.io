@@ -1495,6 +1495,47 @@
     .delay-5 { transition-delay: 0.5s !important; }
     .delay-6 { transition-delay: 0.6s !important; }
 
+    /* ============================================================
+       LANGUAGE TOGGLE
+    ============================================================ */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-left: 24px;
+    }
+    .lang-btn {
+      background: none;
+      border: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 4px 8px;
+      transition: color 0.2s ease, background 0.2s ease;
+      color: rgba(255,255,255,0.5);
+      font-family: var(--font-sans);
+    }
+    .lang-btn.active {
+      color: var(--white);
+      background: rgba(255,255,255,0.12);
+    }
+    .lang-sep {
+      color: rgba(255,255,255,0.25);
+      font-size: 0.72rem;
+      user-select: none;
+    }
+    nav.scrolled .lang-btn { color: var(--grey-400); }
+    nav.scrolled .lang-btn.active { color: var(--navy); background: rgba(48,66,99,0.08); }
+    nav.scrolled .lang-sep { color: var(--grey-200); }
+
+    @media (max-width: 768px) {
+      .lang-toggle {
+        margin-left: auto;
+        margin-right: 12px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1511,14 +1552,19 @@
       <span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about" data-i18n="nav_about">About</a></li>
+      <li><a href="#expertise" data-i18n="nav_expertise">Expertise</a></li>
+      <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+      <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
   </nav>
 
   <!-- ============================================================
@@ -1530,12 +1576,12 @@
     <div class="hero-circle-2"></div>
 
     <div class="hero-inner">
-      <div class="hero-eyebrow">Data Science &amp; Artificial Intelligence</div>
+      <div class="hero-eyebrow" data-i18n="hero_eyebrow">Data Science &amp; Artificial Intelligence</div>
       <h1 class="hero-name">Ariel <em>IBABA</em></h1>
-      <div class="hero-title">Data Science &amp; AI Director</div>
-      <p class="hero-tagline">"Bridging strategy, innovation, and execution<br>to industrialize AI at scale."</p>
+      <div class="hero-title" data-i18n="hero_title">Data Science &amp; AI Director</div>
+      <p class="hero-tagline" data-i18n="hero_tagline">"Bridging strategy, innovation, and execution<br>to industrialize AI at scale."</p>
       <a href="#contact" class="hero-cta">
-        Get in Touch
+        <span data-i18n="hero_cta">Get in Touch</span>
         <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
@@ -1553,7 +1599,7 @@
 
     <div class="hero-scroll">
       <div class="scroll-line"></div>
-      <span>Scroll</span>
+      <span data-i18n="hero_scroll">Scroll</span>
     </div>
   </section>
 
@@ -1565,18 +1611,18 @@
       <div class="about-grid">
 
         <div class="about-left">
-          <div class="section-label reveal">About</div>
-          <h2 class="section-heading reveal delay-1">A hybrid profile <em>built at the intersection of</em> science and industry.</h2>
+          <div class="section-label reveal" data-i18n="about_label">About</div>
+          <h2 class="section-heading reveal delay-1" data-i18n="about_heading">A hybrid profile <em>built at the intersection of</em> science and industry.</h2>
 
-          <p class="about-text reveal delay-2">
-            With <strong>10 years in Data Science & AI</strong> and a prior career of <strong>8 years in aerospace engineering</strong>, Ariel IBABA brings a rare combination: the scientific rigour of an engineer and the strategic vision of a technology leader.
+          <p class="about-text reveal delay-2" data-i18n="about_p1">
+            With <strong>10 years in Data Science &amp; AI</strong> and a prior career of <strong>8 years in aerospace engineering</strong>, Ariel IBABA brings a rare combination: the scientific rigour of an engineer and the strategic vision of a technology leader.
           </p>
 
-          <p class="about-text reveal delay-3">
+          <p class="about-text reveal delay-3" data-i18n="about_p2">
             He specialises in turning complex AI challenges into concrete, industrialised solutions — from ideation to production. His toolkit spans <strong>Machine Learning, Deep Learning, Generative AI, RAG architectures, and LLMs</strong>, applied across regulated industries including banking, FMCG, energy, and manufacturing.
           </p>
 
-          <p class="about-text reveal delay-4">
+          <p class="about-text reveal delay-4" data-i18n="about_p3">
             Beyond delivery, Ariel leads and upskills teams, advises executives on AI strategy, and lectures on Artificial Intelligence at <strong>École Polytechnique</strong> and Webstart — shaping the next generation of practitioners.
           </p>
 
@@ -1584,15 +1630,15 @@
             <div class="highlight-item">
               <div class="highlight-icon">🎓</div>
               <div>
-                <div class="highlight-label">Academic</div>
-                <div class="highlight-value">Lecturer in AI — École Polytechnique & Webstart</div>
+                <div class="highlight-label" data-i18n="about_hl1_label">Academic</div>
+                <div class="highlight-value" data-i18n="about_hl1_value">Lecturer in AI — École Polytechnique &amp; Webstart</div>
               </div>
             </div>
             <div class="highlight-item">
               <div class="highlight-icon">✈️</div>
               <div>
-                <div class="highlight-label">Engineering Background</div>
-                <div class="highlight-value">8 years in Aerospace — Airbus, Boeing, Bombardier structures</div>
+                <div class="highlight-label" data-i18n="about_hl2_label">Engineering Background</div>
+                <div class="highlight-value" data-i18n="about_hl2_value">8 years in Aerospace — Airbus, Boeing, Bombardier structures</div>
               </div>
             </div>
           </div>
@@ -1603,22 +1649,22 @@
 
           <div class="about-stat-block">
             <div class="about-stat-number">18+</div>
-            <div class="about-stat-label">Years of combined engineering & data science expertise</div>
+            <div class="about-stat-label" data-i18n="about_stat1">Years of combined engineering &amp; data science expertise</div>
           </div>
 
           <div class="about-stats-row">
             <div class="about-stat-block">
               <div class="about-stat-number">10</div>
-              <div class="about-stat-label">Years in Data Science & AI</div>
+              <div class="about-stat-label" data-i18n="about_stat2">Years in Data Science &amp; AI</div>
             </div>
             <div class="about-stat-block">
               <div class="about-stat-number">8</div>
-              <div class="about-stat-label">Years in Aerospace Engineering</div>
+              <div class="about-stat-label" data-i18n="about_stat3">Years in Aerospace Engineering</div>
             </div>
           </div>
 
           <div class="clients-row">
-            <div class="clients-label">Notable Clients & Employers</div>
+            <div class="clients-label" data-i18n="about_clients">Notable Clients &amp; Employers</div>
             <div class="clients-list">
               <span class="client-tag">Groupe BPCE</span>
               <span class="client-tag">Danone</span>
@@ -1642,8 +1688,8 @@
   ============================================================ -->
   <section id="expertise">
     <div class="container">
-      <div class="section-label reveal">Expertise</div>
-      <h2 class="section-heading reveal delay-1">Five domains, <em>one integrated</em> practice.</h2>
+      <div class="section-label reveal" data-i18n="expertise_label">Expertise</div>
+      <h2 class="section-heading reveal delay-1" data-i18n="expertise_heading">Five domains, <em>one integrated</em> practice.</h2>
 
       <div class="expertise-grid">
 
@@ -1657,13 +1703,13 @@
               <line x1="12" y1="22.08" x2="12" y2="12"></line>
             </svg>
           </div>
-          <div class="expertise-title">Machine Learning &amp; Deep Learning</div>
-          <div class="expertise-desc">End-to-end ML pipelines for complex industrial problems — from feature engineering to production deployment at scale.</div>
+          <div class="expertise-title" data-i18n="exp1_title">Machine Learning &amp; Deep Learning</div>
+          <div class="expertise-desc" data-i18n="exp1_desc">End-to-end ML pipelines for complex industrial problems — from feature engineering to production deployment at scale.</div>
           <div class="expertise-tags">
             <span class="expertise-tag">NLP</span>
             <span class="expertise-tag">Computer Vision</span>
             <span class="expertise-tag">Time Series</span>
-            <span class="expertise-tag">Predictive Maintenance</span>
+            <span class="expertise-tag" data-i18n="exp1_tag4">Predictive Maintenance</span>
           </div>
         </div>
 
@@ -1677,13 +1723,13 @@
               <path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"></path>
             </svg>
           </div>
-          <div class="expertise-title">Generative AI</div>
-          <div class="expertise-desc">Design and deployment of LLM-based solutions — from architecture to fine-tuning and production-grade RAG pipelines.</div>
+          <div class="expertise-title" data-i18n="exp2_title">Generative AI</div>
+          <div class="expertise-desc" data-i18n="exp2_desc">Design and deployment of LLM-based solutions — from architecture to fine-tuning and production-grade RAG pipelines.</div>
           <div class="expertise-tags">
             <span class="expertise-tag">LLMs</span>
             <span class="expertise-tag">RAG</span>
             <span class="expertise-tag">Fine-Tuning</span>
-            <span class="expertise-tag">Chatbots & Assistants</span>
+            <span class="expertise-tag">Chatbots &amp; Assistants</span>
           </div>
         </div>
 
@@ -1698,10 +1744,10 @@
               <polyline points="2 17 6 13 10 17 14 9 18 15 22 10"></polyline>
             </svg>
           </div>
-          <div class="expertise-title">AI Strategy &amp; Governance</div>
-          <div class="expertise-desc">Identifying high-value use cases, building AI roadmaps, and managing the full lifecycle from prototype to industrialisation.</div>
+          <div class="expertise-title" data-i18n="exp3_title">AI Strategy &amp; Governance</div>
+          <div class="expertise-desc" data-i18n="exp3_desc">Identifying high-value use cases, building AI roadmaps, and managing the full lifecycle from prototype to industrialisation.</div>
           <div class="expertise-tags">
-            <span class="expertise-tag">Use Case Identification</span>
+            <span class="expertise-tag" data-i18n="exp3_tag1">Use Case Identification</span>
             <span class="expertise-tag">Roadmap</span>
             <span class="expertise-tag">MLOps</span>
           </div>
@@ -1718,12 +1764,12 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
           </div>
-          <div class="expertise-title">Team Leadership</div>
-          <div class="expertise-desc">Building and leading high-performance data science teams — from recruitment and onboarding to delivery excellence.</div>
+          <div class="expertise-title" data-i18n="exp4_title">Team Leadership</div>
+          <div class="expertise-desc" data-i18n="exp4_desc">Building and leading high-performance data science teams — from recruitment and onboarding to delivery excellence.</div>
           <div class="expertise-tags">
-            <span class="expertise-tag">Recruitment</span>
-            <span class="expertise-tag">Mentoring</span>
-            <span class="expertise-tag">Up to 15 people</span>
+            <span class="expertise-tag" data-i18n="exp4_tag1">Recruitment</span>
+            <span class="expertise-tag" data-i18n="exp4_tag2">Mentoring</span>
+            <span class="expertise-tag" data-i18n="exp4_tag3">Up to 15 people</span>
           </div>
         </div>
 
@@ -1736,11 +1782,11 @@
               <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
             </svg>
           </div>
-          <div class="expertise-title">Training &amp; Upskilling</div>
-          <div class="expertise-desc">Designing and delivering AI training programmes for developers, data teams, and executive audiences.</div>
+          <div class="expertise-title" data-i18n="exp5_title">Training &amp; Upskilling</div>
+          <div class="expertise-desc" data-i18n="exp5_desc">Designing and delivering AI training programmes for developers, data teams, and executive audiences.</div>
           <div class="expertise-tags">
-            <span class="expertise-tag">Developer Training</span>
-            <span class="expertise-tag">Executive Awareness</span>
+            <span class="expertise-tag" data-i18n="exp5_tag1">Developer Training</span>
+            <span class="expertise-tag" data-i18n="exp5_tag2">Executive Awareness</span>
             <span class="expertise-tag">École Polytechnique</span>
           </div>
         </div>
@@ -1754,8 +1800,8 @@
   ============================================================ -->
   <section id="experience">
     <div class="container">
-      <div class="section-label reveal">Experience</div>
-      <h2 class="section-heading reveal delay-1">A career defined by <em>impact,</em> not just titles.</h2>
+      <div class="section-label reveal" data-i18n="experience_label">Experience</div>
+      <h2 class="section-heading reveal delay-1" data-i18n="experience_heading">A career defined by <em>impact,</em> not just titles.</h2>
 
       <div class="timeline">
 
@@ -1765,15 +1811,15 @@
             <span class="timeline-period">2025 — Present</span>
             <span class="timeline-company">SOFTEAM · Mission at Groupe BPCE</span>
           </div>
-          <div class="timeline-role">Senior Manager / Head of Data Science &amp; AI</div>
-          <div class="timeline-desc">
+          <div class="timeline-role" data-i18n="tl1_role">Senior Manager / Head of Data Science &amp; AI</div>
+          <div class="timeline-desc" data-i18n="tl1_desc">
             Leading the AI practice within a major French banking group. Responsible for AI strategy, team management, and the end-to-end deployment of production-grade AI solutions.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">200+ developers trained on AI</span>
-            <span class="achievement-pill">5 AI assistants deployed</span>
-            <span class="achievement-pill">1 chatbot in production</span>
-            <span class="achievement-pill">1 auto-documentation tool</span>
+            <span class="achievement-pill" data-i18n="tl1_pill1">200+ developers trained on AI</span>
+            <span class="achievement-pill" data-i18n="tl1_pill2">5 AI assistants deployed</span>
+            <span class="achievement-pill" data-i18n="tl1_pill3">1 chatbot in production</span>
+            <span class="achievement-pill" data-i18n="tl1_pill4">1 auto-documentation tool</span>
           </div>
         </div>
 
@@ -1783,13 +1829,13 @@
             <span class="timeline-period">2024 — 2025</span>
             <span class="timeline-company">Schlumberger SLB</span>
           </div>
-          <div class="timeline-role">Generative AI Expert</div>
-          <div class="timeline-desc">
+          <div class="timeline-role" data-i18n="tl2_role">Generative AI Expert</div>
+          <div class="timeline-desc" data-i18n="tl2_desc">
             Designed and built a production-ready end-to-end multimodal RAG chatbot for one of the world's leading oilfield services companies, integrating complex document understanding and multi-source retrieval.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">Multimodal RAG architecture</span>
-            <span class="achievement-pill">End-to-end delivery</span>
+            <span class="achievement-pill" data-i18n="tl2_pill1">Multimodal RAG architecture</span>
+            <span class="achievement-pill" data-i18n="tl2_pill2">End-to-end delivery</span>
           </div>
         </div>
 
@@ -1799,14 +1845,14 @@
             <span class="timeline-period">2024 — 2025</span>
             <span class="timeline-company">DCO2</span>
           </div>
-          <div class="timeline-role">Director of Data Science</div>
-          <div class="timeline-desc">
+          <div class="timeline-role" data-i18n="tl3_role">Director of Data Science</div>
+          <div class="timeline-desc" data-i18n="tl3_desc">
             Created the Data Science department from scratch. Led the research and deployment of three distinct AI solutions for carbon emission estimation in the energy sector.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">DS department created from 0</span>
-            <span class="achievement-pill">3 AI solutions deployed</span>
-            <span class="achievement-pill">Carbon emission estimation</span>
+            <span class="achievement-pill" data-i18n="tl3_pill1">DS department created from 0</span>
+            <span class="achievement-pill" data-i18n="tl3_pill2">3 AI solutions deployed</span>
+            <span class="achievement-pill" data-i18n="tl3_pill3">Carbon emission estimation</span>
           </div>
         </div>
 
@@ -1816,13 +1862,13 @@
             <span class="timeline-period">2023 — 2024</span>
             <span class="timeline-company">BOBST</span>
           </div>
-          <div class="timeline-role">Senior Expert — Generative AI &amp; Data Science</div>
-          <div class="timeline-desc">
+          <div class="timeline-role" data-i18n="tl4_role">Senior Expert — Generative AI &amp; Data Science</div>
+          <div class="timeline-desc" data-i18n="tl4_desc">
             Developed a RAG-based chatbot for industrial maintenance documentation and built predictive models for energy consumption optimisation in packaging manufacturing.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">RAG chatbot for maintenance</span>
-            <span class="achievement-pill">Energy optimisation</span>
+            <span class="achievement-pill" data-i18n="tl4_pill1">RAG chatbot for maintenance</span>
+            <span class="achievement-pill" data-i18n="tl4_pill2">Energy optimisation</span>
           </div>
         </div>
 
@@ -1833,12 +1879,12 @@
             <span class="timeline-company">DANONE</span>
           </div>
           <div class="timeline-role">Data Science Manager</div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="tl5_desc">
             Led AI-driven cost optimisation initiatives across production and supply chain, delivering substantial financial impact for the global FMCG leader.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">€4M/year combined savings</span>
-            <span class="achievement-pill">AI-driven cost reduction</span>
+            <span class="achievement-pill" data-i18n="tl5_pill1">€4M/year combined savings</span>
+            <span class="achievement-pill" data-i18n="tl5_pill2">AI-driven cost reduction</span>
           </div>
         </div>
 
@@ -1849,12 +1895,12 @@
             <span class="timeline-company">GRIPS Intelligence</span>
           </div>
           <div class="timeline-role">Head of Data Science</div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="tl6_desc">
             Managed the Data Science team and developed a volatility index for web ranking analysis at this e-commerce competitive intelligence startup.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">DS team management</span>
-            <span class="achievement-pill">Web ranking volatility index</span>
+            <span class="achievement-pill" data-i18n="tl6_pill1">DS team management</span>
+            <span class="achievement-pill" data-i18n="tl6_pill2">Web ranking volatility index</span>
           </div>
         </div>
 
@@ -1865,12 +1911,12 @@
             <span class="timeline-company">ActiveViam</span>
           </div>
           <div class="timeline-role">Lead Data Scientist</div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="tl7_desc">
             Built ML models for financial asset value prediction at a real-time financial analytics software company. Speaker at Big Data &amp; AI Paris conferences.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">Financial ML models</span>
-            <span class="achievement-pill">Big Data &amp; AI Paris speaker</span>
+            <span class="achievement-pill" data-i18n="tl7_pill1">Financial ML models</span>
+            <span class="achievement-pill" data-i18n="tl7_pill2">Big Data &amp; AI Paris speaker</span>
           </div>
         </div>
 
@@ -1881,13 +1927,13 @@
             <span class="timeline-company">Capgemini Invent</span>
           </div>
           <div class="timeline-role">Lead Data Scientist</div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="tl8_desc">
             Built and led a team of 10–15 data scientists. Delivered high-impact projects in predictive maintenance (mining industry, ERAMET) and fraud detection for financial services clients.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">80% reduction in service stops</span>
-            <span class="achievement-pill">&gt;€500K fraud detection project</span>
-            <span class="achievement-pill">Team of 10–15 DS</span>
+            <span class="achievement-pill" data-i18n="tl8_pill1">80% reduction in service stops</span>
+            <span class="achievement-pill" data-i18n="tl8_pill2">&gt;€500K fraud detection project</span>
+            <span class="achievement-pill" data-i18n="tl8_pill3">Team of 10–15 DS</span>
           </div>
         </div>
 
@@ -1898,13 +1944,13 @@
             <span class="timeline-company">Groupe Open</span>
           </div>
           <div class="timeline-role">Lead Data Scientist</div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="tl9_desc">
             Built a Big Data platform for real-time financial reporting and Basel II/III regulatory compliance. Led Open's Data Lab, prototyping exploratory AI solutions for business development.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">Real-time financial reporting</span>
-            <span class="achievement-pill">Basel II/III compliance</span>
-            <span class="achievement-pill">Data Lab lead</span>
+            <span class="achievement-pill" data-i18n="tl9_pill1">Real-time financial reporting</span>
+            <span class="achievement-pill" data-i18n="tl9_pill2">Basel II/III compliance</span>
+            <span class="achievement-pill" data-i18n="tl9_pill3">Data Lab lead</span>
           </div>
         </div>
 
@@ -1914,13 +1960,13 @@
             <span class="timeline-period">2007 — 2015</span>
             <span class="timeline-company">Latécoère</span>
           </div>
-          <div class="timeline-role">Mechanical Engineer / Team Lead</div>
-          <div class="timeline-desc">
+          <div class="timeline-role" data-i18n="tl10_role">Mechanical Engineer / Team Lead</div>
+          <div class="timeline-desc" data-i18n="tl10_desc">
             Led structural engineering on aircraft programmes for Airbus, Boeing, and Bombardier. Eight years of precision engineering in one of the most demanding industries in the world — the foundation for a data-driven mindset.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill">Airbus programmes</span>
-            <span class="achievement-pill">Boeing structures</span>
+            <span class="achievement-pill" data-i18n="tl10_pill1">Airbus programmes</span>
+            <span class="achievement-pill" data-i18n="tl10_pill2">Boeing structures</span>
             <span class="achievement-pill">Bombardier</span>
           </div>
         </div>
@@ -1934,8 +1980,8 @@
   ============================================================ -->
   <section id="projects">
     <div class="container">
-      <div class="section-label reveal">Projects</div>
-      <h2 class="section-heading reveal delay-1">Selected work that <em>demonstrates expertise.</em></h2>
+      <div class="section-label reveal" data-i18n="projects_label">Projects</div>
+      <h2 class="section-heading reveal delay-1" data-i18n="projects_heading">Selected work that <em>demonstrates expertise.</em></h2>
 
       <div class="projects-grid">
 
@@ -1943,15 +1989,15 @@
         <div class="project-card reveal delay-1">
           <div class="project-card-header">
             <div class="project-card-title">CodeGraphAI</div>
-            <div class="project-card-client">Personal Project</div>
+            <div class="project-card-client" data-i18n="proj1_client">Personal Project</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj1_problem">
             Developers waste hours understanding unfamiliar codebases. Existing documentation tools are shallow and miss structural relationships between components.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj1_approach">
             Built a GraphRAG-powered code documentation and Q&amp;A system. AST parsing extracts entities into a knowledge graph (Kuzu DB), then 4 expert LLM agents (Architect, Business, Technical, Security) analyse the code. Supports 19 languages with incremental analysis saving 90-95% compute on re-runs.
           </div>
-          <div class="project-card-result">19 languages &middot; 90-95% compute savings &middot; MCP server for Claude Code</div>
+          <div class="project-card-result" data-i18n="proj1_result">19 languages &middot; 90-95% compute savings &middot; MCP server for Claude Code</div>
           <div class="project-card-tags">
             <span class="project-tag">GraphRAG</span>
             <span class="project-tag">Kuzu DB</span>
@@ -1964,16 +2010,16 @@
         <!-- 2. Enterprise AI Platform — BPCE -->
         <div class="project-card reveal delay-2">
           <div class="project-card-header">
-            <div class="project-card-title">Enterprise AI Platform at Scale</div>
+            <div class="project-card-title" data-i18n="proj2_title">Enterprise AI Platform at Scale</div>
             <div class="project-card-client">Groupe BPCE</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj2_problem">
             France's 2nd largest banking group needed to move from AI experimentation to production-grade tools — and build AI literacy across its developer workforce.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj2_approach">
             Designed a full GenAI toolchain: 1 project-management chatbot, 5 specialized AI assistants (from requirements writing to compliance analysis), and an automated code-documentation engine. Ran a large-scale training programme in parallel.
           </div>
-          <div class="project-card-result">200+ developers trained &middot; 6 AI tools in production</div>
+          <div class="project-card-result" data-i18n="proj2_result">200+ developers trained &middot; 6 AI tools in production</div>
           <div class="project-card-tags">
             <span class="project-tag">LangChain</span>
             <span class="project-tag">RAG</span>
@@ -1989,13 +2035,13 @@
             <div class="project-card-title">CogniDoc</div>
             <div class="project-card-client">Open Source</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj3_problem">
             Organizations sit on massive document collections that are unsearchable and underutilized. Standard RAG misses structural relationships between concepts.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj3_approach">
             Built a Hybrid RAG framework combining vector search with knowledge graph traversal. Features an agentic query router with 9 specialized tools, auto schema generation (2-stage LLM pipeline), semantic entity resolution, and incremental ingestion. Supports PDF, DOCX, PPTX, XLSX, HTML, and images.
           </div>
-          <div class="project-card-result">Open-source (MIT) &middot; Hybrid RAG &middot; 9 agentic tools</div>
+          <div class="project-card-result" data-i18n="proj3_result">Open-source (MIT) &middot; Hybrid RAG &middot; 9 agentic tools</div>
           <div class="project-card-tags">
             <span class="project-tag">GraphRAG</span>
             <span class="project-tag">Agentic RAG</span>
@@ -2009,15 +2055,15 @@
         <div class="project-card reveal delay-4">
           <div class="project-card-header">
             <div class="project-card-title">Bad News Monitoring</div>
-            <div class="project-card-client">Personal Project</div>
+            <div class="project-card-client" data-i18n="proj4_client">Personal Project</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj4_problem">
             Financial institutions must continuously screen adverse media across hundreds of multilingual sources for KYC/AML compliance. Manual monitoring is unscalable and error-prone.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj4_approach">
             Built an event-driven platform: automated collection from 40+ RSS sources and GDELT global news, LLM-powered entity extraction and risk classification, fuzzy matching against watchlists, and automated alert generation with risk scoring. Full React dashboard + FastAPI backend + Celery workers.
           </div>
-          <div class="project-card-result">40+ sources &middot; Automated KYC/AML alerts &middot; Full-stack platform</div>
+          <div class="project-card-result" data-i18n="proj4_result">40+ sources &middot; Automated KYC/AML alerts &middot; Full-stack platform</div>
           <div class="project-card-tags">
             <span class="project-tag">FastAPI</span>
             <span class="project-tag">React</span>
@@ -2030,16 +2076,16 @@
         <!-- 5. Agent Evaluation & Monitoring -->
         <div class="project-card reveal delay-1">
           <div class="project-card-header">
-            <div class="project-card-title">Agent Evaluation &amp; Monitoring</div>
-            <div class="project-card-client">Personal Project</div>
+            <div class="project-card-title" data-i18n="proj5_title">Agent Evaluation &amp; Monitoring</div>
+            <div class="project-card-client" data-i18n="proj5_client">Personal Project</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj5_problem">
             Evaluating agentic AI in production is harder than simple Q&amp;A — agents orchestrate multi-step reasoning, tool calls, and feedback loops. Most solutions lock you into a SaaS or cover only a narrow slice.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj5_approach">
             Designed a 6-layer hybrid evaluation pipeline: instrumentation (LangFuse/OpenTelemetry), trace storage, cost-optimized evaluator cascade (programmatic &rarr; LLM-as-Judge generic &rarr; domain-specific), test harness with golden datasets, human annotation (Argilla), and Grafana dashboarding with alerting. 100% open-source, zero vendor lock-in.
           </div>
-          <div class="project-card-result">6-layer pipeline &middot; 7 evaluation dimensions &middot; 100% open-source</div>
+          <div class="project-card-result" data-i18n="proj5_result">6-layer pipeline &middot; 7 evaluation dimensions &middot; 100% open-source</div>
           <div class="project-card-tags">
             <span class="project-tag">LangFuse</span>
             <span class="project-tag">RAGAS</span>
@@ -2052,16 +2098,16 @@
         <!-- 6. UBO — Compliance / AML -->
         <div class="project-card reveal delay-2">
           <div class="project-card-header">
-            <div class="project-card-title">UBO Identification System</div>
-            <div class="project-card-client">Personal Project</div>
+            <div class="project-card-title" data-i18n="proj6_title">UBO Identification System</div>
+            <div class="project-card-client" data-i18n="proj6_client">Personal Project</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj6_problem">
             European anti-money laundering directives (AMLD5/6) require identifying Ultimate Beneficial Owners through complex multi-level ownership chains — often indirect, circular, or spanning opaque jurisdictions.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj6_approach">
             Modeled ownership structures as directed graphs with automated calculation of direct and indirect holdings. Built cycle detection, shell company identification, risk scoring (PEP, sanctions, high-risk jurisdictions), and interactive ownership chain visualization with an AI-powered chat interface.
           </div>
-          <div class="project-card-result">Automated AMLD5/6 compliance &middot; Graph-based ownership analysis</div>
+          <div class="project-card-result" data-i18n="proj6_result">Automated AMLD5/6 compliance &middot; Graph-based ownership analysis</div>
           <div class="project-card-tags">
             <span class="project-tag">FastAPI</span>
             <span class="project-tag">React</span>
@@ -2074,16 +2120,16 @@
         <!-- 7. Predictive Maintenance — ERAMET -->
         <div class="project-card reveal delay-3">
           <div class="project-card-header">
-            <div class="project-card-title">Predictive Maintenance for Mining Rail</div>
+            <div class="project-card-title" data-i18n="proj7_title">Predictive Maintenance for Mining Rail</div>
             <div class="project-card-client">ERAMET</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj7_problem">
             ERAMET operates 600 km of mining rail in New Caledonia. Unplanned rail failures caused costly service stops and million-euro-per-kilometre repair bills.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj7_approach">
             Built a predictive maintenance platform using sensor data and machine learning to forecast incidents and trigger proactive repairs before failure occurs.
           </div>
-          <div class="project-card-result">80% reduction in unplanned stops &middot; M&euro;/year saved</div>
+          <div class="project-card-result" data-i18n="proj7_result">80% reduction in unplanned stops &middot; M&euro;/year saved</div>
           <div class="project-card-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">TensorFlow</span>
@@ -2095,16 +2141,16 @@
         <!-- 8. Cost Optimization — Danone -->
         <div class="project-card reveal delay-4">
           <div class="project-card-header">
-            <div class="project-card-title">Recipe &amp; Supplier Cost Optimization</div>
+            <div class="project-card-title" data-i18n="proj8_title">Recipe &amp; Supplier Cost Optimization</div>
             <div class="project-card-client">Danone</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj8_problem">
             Danone's European operations needed to reduce industrial costs without impacting product quality — across thousands of product recipes and supplier contracts.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj8_approach">
             Developed two optimization engines: one for algorithmic recipe harmonization across product lines, another for supplier selection and negotiation. Both validated and adopted by R&amp;D and Procurement teams.
           </div>
-          <div class="project-card-result">&euro;2M/year on recipes &middot; &euro;2M/year on suppliers</div>
+          <div class="project-card-result" data-i18n="proj8_result">&euro;2M/year on recipes &middot; &euro;2M/year on suppliers</div>
           <div class="project-card-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">Combinatorial Optimization</span>
@@ -2116,16 +2162,16 @@
         <!-- 9. Vigile — Strategic Intelligence -->
         <div class="project-card reveal delay-1">
           <div class="project-card-header">
-            <div class="project-card-title">Vigile — Strategic Intelligence</div>
-            <div class="project-card-client">Personal Project</div>
+            <div class="project-card-title" data-i18n="proj9_title">Vigile — Strategic Intelligence</div>
+            <div class="project-card-client" data-i18n="proj9_client">Personal Project</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj9_problem">
             Strategic intelligence is either manual and time-consuming, or delegated to expensive enterprise tools costing thousands per month. No affordable middle ground exists.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj9_approach">
             Built a hybrid intelligence system: automated RSS/Atom collection, AI enrichment (entities, sentiment, themes), agentic RAG chatbot (LangGraph, 7 tools, 4 query modes) with Perplexity-style citations, and automated synthesis reports. Auto-discovery of new sources via DuckDuckGo + LLM scoring.
           </div>
-          <div class="project-card-result">Agentic chatbot &middot; Automated reports &middot; Replaces enterprise tools</div>
+          <div class="project-card-result" data-i18n="proj9_result">Agentic chatbot &middot; Automated reports &middot; Replaces enterprise tools</div>
           <div class="project-card-tags">
             <span class="project-tag">LangGraph</span>
             <span class="project-tag">Streamlit</span>
@@ -2138,16 +2184,16 @@
         <!-- 10. REMS — RAG Evaluation -->
         <div class="project-card reveal delay-2">
           <div class="project-card-header">
-            <div class="project-card-title">REMS — RAG Quality Monitor</div>
-            <div class="project-card-client">Personal Project</div>
+            <div class="project-card-title" data-i18n="proj10_title">REMS — RAG Quality Monitor</div>
+            <div class="project-card-client" data-i18n="proj10_client">Personal Project</div>
           </div>
-          <div class="project-card-problem">
+          <div class="project-card-problem" data-i18n="proj10_problem">
             In regulatory domains, RAG chatbot errors have legal consequences. No lightweight external tool existed to continuously evaluate quality and detect hallucinations — without modifying the chatbot itself.
           </div>
-          <div class="project-card-approach">
+          <div class="project-card-approach" data-i18n="proj10_approach">
             Built an external evaluation module that plugs into any RAG chatbot via API. Uses RAGAS metrics (faithfulness, context precision, answer relevancy) to detect hallucinations, diagnose root causes, and generate actionable recommendations. Automated weekly evaluations via cron.
           </div>
-          <div class="project-card-result">Hallucination detection &middot; Automated diagnostics &middot; PDF/HTML reports</div>
+          <div class="project-card-result" data-i18n="proj10_result">Hallucination detection &middot; Automated diagnostics &middot; PDF/HTML reports</div>
           <div class="project-card-tags">
             <span class="project-tag">RAGAS</span>
             <span class="project-tag">Streamlit</span>
@@ -2167,9 +2213,9 @@
   <section id="impact">
     <div class="container">
       <div class="section-label reveal">Impact</div>
-      <h2 class="section-heading reveal delay-1">Results that <em>speak for themselves.</em></h2>
+      <h2 class="section-heading reveal delay-1" data-i18n="impact_heading">Results that <em>speak for themselves.</em></h2>
 
-      <p class="impact-intro reveal delay-2">
+      <p class="impact-intro reveal delay-2" data-i18n="impact_intro">
         Every engagement is measured against real outcomes. Here are the numbers that matter.
       </p>
 
@@ -2178,35 +2224,35 @@
         <div class="impact-card reveal delay-1">
           <div class="impact-card-bg"></div>
           <div class="impact-number">200<sup>+</sup></div>
-          <div class="impact-label">Developers trained on AI at Groupe BPCE</div>
+          <div class="impact-label" data-i18n="impact_label1">Developers trained on AI at Groupe BPCE</div>
           <div class="impact-icon">🎓</div>
         </div>
 
         <div class="impact-card reveal delay-2">
           <div class="impact-card-bg"></div>
           <div class="impact-number" data-suffix="M">€4M<sup>+</sup></div>
-          <div class="impact-label">Per year in documented cost savings (2x €2M) — Danone</div>
+          <div class="impact-label" data-i18n="impact_label2">Per year in documented cost savings (2x &euro;2M) — Danone</div>
           <div class="impact-icon">💶</div>
         </div>
 
         <div class="impact-card reveal delay-3">
           <div class="impact-card-bg"></div>
           <div class="impact-number">15<sup>+</sup></div>
-          <div class="impact-label">AI prototypes and solutions deployed in production</div>
+          <div class="impact-label" data-i18n="impact_label3">AI prototypes and solutions deployed in production</div>
           <div class="impact-icon">🚀</div>
         </div>
 
         <div class="impact-card reveal delay-2">
           <div class="impact-card-bg"></div>
           <div class="impact-number">10-15</div>
-          <div class="impact-label">Data scientists managed and mentored</div>
+          <div class="impact-label" data-i18n="impact_label4">Data scientists managed and mentored</div>
           <div class="impact-icon">👥</div>
         </div>
 
         <div class="impact-card reveal delay-3">
           <div class="impact-card-bg"></div>
           <div class="impact-number">80<sup>%</sup></div>
-          <div class="impact-label">Reduction in unplanned service stops — ERAMET predictive maintenance</div>
+          <div class="impact-label" data-i18n="impact_label5">Reduction in unplanned service stops — ERAMET predictive maintenance</div>
           <div class="impact-icon">⚙️</div>
         </div>
 
@@ -2220,7 +2266,7 @@
   <section id="certifications">
     <div class="container">
       <div class="section-label reveal">Certifications</div>
-      <h2 class="section-heading reveal delay-1">Continuous learning, <em>validated expertise.</em></h2>
+      <h2 class="section-heading reveal delay-1" data-i18n="cert_heading">Continuous learning, <em>validated expertise.</em></h2>
 
       <div class="certifications-grid">
 
@@ -2314,12 +2360,12 @@
   <section id="contact">
     <div class="container">
       <div class="section-label reveal">Contact</div>
-      <h2 class="section-heading reveal delay-1">Let's build something <em>significant</em> together.</h2>
+      <h2 class="section-heading reveal delay-1" data-i18n="contact_heading">Let's build something <em>significant</em> together.</h2>
 
       <div class="contact-grid">
 
         <div class="contact-left reveal-left">
-          <p class="contact-intro">
+          <p class="contact-intro" data-i18n="contact_intro">
             Whether you're looking to industrialise AI within your organisation, need strategic guidance on a complex data challenge, or want to discuss a collaboration — I'd be glad to connect.
           </p>
 
@@ -2345,7 +2391,7 @@
                 </svg>
               </div>
               <div>
-                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-label" data-i18n="contact_phone_label">Phone</div>
                 <div class="contact-item-value">+33 (0)6 52 40 51 59</div>
               </div>
             </a>
@@ -2371,8 +2417,8 @@
           <form class="contact-form" id="contact-form" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label for="f-name">Name</label>
-                <input type="text" id="f-name" name="name" placeholder="Your name" autocomplete="name" />
+                <label for="f-name" data-i18n="form_name_label">Name</label>
+                <input type="text" id="f-name" name="name" placeholder="Your name" autocomplete="name" data-i18n-placeholder="form_name_placeholder" />
               </div>
               <div class="form-group">
                 <label for="f-email">Email</label>
@@ -2380,21 +2426,21 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="f-subject">Subject</label>
-              <input type="text" id="f-subject" name="subject" placeholder="How can I help?" />
+              <label for="f-subject" data-i18n="form_subject_label">Subject</label>
+              <input type="text" id="f-subject" name="subject" placeholder="How can I help?" data-i18n-placeholder="form_subject_placeholder" />
             </div>
             <div class="form-group">
               <label for="f-message">Message</label>
-              <textarea id="f-message" name="message" placeholder="Tell me about your project or challenge..."></textarea>
+              <textarea id="f-message" name="message" placeholder="Tell me about your project or challenge..." data-i18n-placeholder="form_message_placeholder"></textarea>
             </div>
             <button type="submit" class="form-submit">
-              Send Message
+              <span data-i18n="form_submit">Send Message</span>
               <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="22" y1="2" x2="11" y2="13"></line>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
             </button>
-            <p class="form-note">I typically respond within 24 hours.</p>
+            <p class="form-note" data-i18n="form_note">I typically respond within 24 hours.</p>
           </form>
         </div>
 
@@ -2492,7 +2538,7 @@
       const message = document.getElementById('f-message').value.trim();
 
       if (!name || !email || !message) {
-        alert('Please fill in your name, email, and message.');
+        alert(translations[currentLang]._form_alert);
         return;
       }
 
@@ -2567,6 +2613,385 @@
     }, { threshold: 0.5 });
 
     impactNumbers.forEach(el => numberObserver.observe(el));
+
+    /* ---- LANGUAGE TOGGLE (FR / EN) ---- */
+    const translations = {
+      en: {
+        // Nav
+        nav_about: 'About',
+        nav_expertise: 'Expertise',
+        nav_experience: 'Experience',
+        nav_projects: 'Projects',
+        // Hero
+        hero_eyebrow: 'Data Science &amp; Artificial Intelligence',
+        hero_title: 'Data Science &amp; AI Director',
+        hero_tagline: '&ldquo;Bridging strategy, innovation, and execution<br>to industrialize AI at scale.&rdquo;',
+        hero_cta: 'Get in Touch',
+        hero_scroll: 'Scroll',
+        // About
+        about_label: 'About',
+        about_heading: 'A hybrid profile <em>built at the intersection of</em> science and industry.',
+        about_p1: 'With <strong>10 years in Data Science &amp; AI</strong> and a prior career of <strong>8 years in aerospace engineering</strong>, Ariel IBABA brings a rare combination: the scientific rigour of an engineer and the strategic vision of a technology leader.',
+        about_p2: 'He specialises in turning complex AI challenges into concrete, industrialised solutions — from ideation to production. His toolkit spans <strong>Machine Learning, Deep Learning, Generative AI, RAG architectures, and LLMs</strong>, applied across regulated industries including banking, FMCG, energy, and manufacturing.',
+        about_p3: 'Beyond delivery, Ariel leads and upskills teams, advises executives on AI strategy, and lectures on Artificial Intelligence at <strong>École Polytechnique</strong> and Webstart — shaping the next generation of practitioners.',
+        about_hl1_label: 'Academic',
+        about_hl1_value: 'Lecturer in AI — École Polytechnique &amp; Webstart',
+        about_hl2_label: 'Engineering Background',
+        about_hl2_value: '8 years in Aerospace — Airbus, Boeing, Bombardier structures',
+        about_stat1: 'Years of combined engineering &amp; data science expertise',
+        about_stat2: 'Years in Data Science &amp; AI',
+        about_stat3: 'Years in Aerospace Engineering',
+        about_clients: 'Notable Clients &amp; Employers',
+        // Expertise
+        expertise_label: 'Expertise',
+        expertise_heading: 'Five domains, <em>one integrated</em> practice.',
+        exp1_title: 'Machine Learning &amp; Deep Learning',
+        exp1_desc: 'End-to-end ML pipelines for complex industrial problems — from feature engineering to production deployment at scale.',
+        exp1_tag4: 'Predictive Maintenance',
+        exp2_title: 'Generative AI',
+        exp2_desc: 'Design and deployment of LLM-based solutions — from architecture to fine-tuning and production-grade RAG pipelines.',
+        exp3_title: 'AI Strategy &amp; Governance',
+        exp3_desc: 'Identifying high-value use cases, building AI roadmaps, and managing the full lifecycle from prototype to industrialisation.',
+        exp3_tag1: 'Use Case Identification',
+        exp4_title: 'Team Leadership',
+        exp4_desc: 'Building and leading high-performance data science teams — from recruitment and onboarding to delivery excellence.',
+        exp4_tag1: 'Recruitment',
+        exp4_tag2: 'Mentoring',
+        exp4_tag3: 'Up to 15 people',
+        exp5_title: 'Training &amp; Upskilling',
+        exp5_desc: 'Designing and delivering AI training programmes for developers, data teams, and executive audiences.',
+        exp5_tag1: 'Developer Training',
+        exp5_tag2: 'Executive Awareness',
+        // Experience
+        experience_label: 'Experience',
+        experience_heading: 'A career defined by <em>impact,</em> not just titles.',
+        tl1_role: 'Senior Manager / Head of Data Science &amp; AI',
+        tl1_desc: 'Leading the AI practice within a major French banking group. Responsible for AI strategy, team management, and the end-to-end deployment of production-grade AI solutions.',
+        tl1_pill1: '200+ developers trained on AI',
+        tl1_pill2: '5 AI assistants deployed',
+        tl1_pill3: '1 chatbot in production',
+        tl1_pill4: '1 auto-documentation tool',
+        tl2_role: 'Generative AI Expert',
+        tl2_desc: 'Designed and built a production-ready end-to-end multimodal RAG chatbot for one of the world\'s leading oilfield services companies, integrating complex document understanding and multi-source retrieval.',
+        tl2_pill1: 'Multimodal RAG architecture',
+        tl2_pill2: 'End-to-end delivery',
+        tl3_role: 'Director of Data Science',
+        tl3_desc: 'Created the Data Science department from scratch. Led the research and deployment of three distinct AI solutions for carbon emission estimation in the energy sector.',
+        tl3_pill1: 'DS department created from 0',
+        tl3_pill2: '3 AI solutions deployed',
+        tl3_pill3: 'Carbon emission estimation',
+        tl4_role: 'Senior Expert — Generative AI &amp; Data Science',
+        tl4_desc: 'Developed a RAG-based chatbot for industrial maintenance documentation and built predictive models for energy consumption optimisation in packaging manufacturing.',
+        tl4_pill1: 'RAG chatbot for maintenance',
+        tl4_pill2: 'Energy optimisation',
+        tl5_desc: 'Led AI-driven cost optimisation initiatives across production and supply chain, delivering substantial financial impact for the global FMCG leader.',
+        tl5_pill1: '€4M/year combined savings',
+        tl5_pill2: 'AI-driven cost reduction',
+        tl6_desc: 'Managed the Data Science team and developed a volatility index for web ranking analysis at this e-commerce competitive intelligence startup.',
+        tl6_pill1: 'DS team management',
+        tl6_pill2: 'Web ranking volatility index',
+        tl7_desc: 'Built ML models for financial asset value prediction at a real-time financial analytics software company. Speaker at Big Data &amp; AI Paris conferences.',
+        tl7_pill1: 'Financial ML models',
+        tl7_pill2: 'Big Data &amp; AI Paris speaker',
+        tl8_desc: 'Built and led a team of 10–15 data scientists. Delivered high-impact projects in predictive maintenance (mining industry, ERAMET) and fraud detection for financial services clients.',
+        tl8_pill1: '80% reduction in service stops',
+        tl8_pill2: '>€500K fraud detection project',
+        tl8_pill3: 'Team of 10–15 DS',
+        tl9_desc: 'Built a Big Data platform for real-time financial reporting and Basel II/III regulatory compliance. Led Open\'s Data Lab, prototyping exploratory AI solutions for business development.',
+        tl9_pill1: 'Real-time financial reporting',
+        tl9_pill2: 'Basel II/III compliance',
+        tl9_pill3: 'Data Lab lead',
+        tl10_role: 'Mechanical Engineer / Team Lead',
+        tl10_desc: 'Led structural engineering on aircraft programmes for Airbus, Boeing, and Bombardier. Eight years of precision engineering in one of the most demanding industries in the world — the foundation for a data-driven mindset.',
+        tl10_pill1: 'Airbus programmes',
+        tl10_pill2: 'Boeing structures',
+        // Projects
+        projects_label: 'Projects',
+        projects_heading: 'Selected work that <em>demonstrates expertise.</em>',
+        proj1_client: 'Personal Project',
+        proj1_problem: 'Developers waste hours understanding unfamiliar codebases. Existing documentation tools are shallow and miss structural relationships between components.',
+        proj1_approach: 'Built a GraphRAG-powered code documentation and Q&amp;A system. AST parsing extracts entities into a knowledge graph (Kuzu DB), then 4 expert LLM agents (Architect, Business, Technical, Security) analyse the code. Supports 19 languages with incremental analysis saving 90-95% compute on re-runs.',
+        proj1_result: '19 languages &middot; 90-95% compute savings &middot; MCP server for Claude Code',
+        proj2_title: 'Enterprise AI Platform at Scale',
+        proj2_problem: 'France\'s 2nd largest banking group needed to move from AI experimentation to production-grade tools — and build AI literacy across its developer workforce.',
+        proj2_approach: 'Designed a full GenAI toolchain: 1 project-management chatbot, 5 specialized AI assistants (from requirements writing to compliance analysis), and an automated code-documentation engine. Ran a large-scale training programme in parallel.',
+        proj2_result: '200+ developers trained &middot; 6 AI tools in production',
+        proj3_problem: 'Organizations sit on massive document collections that are unsearchable and underutilized. Standard RAG misses structural relationships between concepts.',
+        proj3_approach: 'Built a Hybrid RAG framework combining vector search with knowledge graph traversal. Features an agentic query router with 9 specialized tools, auto schema generation (2-stage LLM pipeline), semantic entity resolution, and incremental ingestion. Supports PDF, DOCX, PPTX, XLSX, HTML, and images.',
+        proj3_result: 'Open-source (MIT) &middot; Hybrid RAG &middot; 9 agentic tools',
+        proj4_client: 'Personal Project',
+        proj4_problem: 'Financial institutions must continuously screen adverse media across hundreds of multilingual sources for KYC/AML compliance. Manual monitoring is unscalable and error-prone.',
+        proj4_approach: 'Built an event-driven platform: automated collection from 40+ RSS sources and GDELT global news, LLM-powered entity extraction and risk classification, fuzzy matching against watchlists, and automated alert generation with risk scoring. Full React dashboard + FastAPI backend + Celery workers.',
+        proj4_result: '40+ sources &middot; Automated KYC/AML alerts &middot; Full-stack platform',
+        proj5_title: 'Agent Evaluation &amp; Monitoring',
+        proj5_client: 'Personal Project',
+        proj5_problem: 'Evaluating agentic AI in production is harder than simple Q&amp;A — agents orchestrate multi-step reasoning, tool calls, and feedback loops. Most solutions lock you into a SaaS or cover only a narrow slice.',
+        proj5_approach: 'Designed a 6-layer hybrid evaluation pipeline: instrumentation (LangFuse/OpenTelemetry), trace storage, cost-optimized evaluator cascade (programmatic &rarr; LLM-as-Judge generic &rarr; domain-specific), test harness with golden datasets, human annotation (Argilla), and Grafana dashboarding with alerting. 100% open-source, zero vendor lock-in.',
+        proj5_result: '6-layer pipeline &middot; 7 evaluation dimensions &middot; 100% open-source',
+        proj6_title: 'UBO Identification System',
+        proj6_client: 'Personal Project',
+        proj6_problem: 'European anti-money laundering directives (AMLD5/6) require identifying Ultimate Beneficial Owners through complex multi-level ownership chains — often indirect, circular, or spanning opaque jurisdictions.',
+        proj6_approach: 'Modeled ownership structures as directed graphs with automated calculation of direct and indirect holdings. Built cycle detection, shell company identification, risk scoring (PEP, sanctions, high-risk jurisdictions), and interactive ownership chain visualization with an AI-powered chat interface.',
+        proj6_result: 'Automated AMLD5/6 compliance &middot; Graph-based ownership analysis',
+        proj7_title: 'Predictive Maintenance for Mining Rail',
+        proj7_problem: 'ERAMET operates 600 km of mining rail in New Caledonia. Unplanned rail failures caused costly service stops and million-euro-per-kilometre repair bills.',
+        proj7_approach: 'Built a predictive maintenance platform using sensor data and machine learning to forecast incidents and trigger proactive repairs before failure occurs.',
+        proj7_result: '80% reduction in unplanned stops &middot; M&euro;/year saved',
+        proj8_title: 'Recipe &amp; Supplier Cost Optimization',
+        proj8_problem: 'Danone\'s European operations needed to reduce industrial costs without impacting product quality — across thousands of product recipes and supplier contracts.',
+        proj8_approach: 'Developed two optimization engines: one for algorithmic recipe harmonization across product lines, another for supplier selection and negotiation. Both validated and adopted by R&amp;D and Procurement teams.',
+        proj8_result: '&euro;2M/year on recipes &middot; &euro;2M/year on suppliers',
+        proj9_title: 'Vigile — Strategic Intelligence',
+        proj9_client: 'Personal Project',
+        proj9_problem: 'Strategic intelligence is either manual and time-consuming, or delegated to expensive enterprise tools costing thousands per month. No affordable middle ground exists.',
+        proj9_approach: 'Built a hybrid intelligence system: automated RSS/Atom collection, AI enrichment (entities, sentiment, themes), agentic RAG chatbot (LangGraph, 7 tools, 4 query modes) with Perplexity-style citations, and automated synthesis reports. Auto-discovery of new sources via DuckDuckGo + LLM scoring.',
+        proj9_result: 'Agentic chatbot &middot; Automated reports &middot; Replaces enterprise tools',
+        proj10_title: 'REMS — RAG Quality Monitor',
+        proj10_client: 'Personal Project',
+        proj10_problem: 'In regulatory domains, RAG chatbot errors have legal consequences. No lightweight external tool existed to continuously evaluate quality and detect hallucinations — without modifying the chatbot itself.',
+        proj10_approach: 'Built an external evaluation module that plugs into any RAG chatbot via API. Uses RAGAS metrics (faithfulness, context precision, answer relevancy) to detect hallucinations, diagnose root causes, and generate actionable recommendations. Automated weekly evaluations via cron.',
+        proj10_result: 'Hallucination detection &middot; Automated diagnostics &middot; PDF/HTML reports',
+        // Impact
+        impact_heading: 'Results that <em>speak for themselves.</em>',
+        impact_intro: 'Every engagement is measured against real outcomes. Here are the numbers that matter.',
+        impact_label1: 'Developers trained on AI at Groupe BPCE',
+        impact_label2: 'Per year in documented cost savings (2x &euro;2M) — Danone',
+        impact_label3: 'AI prototypes and solutions deployed in production',
+        impact_label4: 'Data scientists managed and mentored',
+        impact_label5: 'Reduction in unplanned service stops — ERAMET predictive maintenance',
+        // Certifications
+        cert_heading: 'Continuous learning, <em>validated expertise.</em>',
+        // Contact
+        contact_heading: 'Let\'s build something <em>significant</em> together.',
+        contact_intro: 'Whether you\'re looking to industrialise AI within your organisation, need strategic guidance on a complex data challenge, or want to discuss a collaboration — I\'d be glad to connect.',
+        contact_phone_label: 'Phone',
+        form_name_label: 'Name',
+        form_subject_label: 'Subject',
+        form_submit: 'Send Message',
+        form_note: 'I typically respond within 24 hours.',
+        // Placeholders
+        form_name_placeholder: 'Your name',
+        form_subject_placeholder: 'How can I help?',
+        form_message_placeholder: 'Tell me about your project or challenge...',
+        // Form validation
+        _form_alert: 'Please fill in your name, email, and message.',
+        // Meta
+        _meta_description: 'Ariel IBABA — Data Science & AI Director. Bridging strategy, innovation, and execution to industrialize AI at scale. Paris, France.',
+      },
+      fr: {
+        // Nav
+        nav_about: 'À propos',
+        nav_expertise: 'Expertise',
+        nav_experience: 'Expérience',
+        nav_projects: 'Projets',
+        // Hero
+        hero_eyebrow: 'Data Science &amp; Intelligence Artificielle',
+        hero_title: 'Directeur Data Science &amp; IA',
+        hero_tagline: '&laquo;&nbsp;Articuler stratégie, innovation et exécution<br>pour industrialiser l\'IA à grande échelle.&nbsp;&raquo;',
+        hero_cta: 'Me Contacter',
+        hero_scroll: 'Défiler',
+        // About
+        about_label: 'À propos',
+        about_heading: 'Un profil hybride <em>construit à l\'intersection</em> de la science et de l\'industrie.',
+        about_p1: 'Avec <strong>10 ans en Data Science &amp; IA</strong> et une carrière précédente de <strong>8 ans en ingénierie aéronautique</strong>, Ariel IBABA offre une combinaison rare&nbsp;: la rigueur scientifique d\'un ingénieur et la vision stratégique d\'un leader technologique.',
+        about_p2: 'Il se spécialise dans la transformation de défis IA complexes en solutions concrètes et industrialisées — de l\'idéation à la mise en production. Son expertise couvre le <strong>Machine Learning, le Deep Learning, l\'IA Générative, les architectures RAG et les LLMs</strong>, appliqués dans des secteurs régulés comme la banque, l\'agroalimentaire, l\'énergie et l\'industrie.',
+        about_p3: 'Au-delà de la livraison, Ariel manage et fait monter en compétences ses équipes, conseille les dirigeants sur la stratégie IA, et enseigne l\'Intelligence Artificielle à <strong>l\'École Polytechnique</strong> et chez Webstart — formant la prochaine génération de praticiens.',
+        about_hl1_label: 'Académique',
+        about_hl1_value: 'Enseignant en IA — École Polytechnique &amp; Webstart',
+        about_hl2_label: 'Parcours Ingénieur',
+        about_hl2_value: '8 ans en Aéronautique — Structures Airbus, Boeing, Bombardier',
+        about_stat1: 'Années d\'expertise combinée ingénierie &amp; data science',
+        about_stat2: 'Ans en Data Science &amp; IA',
+        about_stat3: 'Ans en Ingénierie Aéronautique',
+        about_clients: 'Clients &amp; Employeurs Notables',
+        // Expertise
+        expertise_label: 'Expertise',
+        expertise_heading: 'Cinq domaines, <em>une pratique</em> intégrée.',
+        exp1_title: 'Machine Learning &amp; Deep Learning',
+        exp1_desc: 'Pipelines ML de bout en bout pour des problèmes industriels complexes — de l\'ingénierie de features au déploiement en production à grande échelle.',
+        exp1_tag4: 'Maintenance Prédictive',
+        exp2_title: 'IA Générative',
+        exp2_desc: 'Conception et déploiement de solutions basées sur les LLMs — de l\'architecture au fine-tuning et aux pipelines RAG en production.',
+        exp3_title: 'Stratégie &amp; Gouvernance IA',
+        exp3_desc: 'Identification de cas d\'usage à forte valeur, construction de feuilles de route IA et gestion du cycle complet du prototype à l\'industrialisation.',
+        exp3_tag1: 'Identification de Cas d\'Usage',
+        exp4_title: 'Leadership d\'Équipe',
+        exp4_desc: 'Constitution et pilotage d\'équipes data science performantes — du recrutement et onboarding à l\'excellence de livraison.',
+        exp4_tag1: 'Recrutement',
+        exp4_tag2: 'Mentorat',
+        exp4_tag3: 'Jusqu\'à 15 personnes',
+        exp5_title: 'Formation &amp; Montée en Compétences',
+        exp5_desc: 'Conception et animation de programmes de formation IA pour développeurs, équipes data et dirigeants.',
+        exp5_tag1: 'Formation Développeurs',
+        exp5_tag2: 'Sensibilisation Dirigeants',
+        // Experience
+        experience_label: 'Expérience',
+        experience_heading: 'Une carrière définie par <em>l\'impact,</em> pas les titres.',
+        tl1_role: 'Senior Manager / Resp. Data Science &amp; IA',
+        tl1_desc: 'Pilotage de la pratique IA au sein d\'un groupe bancaire français majeur. Responsable de la stratégie IA, du management d\'équipe et du déploiement end-to-end de solutions IA en production.',
+        tl1_pill1: '200+ développeurs formés à l\'IA',
+        tl1_pill2: '5 assistants IA déployés',
+        tl1_pill3: '1 chatbot en production',
+        tl1_pill4: '1 outil d\'auto-documentation',
+        tl2_role: 'Expert en IA Générative',
+        tl2_desc: 'Conception et développement d\'un chatbot RAG multimodal end-to-end pour l\'un des leaders mondiaux des services pétroliers, intégrant la compréhension de documents complexes et la recherche multi-sources.',
+        tl2_pill1: 'Architecture RAG multimodale',
+        tl2_pill2: 'Livraison end-to-end',
+        tl3_role: 'Directeur Data Science',
+        tl3_desc: 'Création du département Data Science from scratch. Recherche et déploiement de trois solutions IA pour l\'estimation des émissions carbone dans le secteur de l\'énergie.',
+        tl3_pill1: 'Département DS créé de zéro',
+        tl3_pill2: '3 solutions IA déployées',
+        tl3_pill3: 'Estimation d\'émissions carbone',
+        tl4_role: 'Senior Expert — IA Générative &amp; Data Science',
+        tl4_desc: 'Développement d\'un chatbot RAG pour la documentation de maintenance industrielle et de modèles prédictifs pour l\'optimisation de la consommation énergétique dans l\'industrie de l\'emballage.',
+        tl4_pill1: 'Chatbot RAG maintenance',
+        tl4_pill2: 'Optimisation énergétique',
+        tl5_desc: 'Pilotage d\'initiatives d\'optimisation des coûts par l\'IA sur la production et la supply chain, générant un impact financier substantiel pour le leader mondial de l\'agroalimentaire.',
+        tl5_pill1: '4 M€/an d\'économies combinées',
+        tl5_pill2: 'Réduction des coûts par l\'IA',
+        tl6_desc: 'Management de l\'équipe Data Science et développement d\'un indice de volatilité pour l\'analyse de ranking web dans cette startup de veille concurrentielle e-commerce.',
+        tl6_pill1: 'Management équipe DS',
+        tl6_pill2: 'Indice de volatilité ranking web',
+        tl7_desc: 'Conception de modèles ML pour la prédiction de valeur d\'actifs financiers dans un éditeur de logiciels d\'analytics financier temps réel. Speaker aux conférences Big Data &amp; AI Paris.',
+        tl7_pill1: 'Modèles ML financiers',
+        tl7_pill2: 'Speaker Big Data &amp; AI Paris',
+        tl8_desc: 'Constitution et management d\'une équipe de 10 à 15 data scientists. Livraison de projets à fort impact en maintenance prédictive (industrie minière, ERAMET) et en détection de fraude pour des clients financiers.',
+        tl8_pill1: '80 % de réduction des arrêts',
+        tl8_pill2: '&gt;500 K€ détection de fraude',
+        tl8_pill3: 'Équipe de 10–15 DS',
+        tl9_desc: 'Construction d\'une plateforme Big Data pour le reporting financier temps réel et la conformité réglementaire Bâle II/III. Direction du Data Lab d\'Open, prototypage de solutions IA exploratoires.',
+        tl9_pill1: 'Reporting financier temps réel',
+        tl9_pill2: 'Conformité Bâle II/III',
+        tl9_pill3: 'Direction du Data Lab',
+        tl10_role: 'Ingénieur Structure / Chef d\'Équipe',
+        tl10_desc: 'Direction de projets d\'ingénierie structurelle sur des programmes aéronautiques pour Airbus, Boeing et Bombardier. Huit ans d\'ingénierie de précision dans l\'une des industries les plus exigeantes au monde — le fondement d\'une approche data-driven.',
+        tl10_pill1: 'Programmes Airbus',
+        tl10_pill2: 'Structures Boeing',
+        // Projects
+        projects_label: 'Projets',
+        projects_heading: 'Réalisations sélectionnées qui <em>démontrent l\'expertise.</em>',
+        proj1_client: 'Projet Personnel',
+        proj1_problem: 'Les développeurs perdent des heures à comprendre des bases de code inconnues. Les outils de documentation existants sont superficiels et manquent les relations structurelles entre les composants.',
+        proj1_approach: 'Construction d\'un système de documentation et Q&amp;A de code alimenté par GraphRAG. Le parsing AST extrait les entités dans un graphe de connaissances (Kuzu DB), puis 4 agents LLM experts (Architecte, Business, Technique, Sécurité) analysent le code. Support de 19 langages avec analyse incrémentale économisant 90-95 % de calcul.',
+        proj1_result: '19 langages &middot; 90-95 % d\'économie de calcul &middot; Serveur MCP pour Claude Code',
+        proj2_title: 'Plateforme IA d\'Entreprise à Grande Échelle',
+        proj2_problem: 'Le 2ème groupe bancaire français devait passer de l\'expérimentation IA à des outils en production — et développer la culture IA de ses développeurs.',
+        proj2_approach: 'Conception d\'une chaîne d\'outils GenAI complète&nbsp;: 1 chatbot de gestion de projet, 5 assistants IA spécialisés (de la rédaction de spécifications à l\'analyse de conformité), et un moteur d\'auto-documentation. Programme de formation à grande échelle en parallèle.',
+        proj2_result: '200+ développeurs formés &middot; 6 outils IA en production',
+        proj3_problem: 'Les organisations disposent de collections massives de documents inexploitées et non recherchables. Le RAG standard manque les relations structurelles entre les concepts.',
+        proj3_approach: 'Construction d\'un framework RAG Hybride combinant recherche vectorielle et traversée de graphe de connaissances. Routeur de requêtes agentique avec 9 outils spécialisés, génération automatique de schéma (pipeline LLM en 2 étapes), résolution sémantique d\'entités et ingestion incrémentale. Support PDF, DOCX, PPTX, XLSX, HTML et images.',
+        proj3_result: 'Open-source (MIT) &middot; RAG Hybride &middot; 9 outils agentiques',
+        proj4_client: 'Projet Personnel',
+        proj4_problem: 'Les institutions financières doivent surveiller en continu les médias défavorables à travers des centaines de sources multilingues pour la conformité KYC/AML. La surveillance manuelle est impossible à l\'échelle.',
+        proj4_approach: 'Construction d\'une plateforme événementielle&nbsp;: collecte automatisée de 40+ sources RSS et GDELT, extraction d\'entités et classification de risques par LLM, matching flou contre les listes de surveillance, et génération d\'alertes automatiques avec scoring de risque. Dashboard React + backend FastAPI + workers Celery.',
+        proj4_result: '40+ sources &middot; Alertes KYC/AML automatisées &middot; Plateforme full-stack',
+        proj5_title: 'Évaluation &amp; Monitoring d\'Agents',
+        proj5_client: 'Projet Personnel',
+        proj5_problem: 'Évaluer l\'IA agentique en production est plus complexe que le simple Q&amp;A — les agents orchestrent du raisonnement multi-étapes, des appels d\'outils et des boucles de feedback. La plupart des solutions vous enferment dans un SaaS.',
+        proj5_approach: 'Conception d\'un pipeline d\'évaluation hybride à 6 couches&nbsp;: instrumentation (LangFuse/OpenTelemetry), stockage de traces, cascade d\'évaluateurs (programmatique &rarr; LLM-as-Judge générique &rarr; spécifique au domaine), harnais de test avec golden datasets, annotation humaine (Argilla), et tableaux de bord Grafana avec alerting. 100 % open-source.',
+        proj5_result: 'Pipeline à 6 couches &middot; 7 dimensions d\'évaluation &middot; 100 % open-source',
+        proj6_title: 'Système d\'Identification des UBO',
+        proj6_client: 'Projet Personnel',
+        proj6_problem: 'Les directives anti-blanchiment européennes (AMLD5/6) exigent l\'identification des Bénéficiaires Effectifs à travers des chaînes de propriété complexes multi-niveaux — souvent indirectes, circulaires ou traversant des juridictions opaques.',
+        proj6_approach: 'Modélisation des structures de propriété sous forme de graphes dirigés avec calcul automatisé des participations directes et indirectes. Détection de cycles, identification de sociétés écrans, scoring de risque (PEP, sanctions, juridictions à haut risque), et visualisation interactive des chaînes de propriété avec interface de chat IA.',
+        proj6_result: 'Conformité AMLD5/6 automatisée &middot; Analyse de propriété par graphes',
+        proj7_title: 'Maintenance Prédictive pour Chemin de Fer Minier',
+        proj7_problem: 'ERAMET exploite 600 km de voies ferrées minières en Nouvelle-Calédonie. Les pannes imprévues causaient des arrêts de service coûteux et des réparations à plusieurs millions d\'euros par kilomètre.',
+        proj7_approach: 'Construction d\'une plateforme de maintenance prédictive utilisant les données capteurs et le machine learning pour prévoir les incidents et déclencher des réparations proactives avant les pannes.',
+        proj7_result: '80 % de réduction des arrêts imprévus &middot; M€/an économisés',
+        proj8_title: 'Optimisation des Coûts Recettes &amp; Fournisseurs',
+        proj8_problem: 'Les opérations européennes de Danone devaient réduire les coûts industriels sans impacter la qualité des produits — à travers des milliers de recettes et contrats fournisseurs.',
+        proj8_approach: 'Développement de deux moteurs d\'optimisation&nbsp;: un pour l\'harmonisation algorithmique des recettes à travers les gammes de produits, un autre pour la sélection et la négociation fournisseurs. Les deux validés et adoptés par les équipes R&amp;D et Achats.',
+        proj8_result: '2 M€/an sur les recettes &middot; 2 M€/an sur les fournisseurs',
+        proj9_title: 'Vigile — Intelligence Stratégique',
+        proj9_client: 'Projet Personnel',
+        proj9_problem: 'L\'intelligence stratégique est soit manuelle et chronophage, soit déléguée à des outils entreprise coûtant des milliers d\'euros par mois. Aucun juste milieu abordable n\'existe.',
+        proj9_approach: 'Construction d\'un système d\'intelligence hybride&nbsp;: collecte automatisée RSS/Atom, enrichissement IA (entités, sentiment, thèmes), chatbot RAG agentique (LangGraph, 7 outils, 4 modes de requête) avec citations style Perplexity, et rapports de synthèse automatisés. Découverte automatique de nouvelles sources via DuckDuckGo + scoring LLM.',
+        proj9_result: 'Chatbot agentique &middot; Rapports automatisés &middot; Remplace les outils entreprise',
+        proj10_title: 'REMS — Moniteur Qualité RAG',
+        proj10_client: 'Projet Personnel',
+        proj10_problem: 'Dans les domaines réglementaires, les erreurs de chatbot RAG ont des conséquences juridiques. Aucun outil externe léger n\'existait pour évaluer en continu la qualité et détecter les hallucinations — sans modifier le chatbot.',
+        proj10_approach: 'Construction d\'un module d\'évaluation externe qui se branche sur tout chatbot RAG via API. Utilise les métriques RAGAS (fidélité, précision du contexte, pertinence de la réponse) pour détecter les hallucinations, diagnostiquer les causes racines et générer des recommandations actionnables. Évaluations hebdomadaires automatisées via cron.',
+        proj10_result: 'Détection d\'hallucinations &middot; Diagnostics automatisés &middot; Rapports PDF/HTML',
+        // Impact
+        impact_heading: 'Des résultats qui <em>parlent d\'eux-mêmes.</em>',
+        impact_intro: 'Chaque mission est mesurée sur des résultats concrets. Voici les chiffres qui comptent.',
+        impact_label1: 'Développeurs formés à l\'IA au Groupe BPCE',
+        impact_label2: 'Par an en économies documentées (2x 2 M€) — Danone',
+        impact_label3: 'Prototypes et solutions IA déployés en production',
+        impact_label4: 'Data scientists managés et mentorés',
+        impact_label5: 'Réduction des arrêts de service imprévus — Maintenance prédictive ERAMET',
+        // Certifications
+        cert_heading: 'Apprentissage continu, <em>expertise validée.</em>',
+        // Contact
+        contact_heading: 'Construisons quelque chose de <em>significatif</em> ensemble.',
+        contact_intro: 'Que vous cherchiez à industrialiser l\'IA dans votre organisation, que vous ayez besoin de conseils stratégiques sur un défi data complexe, ou que vous souhaitiez discuter d\'une collaboration — je serai ravi d\'échanger.',
+        contact_phone_label: 'Téléphone',
+        form_name_label: 'Nom',
+        form_subject_label: 'Objet',
+        form_submit: 'Envoyer le Message',
+        form_note: 'Je réponds généralement sous 24 heures.',
+        // Placeholders
+        form_name_placeholder: 'Votre nom',
+        form_subject_placeholder: 'Comment puis-je vous aider ?',
+        form_message_placeholder: 'Décrivez votre projet ou défi...',
+        // Form validation
+        _form_alert: 'Veuillez renseigner votre nom, email et message.',
+        // Meta
+        _meta_description: 'Ariel IBABA — Directeur Data Science & IA. Articuler stratégie, innovation et exécution pour industrialiser l\'IA à grande échelle. Paris, France.',
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const t = translations[lang];
+      if (!t) return;
+
+      // Update all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+          el.innerHTML = t[key];
+        }
+      });
+
+      // Update all data-i18n-placeholder elements
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (t[key] !== undefined) {
+          el.placeholder = t[key];
+        }
+      });
+
+      // Update html lang attribute
+      document.documentElement.lang = lang;
+
+      // Update meta description
+      if (t._meta_description) {
+        document.querySelector('meta[name="description"]').setAttribute('content', t._meta_description);
+      }
+
+      // Update toggle button active state
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      // Persist choice
+      localStorage.setItem('lang', lang);
+    }
+
+    // Toggle button click handlers
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    // Initialize language from localStorage (default: en)
+    const savedLang = localStorage.getItem('lang') || 'en';
+    if (savedLang !== 'en') {
+      setLanguage(savedLang);
+    }
 
   </script>
 
