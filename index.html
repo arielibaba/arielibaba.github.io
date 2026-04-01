@@ -2184,8 +2184,8 @@
 
         <div class="impact-card reveal delay-2">
           <div class="impact-card-bg"></div>
-          <div class="impact-number">€4M<sup>+</sup></div>
-          <div class="impact-label">Per year in documented cost savings — Danone</div>
+          <div class="impact-number" data-suffix="M">€4M<sup>+</sup></div>
+          <div class="impact-label">Per year in documented cost savings (2x €2M) — Danone</div>
           <div class="impact-icon">💶</div>
         </div>
 
@@ -2198,7 +2198,7 @@
 
         <div class="impact-card reveal delay-2">
           <div class="impact-card-bg"></div>
-          <div class="impact-number">15</div>
+          <div class="impact-number">10-15</div>
           <div class="impact-label">Data scientists managed and mentored</div>
           <div class="impact-icon">👥</div>
         </div>
@@ -2208,13 +2208,6 @@
           <div class="impact-number">80<sup>%</sup></div>
           <div class="impact-label">Reduction in unplanned service stops — ERAMET predictive maintenance</div>
           <div class="impact-icon">⚙️</div>
-        </div>
-
-        <div class="impact-card reveal delay-4">
-          <div class="impact-card-bg"></div>
-          <div class="impact-number">X</div>
-          <div class="impact-label">Lecturer in AI at École Polytechnique</div>
-          <div class="impact-icon">🏛️</div>
         </div>
 
       </div>
@@ -2540,7 +2533,7 @@
             { match: /^200/, value: 200, suffix: '+' },
             { match: /^€4M/, value: 4, prefix: '€', suffix: 'M+' },
             { match: /^15\+$/, value: 15, suffix: '+' },
-            { match: /^15$/, value: 15, suffix: '' },
+            { match: /^10-15$/, value: 15, prefix: '10-', suffix: '' },
             { match: /^80/, value: 80, suffix: '%' },
           ];
 
@@ -2549,8 +2542,9 @@
             const prefix = config.prefix || '';
             const sup = el.querySelector('sup');
             const supContent = sup ? sup.textContent : '';
+            const dataSuffix = el.dataset.suffix || '';
             // Remove sup content from target text calc
-            el.innerHTML = prefix + '0' + (sup ? `<sup>${supContent}</sup>` : '');
+            el.innerHTML = prefix + '0' + dataSuffix + (sup ? `<sup>${supContent}</sup>` : '');
 
             let frame = 0;
             const totalFrames = 60;
@@ -2559,10 +2553,10 @@
               const progress = frame / totalFrames;
               const eased = 1 - Math.pow(1 - progress, 3);
               const current = Math.floor(eased * config.value);
-              el.innerHTML = prefix + current + (sup ? `<sup>${supContent}</sup>` : config.suffix);
+              el.innerHTML = prefix + current + dataSuffix + (sup ? `<sup>${supContent}</sup>` : config.suffix);
               if (frame >= totalFrames) {
                 clearInterval(interval);
-                el.innerHTML = prefix + config.value + (sup ? `<sup>${supContent}</sup>` : config.suffix);
+                el.innerHTML = prefix + config.value + dataSuffix + (sup ? `<sup>${supContent}</sup>` : config.suffix);
               }
             }, 16);
           }
