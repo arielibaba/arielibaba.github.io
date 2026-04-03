@@ -281,17 +281,17 @@
       border: 1px solid rgba(74,144,217,0.12);
     }
     .hero-circle-1 {
-      width: 480px;
-      height: 480px;
-      right: 8%;
+      width: 420px;
+      height: 420px;
+      right: 10%;
       top: 50%;
       transform: translateY(-50%);
       animation: rotate-slow 32s linear infinite;
     }
     .hero-circle-2 {
-      width: 320px;
-      height: 320px;
-      right: 14%;
+      width: 340px;
+      height: 340px;
+      right: 13%;
       top: 50%;
       transform: translateY(-50%);
       border-color: rgba(74,144,217,0.18);
@@ -310,6 +310,35 @@
       max-width: var(--max-w);
       margin: 0 auto;
       padding: 120px 40px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-photo-wrapper {
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fade-in 1.2s var(--ease-out) 0.6s forwards;
+    }
+
+    .hero-photo {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 25%;
+      border: 4px solid rgba(255,255,255,0.15);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3), 0 0 0 1px rgba(74,144,217,0.2);
     }
 
     .hero-eyebrow {
@@ -462,7 +491,14 @@
 
     @media (max-width: 768px) {
       .hero-circle-1, .hero-circle-2 { display: none; }
-      .hero-inner { padding: 100px 24px 80px; }
+      .hero-inner {
+        padding: 100px 24px 80px;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 36px;
+      }
+      .hero-photo { width: 180px; height: 180px; }
+      .hero-eyebrow { justify-content: center; }
       .hero-scroll { display: none; }
       .hero-location { left: 24px; }
     }
@@ -611,15 +647,14 @@
       padding-top: 8px;
     }
 
-    .about-photo {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 25%;
-      border: 4px solid var(--white);
-      box-shadow: var(--shadow-md), 0 0 0 1px var(--grey-200);
-      margin-bottom: 32px;
+    .about-deco-number {
+      font-family: var(--font-serif);
+      font-size: 7rem;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--grey-200);
+      margin-bottom: 8px;
+      user-select: none;
     }
 
     .about-stat-block {
@@ -697,7 +732,7 @@
 
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .about-photo { width: 160px; height: 160px; margin: 0 auto 24px; }
+      .about-deco-number { display: none; }
     }
 
     /* ============================================================
@@ -1577,17 +1612,22 @@
     <div class="hero-circle-2"></div>
 
     <div class="hero-inner">
-      <div class="hero-eyebrow" data-i18n="hero_eyebrow">Data Science &amp; Artificial Intelligence</div>
-      <h1 class="hero-name">Ariel <em>IBABA</em></h1>
-      <div class="hero-title" data-i18n="hero_title">Data Science &amp; AI Director</div>
-      <p class="hero-tagline" data-i18n="hero_tagline">"Bridging strategy, innovation, and execution<br>to industrialize AI at scale."</p>
-      <a href="#contact" class="hero-cta">
-        <span data-i18n="hero_cta">Get in Touch</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </a>
+      <div class="hero-content">
+        <div class="hero-eyebrow" data-i18n="hero_eyebrow">Data Science &amp; Artificial Intelligence</div>
+        <h1 class="hero-name">Ariel <em>IBABA</em></h1>
+        <div class="hero-title" data-i18n="hero_title">Data Science &amp; AI Director</div>
+        <p class="hero-tagline" data-i18n="hero_tagline">"Bridging strategy, innovation, and execution<br>to industrialize AI at scale."</p>
+        <a href="#contact" class="hero-cta">
+          <span data-i18n="hero_cta">Get in Touch</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+      <div class="hero-photo-wrapper">
+        <img src="photo.png" alt="Ariel IBABA" class="hero-photo" loading="eager" />
+      </div>
     </div>
 
     <div class="hero-location">
@@ -1646,7 +1686,7 @@
         </div>
 
         <div class="about-right reveal-right">
-          <img src="photo.png" alt="Ariel IBABA" class="about-photo reveal" loading="lazy" />
+          <div class="about-deco-number">18+</div>
 
           <div class="about-stat-block">
             <div class="about-stat-number">18+</div>
