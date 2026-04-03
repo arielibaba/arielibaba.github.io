@@ -132,16 +132,24 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.3);
       font-family: var(--font-serif);
-      font-size: 1.1rem;
-      font-weight: normal;
-      letter-spacing: 0.02em;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       color: var(--white);
-      transition: color 0.35s ease;
+      transition: all 0.35s ease;
     }
 
     nav.scrolled .nav-logo {
       color: var(--navy);
+      border-color: var(--navy);
     }
 
     .nav-links {
@@ -1573,7 +1581,7 @@
        NAV
   ============================================================ -->
   <nav id="main-nav">
-    <a href="#hero" class="nav-logo">Ariel IBABA</a>
+    <a href="#hero" class="nav-logo">AI</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
       <span></span>
       <span></span>
