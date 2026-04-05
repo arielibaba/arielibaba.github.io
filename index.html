@@ -764,7 +764,7 @@
       position: relative;
       overflow: hidden;
       transition: background 0.3s ease;
-      cursor: default;
+      cursor: pointer;
     }
 
     .expertise-card::before {
@@ -849,12 +849,31 @@
       border-radius: 2px;
     }
 
+    .expertise-card-cta {
+      display: block;
+      margin-top: 14px;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .expertise-card:hover .expertise-card-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media (max-width: 900px) {
       .expertise-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 580px) {
       .expertise-grid { grid-template-columns: 1fr; }
+      .expertise-card-cta { opacity: 1; transform: none; }
     }
 
     /* ============================================================
@@ -985,6 +1004,32 @@
       height: 5px;
       border-radius: 50%;
       background: var(--accent);
+    }
+
+    .timeline-item {
+      cursor: pointer;
+    }
+
+    .timeline-item-cta {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .timeline-item:hover .timeline-item-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item-cta { opacity: 1; transform: none; }
     }
 
     .timeline-divider {
@@ -1950,7 +1995,7 @@
       <div class="expertise-grid">
 
         <!-- Card 1 -->
-        <div class="expertise-card reveal delay-1">
+        <div class="expertise-card reveal delay-1" data-expertise="ml-dl">
           <div class="expertise-card-number">01</div>
           <div class="expertise-icon">
             <svg viewBox="0 0 24 24">
@@ -1967,10 +2012,11 @@
             <span class="expertise-tag">Time Series</span>
             <span class="expertise-tag" data-i18n="exp1_tag4">Predictive Maintenance</span>
           </div>
+          <span class="expertise-card-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
         <!-- Card 2 -->
-        <div class="expertise-card reveal delay-2">
+        <div class="expertise-card reveal delay-2" data-expertise="genai">
           <div class="expertise-card-number">02</div>
           <div class="expertise-icon">
             <svg viewBox="0 0 24 24">
@@ -1987,10 +2033,11 @@
             <span class="expertise-tag">Fine-Tuning</span>
             <span class="expertise-tag">Chatbots &amp; Assistants</span>
           </div>
+          <span class="expertise-card-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
         <!-- Card 3 -->
-        <div class="expertise-card reveal delay-3">
+        <div class="expertise-card reveal delay-3" data-expertise="strategy">
           <div class="expertise-card-number">03</div>
           <div class="expertise-icon">
             <svg viewBox="0 0 24 24">
@@ -2007,10 +2054,11 @@
             <span class="expertise-tag">Roadmap</span>
             <span class="expertise-tag">MLOps</span>
           </div>
+          <span class="expertise-card-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
         <!-- Card 4 -->
-        <div class="expertise-card reveal delay-2">
+        <div class="expertise-card reveal delay-2" data-expertise="leadership">
           <div class="expertise-card-number">04</div>
           <div class="expertise-icon">
             <svg viewBox="0 0 24 24">
@@ -2027,10 +2075,11 @@
             <span class="expertise-tag" data-i18n="exp4_tag2">Mentoring</span>
             <span class="expertise-tag" data-i18n="exp4_tag3">Up to 15 people</span>
           </div>
+          <span class="expertise-card-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
         <!-- Card 5 -->
-        <div class="expertise-card reveal delay-3">
+        <div class="expertise-card reveal delay-3" data-expertise="training">
           <div class="expertise-card-number">05</div>
           <div class="expertise-icon">
             <svg viewBox="0 0 24 24">
@@ -2045,6 +2094,7 @@
             <span class="expertise-tag" data-i18n="exp5_tag2">Executive Awareness</span>
             <span class="expertise-tag">École Polytechnique</span>
           </div>
+          <span class="expertise-card-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
       </div>
@@ -2061,7 +2111,7 @@
 
       <div class="timeline">
 
-        <div class="timeline-item reveal">
+        <div class="timeline-item reveal" data-experience="bpce">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2025 — Present</span>
@@ -2077,9 +2127,10 @@
             <span class="achievement-pill" data-i18n="tl1_pill3">1 chatbot in production</span>
             <span class="achievement-pill" data-i18n="tl1_pill4">1 auto-documentation tool</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
-        <div class="timeline-item reveal delay-1">
+        <div class="timeline-item reveal delay-1" data-experience="slb">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2024 — 2025</span>
@@ -2093,9 +2144,10 @@
             <span class="achievement-pill" data-i18n="tl2_pill1">Multimodal RAG architecture</span>
             <span class="achievement-pill" data-i18n="tl2_pill2">End-to-end delivery</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
-        <div class="timeline-item reveal delay-2">
+        <div class="timeline-item reveal delay-2" data-experience="dco2">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2024 — 2025</span>
@@ -2110,9 +2162,10 @@
             <span class="achievement-pill" data-i18n="tl3_pill2">3 AI solutions deployed</span>
             <span class="achievement-pill" data-i18n="tl3_pill3">Carbon emission estimation</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
-        <div class="timeline-item reveal delay-1">
+        <div class="timeline-item reveal delay-1" data-experience="bobst">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2023 — 2024</span>
@@ -2126,9 +2179,10 @@
             <span class="achievement-pill" data-i18n="tl4_pill1">RAG chatbot for maintenance</span>
             <span class="achievement-pill" data-i18n="tl4_pill2">Energy optimisation</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
-        <div class="timeline-item reveal delay-2">
+        <div class="timeline-item reveal delay-2" data-experience="danone">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2022 — 2023</span>
@@ -2142,9 +2196,10 @@
             <span class="achievement-pill" data-i18n="tl5_pill1">€4M/year combined savings</span>
             <span class="achievement-pill" data-i18n="tl5_pill2">AI-driven cost reduction</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
-        <div class="timeline-item reveal">
+        <div class="timeline-item reveal" data-experience="grips">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2022</span>
@@ -2158,9 +2213,10 @@
             <span class="achievement-pill" data-i18n="tl6_pill1">DS team management</span>
             <span class="achievement-pill" data-i18n="tl6_pill2">Web ranking volatility index</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
-        <div class="timeline-item reveal delay-1">
+        <div class="timeline-item reveal delay-1" data-experience="activeviam">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2020 — 2022</span>
@@ -2174,9 +2230,10 @@
             <span class="achievement-pill" data-i18n="tl7_pill1">Financial ML models</span>
             <span class="achievement-pill" data-i18n="tl7_pill2">Big Data &amp; AI Paris speaker</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
-        <div class="timeline-item reveal delay-2">
+        <div class="timeline-item reveal delay-2" data-experience="capgemini">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2017 — 2020</span>
@@ -2191,9 +2248,10 @@
             <span class="achievement-pill" data-i18n="tl8_pill2">&gt;€500K fraud detection project</span>
             <span class="achievement-pill" data-i18n="tl8_pill3">Team of 10–15 DS</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
-        <div class="timeline-item reveal">
+        <div class="timeline-item reveal" data-experience="open">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2016 — 2017</span>
@@ -2208,9 +2266,10 @@
             <span class="achievement-pill" data-i18n="tl9_pill2">Basel II/III compliance</span>
             <span class="achievement-pill" data-i18n="tl9_pill3">Data Lab lead</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
-        <div class="timeline-item reveal delay-1">
+        <div class="timeline-item reveal delay-1" data-experience="latecoere">
           <div class="timeline-dot"></div>
           <div class="timeline-meta">
             <span class="timeline-period">2007 — 2015</span>
@@ -2225,6 +2284,7 @@
             <span class="achievement-pill" data-i18n="tl10_pill2">Boeing structures</span>
             <span class="achievement-pill">Bombardier</span>
           </div>
+          <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
 
       </div>
@@ -3028,6 +3088,7 @@
         proj10_approach: 'Built an external evaluation module that plugs into any RAG chatbot via API. Uses RAGAS metrics (faithfulness, context precision, answer relevancy) to detect hallucinations, diagnose root causes, and generate actionable recommendations. Automated weekly evaluations via cron.',
         proj10_result: 'Hallucination detection &middot; Automated diagnostics &middot; PDF/HTML reports',
         proj_cta: 'View details &#8594;',
+        exp_cta: 'View details &#8594;',
         // Impact
         impact_heading: 'Results that <em>speak for themselves.</em>',
         impact_intro: 'Every engagement is measured against real outcomes. Here are some numbers I\'m proud of.',
@@ -3191,6 +3252,7 @@
         proj10_approach: 'Construction d\'un module d\'évaluation externe qui se branche sur tout chatbot RAG via API. Utilise les métriques RAGAS (fidélité, précision du contexte, pertinence de la réponse) pour détecter les hallucinations, diagnostiquer les causes racines et générer des recommandations actionnables. Évaluations hebdomadaires automatisées via cron.',
         proj10_result: 'Détection d\'hallucinations &middot; Diagnostics automatisés &middot; Rapports PDF/HTML',
         proj_cta: 'Voir les détails &#8594;',
+        exp_cta: 'Voir les détails &#8594;',
         // Impact
         impact_heading: 'Des résultats qui <em>parlent d\'eux-mêmes.</em>',
         impact_intro: 'Chaque mission est mesurée sur des résultats concrets. Voici quelques chiffres dont je suis fier.',
@@ -3766,6 +3828,759 @@
     });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeProjectModal();
+    });
+
+    /* ---- EXPERTISE DETAILS ---- */
+    const expertiseDetails = {
+      'ml-dl': {
+        en: {
+          title: 'Machine Learning & Deep Learning',
+          badge: 'Core Expertise',
+          tags: ['NLP', 'Computer Vision', 'Time Series', 'Predictive Maintenance', 'Anomaly Detection', 'TensorFlow', 'PyTorch', 'scikit-learn'],
+          context: 'Machine Learning and Deep Learning form the foundation of my technical practice. Over 10 years, I have designed and deployed ML solutions across industries — from predictive maintenance in mining to fraud detection in banking, from recipe optimisation in FMCG to financial asset prediction.',
+          approach: 'My approach covers the full pipeline: problem framing with stakeholders, data engineering and feature design, model selection and training, evaluation, and production deployment. I focus on industrial-grade solutions that deliver measurable business value, not just experimental notebooks.',
+          highlights: [
+            { value: '10+', label: 'Years of practice' },
+            { value: '80%', label: 'Reduction in service stops (ERAMET)' },
+            { value: '\u20AC4M/yr', label: 'Savings delivered (Danone)' },
+          ],
+          useCases: [
+            'Predictive maintenance on sensor time series data (ERAMET — 80% fewer unplanned stops)',
+            'Fraud detection models for banking (Capgemini Invent — \u20AC500K+ project won)',
+            'Cost optimisation through algorithmic recipe harmonization (Danone — \u20AC4M/year)',
+            'Financial asset value prediction with real-time analytics (ActiveViam)',
+            'Carbon emission estimation from financial data (DCO2 — 3 AI solutions)',
+          ],
+          certifications: ['Deep Learning Specialization — DeepLearning.AI', 'Machine Learning — Stanford/Coursera', 'Neural Networks and Deep Learning — DeepLearning.AI'],
+        },
+        fr: {
+          title: 'Machine Learning & Deep Learning',
+          badge: 'Expertise Fondamentale',
+          tags: ['NLP', 'Computer Vision', 'Séries Temporelles', 'Maintenance Prédictive', 'Détection d\'Anomalies', 'TensorFlow', 'PyTorch', 'scikit-learn'],
+          context: 'Le Machine Learning et le Deep Learning constituent le socle de ma pratique technique. En plus de 10 ans, j\'ai conçu et déployé des solutions ML dans de nombreux secteurs — de la maintenance prédictive dans l\'industrie minière à la détection de fraude bancaire, de l\'optimisation de recettes agroalimentaires à la prédiction d\'actifs financiers.',
+          approach: 'Mon approche couvre l\'ensemble du pipeline : cadrage du problème avec les parties prenantes, ingénierie des données et design de features, sélection et entraînement de modèles, évaluation, et déploiement en production. Je me concentre sur des solutions industrielles qui délivrent une valeur métier mesurable.',
+          highlights: [
+            { value: '10+', label: 'Années de pratique' },
+            { value: '80 %', label: 'Réduction des arrêts (ERAMET)' },
+            { value: '4 M\u20AC/an', label: 'Économies livrées (Danone)' },
+          ],
+          useCases: [
+            'Maintenance prédictive sur séries temporelles capteurs (ERAMET — 80 % d\'arrêts en moins)',
+            'Modèles de détection de fraude bancaire (Capgemini Invent — projet de +500 K\u20AC)',
+            'Optimisation des coûts par harmonisation algorithmique de recettes (Danone — 4 M\u20AC/an)',
+            'Prédiction de valeur d\'actifs financiers en temps réel (ActiveViam)',
+            'Estimation d\'émissions carbone à partir de données financières (DCO2 — 3 solutions IA)',
+          ],
+          certifications: ['Deep Learning Specialization — DeepLearning.AI', 'Machine Learning — Stanford/Coursera', 'Neural Networks and Deep Learning — DeepLearning.AI'],
+        },
+      },
+      genai: {
+        en: {
+          title: 'Generative AI',
+          badge: 'Core Expertise',
+          tags: ['LLMs', 'RAG', 'Fine-Tuning', 'Chatbots & Assistants', 'LangChain', 'LangGraph', 'Prompt Engineering', 'MCP'],
+          context: 'Generative AI has been my primary focus since 2023. I design and deploy LLM-based solutions that go beyond simple chat interfaces — production-grade RAG pipelines, multi-agent systems, AI assistants with enterprise security constraints, and tools that augment human expertise rather than replace it.',
+          approach: 'I bring a systems-engineering mindset to GenAI: architecture design, retrieval strategy selection (vector, graph, hybrid), prompt engineering, evaluation pipelines, guardrails, and production monitoring. Every solution is designed for enterprise constraints — data privacy, auditability, cost control.',
+          highlights: [
+            { value: '6', label: 'AI tools shipped to production' },
+            { value: '7+', label: 'Personal GenAI projects built' },
+            { value: '200+', label: 'Developers trained on GenAI' },
+          ],
+          useCases: [
+            'Enterprise AI platform with 6 production tools (Groupe BPCE — chatbot, 5 assistants, auto-doc engine)',
+            'Multimodal RAG chatbot for energy technical documentation (Schlumberger SLB)',
+            'Hybrid RAG framework combining vector + graph search (CogniDoc — open source)',
+            'GraphRAG-powered code analysis with 4 expert LLM agents (CodeGraphAI)',
+            'Agentic RAG chatbot with 7 tools for strategic intelligence (Vigile)',
+            'RAG chatbot for industrial maintenance documentation (BOBST)',
+          ],
+          certifications: ['Building Agentic RAG with LlamaIndex — DeepLearning.AI', 'Fine-Tuning Large Language Models — DeepLearning.AI', 'Functions, Tools & Agents with LangChain — DeepLearning.AI', 'LangChain for LLM Application Development — DeepLearning.AI'],
+        },
+        fr: {
+          title: 'IA Générative',
+          badge: 'Expertise Fondamentale',
+          tags: ['LLMs', 'RAG', 'Fine-Tuning', 'Chatbots & Assistants', 'LangChain', 'LangGraph', 'Prompt Engineering', 'MCP'],
+          context: 'L\'IA Générative est mon axe principal depuis 2023. Je conçois et déploie des solutions basées sur les LLMs qui vont au-delà du simple chat — pipelines RAG production, systèmes multi-agents, assistants IA avec contraintes de sécurité entreprise, et outils qui augmentent l\'expertise humaine.',
+          approach: 'J\'apporte une approche d\'ingénierie système au GenAI : design d\'architecture, sélection de stratégie de retrieval (vectoriel, graphe, hybride), prompt engineering, pipelines d\'évaluation, guardrails, et monitoring en production. Chaque solution est conçue pour les contraintes entreprise — confidentialité, auditabilité, maîtrise des coûts.',
+          highlights: [
+            { value: '6', label: 'Outils IA en production' },
+            { value: '7+', label: 'Projets GenAI personnels' },
+            { value: '200+', label: 'Développeurs formés au GenAI' },
+          ],
+          useCases: [
+            'Plateforme IA entreprise avec 6 outils en production (Groupe BPCE)',
+            'Chatbot RAG multimodal pour documentation technique énergie (Schlumberger SLB)',
+            'Framework RAG Hybride vectoriel + graphe (CogniDoc — open source)',
+            'Analyse de code par GraphRAG avec 4 agents LLM experts (CodeGraphAI)',
+            'Chatbot RAG agentique avec 7 outils pour l\'intelligence stratégique (Vigile)',
+            'Chatbot RAG pour documentation de maintenance industrielle (BOBST)',
+          ],
+          certifications: ['Building Agentic RAG with LlamaIndex — DeepLearning.AI', 'Fine-Tuning Large Language Models — DeepLearning.AI', 'Functions, Tools & Agents with LangChain — DeepLearning.AI', 'LangChain for LLM Application Development — DeepLearning.AI'],
+        },
+      },
+      strategy: {
+        en: {
+          title: 'AI Strategy & Governance',
+          badge: 'Leadership Expertise',
+          tags: ['Use Case Identification', 'AI Roadmap', 'MLOps', 'ROI Analysis', 'Executive Advisory', 'AI Governance'],
+          context: 'Beyond building AI solutions, I advise organizations on where and how AI can create the most value. This means identifying high-impact use cases, building realistic roadmaps, setting up governance frameworks, and ensuring AI initiatives deliver measurable ROI rather than remaining experimental.',
+          approach: 'I start by mapping business processes to identify where AI has the highest leverage — not where it\'s technically easiest. Then I build phased roadmaps that balance quick wins with strategic investments, define success metrics upfront, and establish the governance structures (data quality, model monitoring, ethical guidelines) needed for sustainable AI at scale.',
+          highlights: [
+            { value: '3', label: 'DS departments created from scratch' },
+            { value: '6', label: 'AI tools industrialised at BPCE' },
+            { value: '3', label: 'AI solutions deployed at DCO2' },
+          ],
+          useCases: [
+            'AI strategy and toolchain deployment for France\'s 2nd largest banking group (Groupe BPCE)',
+            'Data Science department creation from zero at a greentech startup (DCO2)',
+            'Use case identification and AI roadmap for packaging manufacturer (BOBST)',
+            'Data Lab leadership — prototyping AI solutions for business development (Groupe Open)',
+            'AI practice leadership across consulting engagements (Capgemini Invent)',
+          ],
+          certifications: ['AWS Certified Solutions Architect — Associate', 'Generative AI for Everyone — DeepLearning.AI'],
+        },
+        fr: {
+          title: 'Stratégie & Gouvernance IA',
+          badge: 'Expertise Leadership',
+          tags: ['Identification de Cas d\'Usage', 'Roadmap IA', 'MLOps', 'Analyse ROI', 'Conseil Exécutif', 'Gouvernance IA'],
+          context: 'Au-delà de la construction de solutions IA, je conseille les organisations sur où et comment l\'IA peut créer le plus de valeur. Cela implique d\'identifier les cas d\'usage à fort impact, de construire des roadmaps réalistes, de mettre en place des cadres de gouvernance, et de s\'assurer que les initiatives IA délivrent un ROI mesurable.',
+          approach: 'Je commence par cartographier les processus métier pour identifier où l\'IA a le plus de levier — pas là où c\'est techniquement le plus facile. Puis je construis des roadmaps phasées qui équilibrent quick wins et investissements stratégiques, définis les métriques de succès en amont, et établis les structures de gouvernance nécessaires.',
+          highlights: [
+            { value: '3', label: 'Départements DS créés from scratch' },
+            { value: '6', label: 'Outils IA industrialisés (BPCE)' },
+            { value: '3', label: 'Solutions IA déployées (DCO2)' },
+          ],
+          useCases: [
+            'Stratégie IA et déploiement d\'outils pour le 2ème groupe bancaire français (Groupe BPCE)',
+            'Création du département Data Science from scratch dans une startup greentech (DCO2)',
+            'Identification de cas d\'usage et roadmap IA pour un fabricant d\'emballages (BOBST)',
+            'Direction du Data Lab — prototypage de solutions IA pour le développement commercial (Groupe Open)',
+            'Leadership de la pratique IA dans des missions de conseil (Capgemini Invent)',
+          ],
+          certifications: ['AWS Certified Solutions Architect — Associate', 'Generative AI for Everyone — DeepLearning.AI'],
+        },
+      },
+      leadership: {
+        en: {
+          title: 'Team Leadership',
+          badge: 'Leadership Expertise',
+          tags: ['Recruitment', 'Mentoring', 'Agile Delivery', 'Performance Management', 'Cross-functional Collaboration'],
+          context: 'I have built and led data science teams ranging from 3 to 15 people, across startups, consulting firms, and large enterprises. My leadership philosophy centers on hiring for potential, creating environments where people grow fast, and delivering results that matter to the business.',
+          approach: 'I handle the full leadership cycle: defining roles and hiring criteria, conducting technical interviews, onboarding, setting up delivery processes, mentoring individual contributors toward senior roles, and managing performance. I believe in servant leadership — removing obstacles, shielding teams from organizational noise, and making sure the best ideas win regardless of seniority.',
+          highlights: [
+            { value: '15', label: 'Largest team managed' },
+            { value: '3', label: 'Teams built from scratch' },
+            { value: '10+', label: 'Years of management experience' },
+          ],
+          useCases: [
+            'Built and led a team of 10–15 data scientists at Capgemini Invent, delivering projects for ERAMET and major banks',
+            'Created and staffed the Data Science department from zero at DCO2',
+            'Managed the DS team at GRIPS Intelligence (e-commerce competitive intelligence)',
+            'Led AI practice and team at Groupe BPCE (200+ developers trained)',
+            'Led the Data Lab at Groupe Open, managing data scientists and prototyping AI solutions',
+          ],
+          certifications: [],
+        },
+        fr: {
+          title: 'Leadership d\'Équipe',
+          badge: 'Expertise Leadership',
+          tags: ['Recrutement', 'Mentorat', 'Livraison Agile', 'Gestion de Performance', 'Collaboration Cross-fonctionnelle'],
+          context: 'J\'ai constitué et dirigé des équipes data science de 3 à 15 personnes, dans des startups, cabinets de conseil et grands groupes. Ma philosophie de leadership repose sur le recrutement de potentiel, la création d\'environnements où les gens progressent vite, et la livraison de résultats qui comptent pour le business.',
+          approach: 'Je gère l\'ensemble du cycle de leadership : définition des rôles et critères de recrutement, entretiens techniques, onboarding, mise en place de processus de livraison, mentorat des contributeurs individuels vers des rôles seniors, et gestion de la performance. Je crois au servant leadership — lever les obstacles et faire gagner les meilleures idées.',
+          highlights: [
+            { value: '15', label: 'Plus grande équipe managée' },
+            { value: '3', label: 'Équipes créées from scratch' },
+            { value: '10+', label: 'Années de management' },
+          ],
+          useCases: [
+            'Constitution et direction d\'une équipe de 10–15 data scientists chez Capgemini Invent',
+            'Création et staffing du département Data Science from scratch chez DCO2',
+            'Management de l\'équipe DS chez GRIPS Intelligence',
+            'Direction de la pratique IA et de l\'équipe au Groupe BPCE (200+ développeurs formés)',
+            'Direction du Data Lab chez Groupe Open',
+          ],
+          certifications: [],
+        },
+      },
+      training: {
+        en: {
+          title: 'Training & Upskilling',
+          badge: 'Education',
+          tags: ['Developer Training', 'Executive Awareness', 'École Polytechnique', 'Webstart', 'Curriculum Design', 'Hands-on Labs'],
+          context: 'I teach AI at École Polytechnique and Webstart, and have trained over 200 developers on AI tools and practices at Groupe BPCE. I believe the best training is hands-on — participants should ship something real during the course, not just absorb theory.',
+          approach: 'I design programmes tailored to the audience: for developers, hands-on labs where they build and deploy an AI feature; for executives, strategic workshops focused on understanding AI capabilities, limitations, and ROI; for data teams, deep dives into specific techniques with real-world datasets. Every programme includes practical exercises with real business data.',
+          highlights: [
+            { value: '200+', label: 'Developers trained at BPCE' },
+            { value: '2', label: 'Academic institutions' },
+            { value: 'Hands-on', label: 'Training philosophy' },
+          ],
+          useCases: [
+            'AI training programme for 200+ developers at Groupe BPCE (from basics to production deployment)',
+            'AI lecturer at École Polytechnique — France\'s most prestigious engineering school',
+            'AI lecturer at Webstart — digital and tech school',
+            'Speaker at Big Data & AI Paris conferences (ActiveViam period)',
+          ],
+          certifications: ['Generative AI for Everyone — DeepLearning.AI', 'Generative AI with Large Language Models — DeepLearning.AI/AWS'],
+        },
+        fr: {
+          title: 'Formation & Montée en Compétences',
+          badge: 'Éducation',
+          tags: ['Formation Développeurs', 'Sensibilisation Dirigeants', 'École Polytechnique', 'Webstart', 'Conception de Cursus', 'Labs Pratiques'],
+          context: 'J\'enseigne l\'IA à l\'École Polytechnique et chez Webstart, et j\'ai formé plus de 200 développeurs aux outils et pratiques IA chez Groupe BPCE. Je crois que la meilleure formation est pratique — les participants doivent livrer quelque chose de concret pendant le cours.',
+          approach: 'Je conçois des programmes adaptés à l\'audience : pour les développeurs, des labs pratiques où ils construisent et déploient une feature IA ; pour les dirigeants, des workshops stratégiques sur les capacités, limites et ROI de l\'IA ; pour les équipes data, des approfondissements techniques avec des données réelles.',
+          highlights: [
+            { value: '200+', label: 'Développeurs formés (BPCE)' },
+            { value: '2', label: 'Institutions académiques' },
+            { value: 'Pratique', label: 'Philosophie de formation' },
+          ],
+          useCases: [
+            'Programme de formation IA pour 200+ développeurs au Groupe BPCE',
+            'Enseignant en IA à l\'École Polytechnique — la plus prestigieuse école d\'ingénieurs française',
+            'Enseignant en IA chez Webstart — école du digital et de la tech',
+            'Speaker aux conférences Big Data & AI Paris (période ActiveViam)',
+          ],
+          certifications: ['Generative AI for Everyone — DeepLearning.AI', 'Generative AI with Large Language Models — DeepLearning.AI/AWS'],
+        },
+      },
+    };
+
+    /* ---- EXPERIENCE DETAILS ---- */
+    const experienceDetails = {
+      bpce: {
+        en: {
+          title: 'Head of Data Science & AI / Senior Manager',
+          badge: 'SOFTEAM · Mission at Groupe BPCE',
+          period: '2025 — Present',
+          tags: ['LangChain', 'RAG', 'Azure OpenAI', 'AI Agents', 'LlamaIndex', 'Team Management'],
+          context: 'Groupe BPCE is France\'s 2nd largest banking group with 100,000+ employees. Despite multiple AI proofs of concept, no GenAI solution had reached production. The organization needed both production-ready AI tools and a developer workforce capable of building and maintaining them.',
+          responsibilities: [
+            'Define and execute the AI strategy for the group\'s IT division',
+            'Design, build, and deploy production-grade AI tools (chatbots, assistants, auto-documentation)',
+            'Manage the data science team and coordinate with business stakeholders',
+            'Design and deliver a large-scale AI training programme for 200+ developers',
+            'Ensure compliance with banking security and data governance requirements',
+          ],
+          achievements: [
+            '200+ developers trained on AI tools and practices',
+            '5 AI assistants deployed to production (requirements writing, compliance, code review, test generation, documentation)',
+            '1 project-management chatbot shipped and actively used',
+            '1 automated code-documentation engine in production',
+            'Shifted the organization from "AI-curious" to "AI-operational"',
+          ],
+          highlights: [
+            { value: '200+', label: 'Developers trained' },
+            { value: '6', label: 'AI tools in production' },
+            { value: '100K+', label: 'Employees in the group' },
+          ],
+        },
+        fr: {
+          title: 'Senior Manager / Resp. Data Science & IA',
+          badge: 'SOFTEAM · Mission au Groupe BPCE',
+          period: '2025 — Présent',
+          tags: ['LangChain', 'RAG', 'Azure OpenAI', 'AI Agents', 'LlamaIndex', 'Management d\'Équipe'],
+          context: 'Le Groupe BPCE est le 2ème groupe bancaire français avec plus de 100 000 collaborateurs. Malgré plusieurs preuves de concept IA, aucune solution GenAI n\'avait atteint la production. L\'organisation avait besoin à la fois d\'outils IA production-ready et d\'une force de développeurs capable de les construire.',
+          responsibilities: [
+            'Définir et exécuter la stratégie IA pour la DSI du groupe',
+            'Concevoir, construire et déployer des outils IA en production (chatbots, assistants, auto-documentation)',
+            'Manager l\'équipe data science et coordonner avec les parties prenantes métier',
+            'Concevoir et animer un programme de formation IA pour 200+ développeurs',
+            'Assurer la conformité avec les exigences de sécurité bancaire et de gouvernance des données',
+          ],
+          achievements: [
+            '200+ développeurs formés aux outils et pratiques IA',
+            '5 assistants IA déployés en production',
+            '1 chatbot de gestion de projet livré et activement utilisé',
+            '1 moteur d\'auto-documentation de code en production',
+          ],
+          highlights: [
+            { value: '200+', label: 'Développeurs formés' },
+            { value: '6', label: 'Outils IA en production' },
+            { value: '100K+', label: 'Collaborateurs du groupe' },
+          ],
+        },
+      },
+      slb: {
+        en: {
+          title: 'Generative AI Expert',
+          badge: 'Freelance · Schlumberger SLB',
+          period: '2024 — 2025',
+          tags: ['LangChain', 'Multimodal RAG', 'GPT-4', 'Claude', 'AWS', 'Document Understanding'],
+          context: 'Schlumberger (SLB) is the world\'s leading energy technology company. They had vast repositories of technical documentation — engineering manuals, well reports, geological surveys — that were effectively unsearchable. Engineers spent hours manually digging through documents to find answers.',
+          responsibilities: [
+            'Design the end-to-end architecture for a multimodal RAG chatbot',
+            'Build ingestion pipelines for complex technical documents (tables, diagrams, formulas)',
+            'Implement retrieval strategies optimised for technical and scientific content',
+            'Deliver the full solution from prototype to production',
+          ],
+          achievements: [
+            'End-to-end multimodal RAG chatbot delivered to production',
+            'Complex document understanding including tables, diagrams, and technical formulas',
+            'Multi-source retrieval across heterogeneous document types',
+          ],
+          highlights: [
+            { value: 'End-to-end', label: 'From design to production' },
+            { value: 'Multimodal', label: 'Tables, diagrams, formulas' },
+            { value: 'Global', label: 'World\'s #1 energy tech company' },
+          ],
+        },
+        fr: {
+          title: 'Expert en IA Générative',
+          badge: 'Freelance · Schlumberger SLB',
+          period: '2024 — 2025',
+          tags: ['LangChain', 'RAG Multimodal', 'GPT-4', 'Claude', 'AWS', 'Compréhension de Documents'],
+          context: 'Schlumberger (SLB) est le leader mondial des technologies pour l\'énergie. L\'entreprise disposait de vastes référentiels de documentation technique — manuels d\'ingénierie, rapports de puits, études géologiques — effectivement non recherchables.',
+          responsibilities: [
+            'Concevoir l\'architecture end-to-end d\'un chatbot RAG multimodal',
+            'Construire les pipelines d\'ingestion pour documents techniques complexes (tableaux, diagrammes, formules)',
+            'Implémenter les stratégies de retrieval optimisées pour le contenu technique et scientifique',
+            'Livrer la solution complète du prototype à la production',
+          ],
+          achievements: [
+            'Chatbot RAG multimodal end-to-end livré en production',
+            'Compréhension de documents complexes incluant tableaux, diagrammes et formules',
+          ],
+          highlights: [
+            { value: 'End-to-end', label: 'Du design à la production' },
+            { value: 'Multimodal', label: 'Tableaux, diagrammes, formules' },
+            { value: 'Global', label: 'N°1 mondial de l\'énergie tech' },
+          ],
+        },
+      },
+      dco2: {
+        en: {
+          title: 'Director of Data Science',
+          badge: 'DCO2 — Greentech',
+          period: '2024 — 2025',
+          tags: ['Python', 'scikit-learn', 'TensorFlow', 'REST API', 'Carbon Estimation', 'Team Building'],
+          context: 'DCO2 is a greentech startup focused on helping industrial companies reduce their carbon emissions. The company had no data science capability when I joined — the challenge was to create an entire DS department from scratch and deliver production-ready AI solutions for carbon emission estimation.',
+          responsibilities: [
+            'Create the Data Science department from zero (hiring, processes, tools)',
+            'Research and develop AI models for carbon emission estimation from financial and operational data',
+            'Build and deploy 3 distinct AI solutions as production APIs',
+            'Define the technical and strategic direction for the DS practice',
+          ],
+          achievements: [
+            'Data Science department created from scratch',
+            '3 AI solutions deployed: auto-completion, predictive models, and proprietary SaaS methodology',
+            'Carbon emission estimation without direct measurement — using financial and operational proxies',
+          ],
+          highlights: [
+            { value: '0 \u2192 1', label: 'DS department created' },
+            { value: '3', label: 'AI solutions deployed' },
+            { value: 'Greentech', label: 'Carbon emission estimation' },
+          ],
+        },
+        fr: {
+          title: 'Directeur Data Science',
+          badge: 'DCO2 — Greentech',
+          period: '2024 — 2025',
+          tags: ['Python', 'scikit-learn', 'TensorFlow', 'REST API', 'Estimation Carbone', 'Création d\'Équipe'],
+          context: 'DCO2 est une startup greentech aidant les entreprises industrielles à réduire leurs émissions carbone. L\'entreprise n\'avait aucune capacité data science — le défi était de créer un département DS from scratch et de livrer des solutions IA pour l\'estimation des émissions carbone.',
+          responsibilities: [
+            'Créer le département Data Science de zéro (recrutement, processus, outils)',
+            'Rechercher et développer des modèles IA d\'estimation d\'émissions carbone',
+            'Construire et déployer 3 solutions IA distinctes en production',
+          ],
+          achievements: [
+            'Département Data Science créé from scratch',
+            '3 solutions IA déployées : auto-complétion, modèles prédictifs, et méthodologie SaaS propriétaire',
+          ],
+          highlights: [
+            { value: '0 \u2192 1', label: 'Département DS créé' },
+            { value: '3', label: 'Solutions IA déployées' },
+            { value: 'Greentech', label: 'Estimation d\'émissions carbone' },
+          ],
+        },
+      },
+      bobst: {
+        en: {
+          title: 'Senior Expert — Generative AI & Data Science',
+          badge: 'BOBST — Packaging Industry',
+          period: '2023 — 2024',
+          tags: ['RAG', 'LLMs', 'Predictive Models', 'Energy Optimisation', 'Manufacturing'],
+          context: 'BOBST is a leading global supplier of packaging machinery. The company faced two challenges: maintenance technicians struggled with vast technical documentation, and energy costs were rising across manufacturing lines without clear optimisation levers.',
+          responsibilities: [
+            'Design and develop a RAG-based chatbot for industrial maintenance documentation',
+            'Build predictive models for energy consumption optimisation in packaging manufacturing',
+            'Identify high-value AI use cases across the company\'s operations',
+          ],
+          achievements: [
+            'RAG chatbot for maintenance documentation — enabling technicians to find answers instantly',
+            'Predictive energy consumption models for packaging manufacturing lines',
+          ],
+          highlights: [
+            { value: 'RAG', label: 'Chatbot for maintenance' },
+            { value: 'ML', label: 'Energy optimisation models' },
+            { value: 'Industry', label: 'Packaging manufacturing' },
+          ],
+        },
+        fr: {
+          title: 'Senior Expert — IA Générative & Data Science',
+          badge: 'BOBST — Industrie de l\'Emballage',
+          period: '2023 — 2024',
+          tags: ['RAG', 'LLMs', 'Modèles Prédictifs', 'Optimisation Énergétique', 'Manufacturing'],
+          context: 'BOBST est un leader mondial des machines d\'emballage. L\'entreprise faisait face à deux défis : les techniciens de maintenance peinaient avec la vaste documentation technique, et les coûts énergétiques augmentaient sans leviers d\'optimisation clairs.',
+          responsibilities: [
+            'Concevoir et développer un chatbot RAG pour la documentation de maintenance industrielle',
+            'Construire des modèles prédictifs d\'optimisation de la consommation énergétique',
+          ],
+          achievements: [
+            'Chatbot RAG pour la documentation de maintenance — permettant aux techniciens de trouver des réponses instantanément',
+            'Modèles prédictifs de consommation énergétique pour les lignes de fabrication',
+          ],
+          highlights: [
+            { value: 'RAG', label: 'Chatbot maintenance' },
+            { value: 'ML', label: 'Modèles d\'optimisation énergie' },
+            { value: 'Industrie', label: 'Fabrication d\'emballages' },
+          ],
+        },
+      },
+      danone: {
+        en: {
+          title: 'Data Science Manager',
+          badge: 'Freelance · DANONE',
+          period: '2022 — 2023',
+          tags: ['Python', 'Combinatorial Optimization', 'Cost Modeling', 'SQL', 'Supply Chain'],
+          context: 'Danone\'s European operations manage thousands of product recipes across multiple factories and countries, sourcing from hundreds of suppliers. Small inefficiencies in recipe formulation or supplier allocation, compounded across this scale, translated into millions in avoidable costs.',
+          responsibilities: [
+            'Lead AI-driven cost optimisation initiatives across production and supply chain',
+            'Develop recipe harmonization algorithms within quality constraints',
+            'Build supplier allocation optimisation models (volume discounts, logistics, quality)',
+            'Validate results with R&D and Procurement teams',
+          ],
+          achievements: [
+            '\u20AC2M/year saved on recipe optimisation — algorithmic harmonization across product lines',
+            '\u20AC2M/year saved on supplier optimisation — volume consolidation and allocation',
+            '\u20AC4M/year combined savings validated and adopted by R&D and Procurement',
+          ],
+          highlights: [
+            { value: '\u20AC2M/yr', label: 'Recipe savings' },
+            { value: '\u20AC2M/yr', label: 'Supplier savings' },
+            { value: '\u20AC4M/yr', label: 'Combined annual impact' },
+          ],
+        },
+        fr: {
+          title: 'Data Science Manager',
+          badge: 'Freelance · DANONE',
+          period: '2022 — 2023',
+          tags: ['Python', 'Optimisation Combinatoire', 'Modélisation de Coûts', 'SQL', 'Supply Chain'],
+          context: 'Les opérations européennes de Danone gèrent des milliers de recettes produits à travers plusieurs usines et pays, s\'approvisionnant auprès de centaines de fournisseurs. De petites inefficacités multipliées à cette échelle se traduisaient par des millions de coûts évitables.',
+          responsibilities: [
+            'Piloter les initiatives d\'optimisation des coûts par l\'IA sur la production et la supply chain',
+            'Développer des algorithmes d\'harmonisation de recettes dans les contraintes qualité',
+            'Construire des modèles d\'optimisation d\'allocation fournisseurs',
+          ],
+          achievements: [
+            '2 M\u20AC/an économisés sur les recettes — harmonisation algorithmique entre gammes produits',
+            '2 M\u20AC/an économisés sur les fournisseurs — consolidation de volumes',
+            '4 M\u20AC/an d\'économies combinées validées par la R&D et les Achats',
+          ],
+          highlights: [
+            { value: '2 M\u20AC/an', label: 'Économies recettes' },
+            { value: '2 M\u20AC/an', label: 'Économies fournisseurs' },
+            { value: '4 M\u20AC/an', label: 'Impact combiné' },
+          ],
+        },
+      },
+      grips: {
+        en: {
+          title: 'Head of Data Science',
+          badge: 'GRIPS Intelligence — E-commerce',
+          period: '2022',
+          tags: ['Python', 'Data Science', 'Web Analytics', 'Team Management', 'E-commerce'],
+          context: 'GRIPS Intelligence is an e-commerce competitive intelligence startup that helps brands and retailers understand their competitive positioning through web ranking and market share analysis.',
+          responsibilities: [
+            'Manage the Data Science team',
+            'Develop a web ranking volatility index to track competitive dynamics',
+            'Improve and maintain the company\'s analytical models',
+          ],
+          achievements: [
+            'Web ranking volatility index developed and deployed — enabling clients to track competitive shifts',
+            'Data Science team management and process improvement',
+          ],
+          highlights: [
+            { value: 'DS Lead', label: 'Team management' },
+            { value: 'Index', label: 'Web ranking volatility' },
+            { value: 'E-commerce', label: 'Competitive intelligence' },
+          ],
+        },
+        fr: {
+          title: 'Head of Data Science',
+          badge: 'GRIPS Intelligence — E-commerce',
+          period: '2022',
+          tags: ['Python', 'Data Science', 'Web Analytics', 'Management d\'Équipe', 'E-commerce'],
+          context: 'GRIPS Intelligence est une startup de veille concurrentielle e-commerce qui aide les marques et retailers à comprendre leur positionnement via l\'analyse de ranking web et de parts de marché.',
+          responsibilities: [
+            'Manager l\'équipe Data Science',
+            'Développer un indice de volatilité du ranking web',
+          ],
+          achievements: [
+            'Indice de volatilité du ranking web développé et déployé',
+            'Management de l\'équipe DS et amélioration des processus',
+          ],
+          highlights: [
+            { value: 'DS Lead', label: 'Management d\'équipe' },
+            { value: 'Indice', label: 'Volatilité du ranking web' },
+            { value: 'E-commerce', label: 'Veille concurrentielle' },
+          ],
+        },
+      },
+      activeviam: {
+        en: {
+          title: 'Lead Data Scientist',
+          badge: 'ActiveViam — Financial Analytics',
+          period: '2020 — 2022',
+          tags: ['Python', 'R', 'ML', 'Financial Modeling', 'Time Series', 'Real-time Analytics'],
+          context: 'ActiveViam builds real-time financial analytics software used by major banks and asset managers. The challenge was to augment their analytics platform with predictive ML capabilities for financial asset valuation.',
+          responsibilities: [
+            'Build ML models for financial asset value prediction',
+            'Integrate predictive capabilities into the real-time analytics platform',
+            'Represent the company at Big Data & AI Paris conferences as a speaker',
+          ],
+          achievements: [
+            'Financial ML models for asset value prediction deployed into the platform',
+            'Speaker at Big Data & AI Paris conferences — building company visibility in the AI community',
+          ],
+          highlights: [
+            { value: 'ML', label: 'Financial asset prediction' },
+            { value: 'Speaker', label: 'Big Data & AI Paris' },
+            { value: 'Real-time', label: 'Financial analytics' },
+          ],
+        },
+        fr: {
+          title: 'Lead Data Scientist',
+          badge: 'ActiveViam — Analytics Financier',
+          period: '2020 — 2022',
+          tags: ['Python', 'R', 'ML', 'Modélisation Financière', 'Séries Temporelles', 'Analytics Temps Réel'],
+          context: 'ActiveViam développe des logiciels d\'analytics financier temps réel utilisés par les grandes banques et gestionnaires d\'actifs. Le défi était d\'augmenter la plateforme avec des capacités prédictives ML pour la valorisation d\'actifs.',
+          responsibilities: [
+            'Construire des modèles ML pour la prédiction de valeur d\'actifs financiers',
+            'Intégrer les capacités prédictives dans la plateforme d\'analytics temps réel',
+            'Représenter l\'entreprise comme speaker aux conférences Big Data & AI Paris',
+          ],
+          achievements: [
+            'Modèles ML financiers pour la prédiction de valeur d\'actifs déployés',
+            'Speaker aux conférences Big Data & AI Paris',
+          ],
+          highlights: [
+            { value: 'ML', label: 'Prédiction d\'actifs financiers' },
+            { value: 'Speaker', label: 'Big Data & AI Paris' },
+            { value: 'Temps réel', label: 'Analytics financier' },
+          ],
+        },
+      },
+      capgemini: {
+        en: {
+          title: 'Lead Data Scientist',
+          badge: 'Capgemini Invent — Consulting',
+          period: '2017 — 2020',
+          tags: ['Python', 'R', 'Spark', 'TensorFlow', 'Team Leadership', 'Predictive Maintenance', 'Fraud Detection'],
+          context: 'Capgemini Invent is the innovation and transformation consulting arm of Capgemini. I led a team of 10–15 data scientists delivering high-impact AI projects for major clients across mining, banking, and industrial sectors.',
+          responsibilities: [
+            'Build and lead a team of 10–15 data scientists',
+            'Deliver end-to-end data science projects for strategic clients',
+            'Win new business through prototype delivery and technical credibility',
+            'Mentor junior data scientists toward senior roles',
+          ],
+          achievements: [
+            'Predictive maintenance platform for ERAMET (600 km mining rail in Gabon) — 80% reduction in unplanned stops, millions \u20AC/year saved',
+            'Fraud detection prototype for a major French bank — \u20AC500K+ project won from the prototype',
+            'Team grown from 3 to 15 data scientists over 3 years',
+          ],
+          highlights: [
+            { value: '10–15', label: 'Data scientists managed' },
+            { value: '80%', label: 'Fewer unplanned stops (ERAMET)' },
+            { value: '>\u20AC500K', label: 'Fraud detection project won' },
+          ],
+        },
+        fr: {
+          title: 'Lead Data Scientist',
+          badge: 'Capgemini Invent — Conseil',
+          period: '2017 — 2020',
+          tags: ['Python', 'R', 'Spark', 'TensorFlow', 'Leadership d\'Équipe', 'Maintenance Prédictive', 'Détection de Fraude'],
+          context: 'Capgemini Invent est la branche innovation et transformation de Capgemini. J\'ai dirigé une équipe de 10 à 15 data scientists livrant des projets IA à fort impact pour des clients majeurs dans les secteurs minier, bancaire et industriel.',
+          responsibilities: [
+            'Constituer et diriger une équipe de 10–15 data scientists',
+            'Livrer des projets data science end-to-end pour des clients stratégiques',
+            'Gagner de nouveaux projets par la livraison de prototypes',
+          ],
+          achievements: [
+            'Plateforme de maintenance prédictive pour ERAMET (600 km de rail minier au Gabon) — 80 % de réduction des arrêts, millions d\'\u20AC/an économisés',
+            'Prototype de détection de fraude pour une grande banque française — projet de +500 K\u20AC gagné',
+            'Équipe passée de 3 à 15 data scientists en 3 ans',
+          ],
+          highlights: [
+            { value: '10–15', label: 'Data scientists managés' },
+            { value: '80 %', label: 'Arrêts en moins (ERAMET)' },
+            { value: '>500 K\u20AC', label: 'Projet fraude gagné' },
+          ],
+        },
+      },
+      open: {
+        en: {
+          title: 'Lead Data Scientist',
+          badge: 'Groupe Open — IT Services',
+          period: '2016 — 2017',
+          tags: ['Big Data', 'Hadoop', 'Spark', 'Financial Reporting', 'Basel II/III', 'Data Lab'],
+          context: 'Groupe Open is a French IT services company. I joined to build a Big Data platform for financial clients and led the company\'s Data Lab, prototyping exploratory AI solutions for business development.',
+          responsibilities: [
+            'Build a Big Data platform for real-time financial reporting',
+            'Ensure Basel II/III regulatory compliance in data pipelines',
+            'Lead the Data Lab — prototyping AI solutions to win new clients',
+          ],
+          achievements: [
+            'Big Data platform for real-time financial reporting and regulatory compliance',
+            'Basel II/III compliance built into the data pipeline architecture',
+            'Data Lab leadership — multiple AI prototypes delivered for business development',
+          ],
+          highlights: [
+            { value: 'Big Data', label: 'Financial reporting platform' },
+            { value: 'Basel II/III', label: 'Regulatory compliance' },
+            { value: 'Data Lab', label: 'AI prototyping for BD' },
+          ],
+        },
+        fr: {
+          title: 'Lead Data Scientist',
+          badge: 'Groupe Open — Services IT',
+          period: '2016 — 2017',
+          tags: ['Big Data', 'Hadoop', 'Spark', 'Reporting Financier', 'Bâle II/III', 'Data Lab'],
+          context: 'Groupe Open est une ESN française. J\'ai rejoint pour construire une plateforme Big Data pour des clients financiers et dirigé le Data Lab de l\'entreprise, prototypant des solutions IA pour le développement commercial.',
+          responsibilities: [
+            'Construire une plateforme Big Data pour le reporting financier temps réel',
+            'Assurer la conformité réglementaire Bâle II/III',
+            'Diriger le Data Lab — prototypage de solutions IA pour le développement commercial',
+          ],
+          achievements: [
+            'Plateforme Big Data pour reporting financier temps réel et conformité réglementaire',
+            'Conformité Bâle II/III intégrée dans l\'architecture des pipelines',
+            'Direction du Data Lab — multiples prototypes IA livrés',
+          ],
+          highlights: [
+            { value: 'Big Data', label: 'Plateforme reporting financier' },
+            { value: 'Bâle II/III', label: 'Conformité réglementaire' },
+            { value: 'Data Lab', label: 'Prototypage IA pour BD' },
+          ],
+        },
+      },
+      latecoere: {
+        en: {
+          title: 'Mechanical Engineer / Team Lead',
+          badge: 'Latécoère — Aerospace',
+          period: '2007 — 2015',
+          tags: ['Structural Engineering', 'Airbus', 'Boeing', 'Bombardier', 'FEA', 'Team Leadership', 'CATIA'],
+          context: 'Latécoère is a major aerospace supplier, designing and manufacturing aerostructures for Airbus, Boeing, and Bombardier. I spent eight years in structural engineering — designing, analysing, and certifying aircraft components — before transitioning to data science.',
+          responsibilities: [
+            'Lead structural engineering on aircraft programmes for Airbus, Boeing, and Bombardier',
+            'Perform structural analysis (finite element analysis, fatigue, damage tolerance)',
+            'Manage a team of structural engineers',
+            'Coordinate with certification authorities and client engineering teams',
+          ],
+          achievements: [
+            'Airbus programmes — structural design and certification of aerostructure components',
+            'Boeing structures — stress analysis and qualification testing coordination',
+            'Bombardier — fuselage and door structure engineering',
+            'Eight years of analytical rigour that now informs a disciplined, engineering-first approach to data science',
+          ],
+          highlights: [
+            { value: '8', label: 'Years in aerospace' },
+            { value: '3', label: 'Major aircraft OEMs' },
+            { value: 'Engineering', label: 'Rigour applied to DS' },
+          ],
+        },
+        fr: {
+          title: 'Ingénieur Structure / Chef d\'Équipe',
+          badge: 'Latécoère — Aéronautique',
+          period: '2007 — 2015',
+          tags: ['Ingénierie Structurelle', 'Airbus', 'Boeing', 'Bombardier', 'FEA', 'Leadership d\'Équipe', 'CATIA'],
+          context: 'Latécoère est un grand équipementier aéronautique, concevant et fabriquant des aérostructures pour Airbus, Boeing et Bombardier. J\'ai passé huit ans en ingénierie structurelle — conception, analyse et certification de composants aéronautiques — avant de me reconvertir en data science.',
+          responsibilities: [
+            'Diriger l\'ingénierie structurelle sur des programmes pour Airbus, Boeing et Bombardier',
+            'Réaliser des analyses structurelles (éléments finis, fatigue, tolérance aux dommages)',
+            'Manager une équipe d\'ingénieurs structure',
+          ],
+          achievements: [
+            'Programmes Airbus — conception structurelle et certification de composants',
+            'Structures Boeing — analyse de contraintes et coordination des essais de qualification',
+            'Bombardier — ingénierie fuselage et structure de portes',
+            'Huit ans de rigueur analytique qui informent aujourd\'hui une approche disciplinée de la data science',
+          ],
+          highlights: [
+            { value: '8', label: 'Années en aéronautique' },
+            { value: '3', label: 'Grands constructeurs' },
+            { value: 'Ingénierie', label: 'Rigueur appliquée à la DS' },
+          ],
+        },
+      },
+    };
+
+    /* ---- GENERIC MODAL RENDERER ---- */
+    function openGenericModal(data) {
+      const lang = currentLang || 'en';
+      const d = data[lang];
+      if (!d) return;
+
+      const labels = lang === 'fr'
+        ? { context: 'Contexte', approach: 'Approche', responsibilities: 'Responsabilités', achievements: 'Réalisations', useCases: 'Cas d\'Usage Concrets', certifications: 'Certifications Associées', keyMetrics: 'Métriques Clés' }
+        : { context: 'Context', approach: 'Approach', responsibilities: 'Responsibilities', achievements: 'Key Achievements', useCases: 'Real-World Use Cases', certifications: 'Related Certifications', keyMetrics: 'Key Metrics' };
+
+      const tagsHtml = d.tags.map(t => '<span class="modal-tag">' + t + '</span>').join('');
+      const highlightsHtml = d.highlights.map(h =>
+        '<div class="modal-highlight"><div class="modal-highlight-value">' + h.value + '</div><div class="modal-highlight-label">' + h.label + '</div></div>'
+      ).join('');
+
+      let html = '<div class="modal-header">' +
+        '<div class="modal-title">' + d.title + '</div>' +
+        '<div class="modal-badge">' + d.badge + '</div>' +
+        (d.period ? '<div class="modal-badge" style="margin-left:12px;color:var(--grey-600)">' + d.period + '</div>' : '') +
+        '<div class="modal-tags">' + tagsHtml + '</div></div>';
+
+      html += '<div class="modal-section"><div class="modal-section-label">' + labels.context + '</div><div class="modal-section-text">' + d.context + '</div></div>';
+
+      if (d.approach) {
+        html += '<div class="modal-section"><div class="modal-section-label">' + labels.approach + '</div><div class="modal-section-text">' + d.approach + '</div></div>';
+      }
+
+      if (d.responsibilities) {
+        html += '<div class="modal-section"><div class="modal-section-label">' + labels.responsibilities + '</div><div class="modal-section-text"><ul>' +
+          d.responsibilities.map(r => '<li>' + r + '</li>').join('') + '</ul></div></div>';
+      }
+
+      html += '<div class="modal-highlights">' + highlightsHtml + '</div>';
+
+      if (d.achievements) {
+        html += '<div class="modal-section"><div class="modal-section-label">' + labels.achievements + '</div><div class="modal-section-text"><ul>' +
+          d.achievements.map(a => '<li>' + a + '</li>').join('') + '</ul></div></div>';
+      }
+
+      if (d.useCases) {
+        html += '<div class="modal-section"><div class="modal-section-label">' + labels.useCases + '</div><div class="modal-section-text"><ul>' +
+          d.useCases.map(u => '<li>' + u + '</li>').join('') + '</ul></div></div>';
+      }
+
+      if (d.certifications && d.certifications.length > 0) {
+        html += '<div class="modal-section"><div class="modal-section-label">' + labels.certifications + '</div><div class="modal-section-text"><ul>' +
+          d.certifications.map(c => '<li>' + c + '</li>').join('') + '</ul></div></div>';
+      }
+
+      modalContent.innerHTML = html;
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Expertise card click handlers
+    document.querySelectorAll('.expertise-card[data-expertise]').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.dataset.expertise;
+        if (expertiseDetails[id]) openGenericModal(expertiseDetails[id]);
+      });
+    });
+
+    // Experience item click handlers
+    document.querySelectorAll('.timeline-item[data-experience]').forEach(item => {
+      item.addEventListener('click', () => {
+        const id = item.dataset.experience;
+        if (experienceDetails[id]) openGenericModal(experienceDetails[id]);
+      });
     });
 
   </script>
