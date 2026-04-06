@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ariel IBABA — Data Science & AI Director. Bridging strategy, innovation, and execution to industrialize AI at scale. Paris, France." />
+  <meta name="description" content="Ariel IBABA — Data Science & AI Director. I help large organizations deploy AI that delivers real results: M€+ in documented savings, 200+ developers trained, 15+ solutions in production. Paris, France." />
   <meta name="author" content="Ariel IBABA" />
   <title>Ariel IBABA — Data Science & AI Director</title>
 
@@ -313,7 +313,7 @@
       width: 100%;
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 120px 40px 80px;
+      padding: 110px 40px 60px;
     }
 
     .hero-photo-wrapper {
@@ -345,7 +345,7 @@
       text-transform: uppercase;
       color: var(--accent);
       font-weight: 600;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
       opacity: 0;
       animation: fade-up 0.8s var(--ease-out) 0.2s forwards;
     }
@@ -360,12 +360,12 @@
 
     .hero-name {
       font-family: var(--font-serif);
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
       font-weight: normal;
       color: var(--white);
       line-height: 1.08;
       letter-spacing: -0.01em;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       opacity: 0;
       animation: fade-up 0.9s var(--ease-out) 0.35s forwards;
     }
@@ -381,21 +381,79 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.55);
       font-weight: 400;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       opacity: 0;
       animation: fade-up 0.9s var(--ease-out) 0.5s forwards;
     }
 
     .hero-tagline {
-      font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
-      color: rgba(255,255,255,0.78);
-      max-width: 540px;
-      line-height: 1.55;
-      font-style: italic;
-      margin-bottom: 48px;
+      font-family: var(--font-sans);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      line-height: 1.6;
+      font-style: normal;
+      margin-bottom: 32px;
       opacity: 0;
       animation: fade-up 0.9s var(--ease-out) 0.65s forwards;
+    }
+
+    .hero-kpis {
+      display: flex;
+      gap: 36px;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fade-up 0.9s var(--ease-out) 0.75s forwards;
+    }
+
+    .hero-kpi {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-kpi-number {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .hero-kpi-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.4;
+      max-width: 140px;
+    }
+
+    .hero-clients {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: fade-up 0.9s var(--ease-out) 0.85s forwards;
+    }
+
+    .hero-clients-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.32);
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .hero-client-name {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.52);
+      font-weight: 500;
+      padding: 4px 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      letter-spacing: 0.02em;
     }
 
     .hero-cta {
@@ -411,7 +469,7 @@
       font-weight: 700;
       transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
       opacity: 0;
-      animation: fade-up 0.9s var(--ease-out) 0.8s forwards;
+      animation: fade-up 0.9s var(--ease-out) 0.95s forwards;
     }
 
     .hero-cta:hover {
@@ -499,6 +557,16 @@
       }
       .hero-photo { width: 180px; height: 180px; }
       .hero-eyebrow { justify-content: center; }
+      .hero-tagline { text-align: center; margin-left: auto; margin-right: auto; }
+      .hero-kpis {
+        flex-wrap: wrap;
+        gap: 24px 32px;
+        justify-content: center;
+      }
+      .hero-kpi-label { max-width: 120px; }
+      .hero-clients {
+        justify-content: center;
+      }
       .hero-scroll { display: none; }
       .hero-location { left: 24px; }
     }
@@ -1877,12 +1945,43 @@
     </div>
 
     <div class="hero-inner">
-      <div class="hero-eyebrow" data-i18n="hero_eyebrow">Data Science &amp; Artificial Intelligence</div>
+      <div class="hero-eyebrow" data-i18n="hero_eyebrow">Engineer turned AI Leader &mdash; 18 years in the field</div>
       <h1 class="hero-name">Ariel <em>IBABA</em></h1>
       <div class="hero-title" data-i18n="hero_title">Data Science &amp; AI Director</div>
-      <p class="hero-tagline" data-i18n="hero_tagline">"Bridging strategy, innovation, and execution<br>to industrialize AI at scale."</p>
+      <p class="hero-tagline" data-i18n="hero_tagline">I help large organizations turn AI from a buzzword into production systems that actually save money, reduce risk, and scale. From hands-on architecture to team building and executive advisory &mdash; I've done it across banking, energy, FMCG, and aerospace.</p>
+
+      <div class="hero-kpis">
+        <div class="hero-kpi">
+          <div class="hero-kpi-number" data-i18n="hero_kpi1_num">&euro;4M+</div>
+          <div class="hero-kpi-label" data-i18n="hero_kpi1_label">annual savings documented</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-number">200+</div>
+          <div class="hero-kpi-label" data-i18n="hero_kpi2_label">developers trained on AI</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-number">15+</div>
+          <div class="hero-kpi-label" data-i18n="hero_kpi3_label">AI solutions in production</div>
+        </div>
+        <div class="hero-kpi">
+          <div class="hero-kpi-number">10+</div>
+          <div class="hero-kpi-label" data-i18n="hero_kpi4_label">years in Data Science &amp; AI</div>
+        </div>
+      </div>
+
+      <div class="hero-clients">
+        <span class="hero-clients-label" data-i18n="hero_clients_label">Worked with</span>
+        <span class="hero-client-name">BPCE</span>
+        <span class="hero-client-name">Danone</span>
+        <span class="hero-client-name">ERAMET</span>
+        <span class="hero-client-name">Schlumberger</span>
+        <span class="hero-client-name">Airbus</span>
+        <span class="hero-client-name">Boeing</span>
+        <span class="hero-client-name">Polytechnique</span>
+      </div>
+
       <a href="#contact" class="hero-cta">
-        <span data-i18n="hero_cta">Get in Touch</span>
+        <span data-i18n="hero_cta">Let's Talk</span>
         <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
@@ -2193,7 +2292,7 @@
             Led AI-driven cost optimisation initiatives across production and supply chain, delivering significant savings for a global FMCG group.
           </div>
           <div class="timeline-achievements">
-            <span class="achievement-pill" data-i18n="tl5_pill1">€4M/year combined savings</span>
+            <span class="achievement-pill" data-i18n="tl5_pill1">M€+/year combined savings</span>
             <span class="achievement-pill" data-i18n="tl5_pill2">AI-driven cost reduction</span>
           </div>
           <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
@@ -2245,7 +2344,7 @@
           </div>
           <div class="timeline-achievements">
             <span class="achievement-pill" data-i18n="tl8_pill1">80% reduction in service stops</span>
-            <span class="achievement-pill" data-i18n="tl8_pill2">&gt;€500K fraud detection project</span>
+            <span class="achievement-pill" data-i18n="tl8_pill2">Significant fraud detection engagement</span>
             <span class="achievement-pill" data-i18n="tl8_pill3">Team of 10–15 DS</span>
           </div>
           <span class="timeline-item-cta" data-i18n="exp_cta">View details &#8594;</span>
@@ -2472,7 +2571,7 @@
           <div class="project-card-approach" data-i18n="proj8_approach">
             Developed two optimization engines: one for algorithmic recipe harmonization across product lines, another for supplier selection and negotiation. Both validated and adopted by R&amp;D and Procurement teams.
           </div>
-          <div class="project-card-result" data-i18n="proj8_result">&euro;2M/year on recipes &middot; &euro;2M/year on suppliers</div>
+          <div class="project-card-result" data-i18n="proj8_result">M&euro;+/year on recipes &middot; M&euro;+/year on suppliers</div>
           <div class="project-card-tags">
             <span class="project-tag">Python</span>
             <span class="project-tag">Combinatorial Optimization</span>
@@ -2556,7 +2655,7 @@
         <div class="impact-card reveal delay-2">
           <div class="impact-card-bg"></div>
           <div class="impact-number" data-suffix="M">€4M<sup>+</sup></div>
-          <div class="impact-label" data-i18n="impact_label2">Per year in documented cost savings (2x &euro;2M) — Danone</div>
+          <div class="impact-label" data-i18n="impact_label2">Per year in documented cost savings across engagements</div>
           <div class="impact-icon">💶</div>
         </div>
 
@@ -2577,7 +2676,7 @@
         <div class="impact-card reveal delay-3">
           <div class="impact-card-bg"></div>
           <div class="impact-number">80<sup>%</sup></div>
-          <div class="impact-label" data-i18n="impact_label5">Reduction in unplanned service stops — ERAMET predictive maintenance</div>
+          <div class="impact-label" data-i18n="impact_label5">Documented reduction in unplanned service stops via predictive maintenance</div>
           <div class="impact-icon">⚙️</div>
         </div>
 
@@ -2912,7 +3011,7 @@
           // Parse numeric configs
           const configs = [
             { match: /^200/, value: 200, suffix: '+' },
-            { match: /^€4M/, value: 4, prefix: '€', suffix: 'M+' },
+            { match: /^€4M/, value: 4, prefix: '€', suffix: 'M+' }, /* impact card counter */
             { match: /^15\+$/, value: 15, suffix: '+' },
             { match: /^10-15$/, value: 15, prefix: '10-', suffix: '' },
             { match: /^80/, value: 80, suffix: '%' },
@@ -2958,11 +3057,17 @@
         nav_experience: 'Experience',
         nav_projects: 'Projects',
         // Hero
-        hero_eyebrow: 'Data Science &amp; Artificial Intelligence',
+        hero_eyebrow: 'Engineer turned AI Leader &mdash; 18 years in the field',
         hero_title: 'Data Science &amp; AI Director',
-        hero_tagline: '&ldquo;Bridging strategy, innovation, and execution<br>to industrialize AI at scale.&rdquo;',
-        hero_cta: 'Get in Touch',
+        hero_tagline: 'I help large organizations turn AI from a buzzword into production systems that actually save money, reduce risk, and scale. From hands-on architecture to team building and executive advisory &mdash; I\'ve done it across banking, energy, FMCG, and aerospace.',
+        hero_cta: 'Let\'s Talk',
         hero_scroll: 'Scroll',
+        hero_kpi1_num: '&euro;4M+',
+        hero_kpi1_label: 'annual savings documented',
+        hero_kpi2_label: 'developers trained on AI',
+        hero_kpi3_label: 'AI solutions in production',
+        hero_kpi4_label: 'years in Data Science &amp; AI',
+        hero_clients_label: 'Worked with',
         // About
         about_label: 'About',
         about_heading: 'A hybrid profile <em>built at the intersection of</em> science and industry.',
@@ -3020,7 +3125,7 @@
         tl4_pill1: 'RAG chatbot for maintenance',
         tl4_pill2: 'Energy optimisation',
         tl5_desc: 'Led AI-driven cost optimisation initiatives across production and supply chain, delivering significant savings for a global FMCG group.',
-        tl5_pill1: '€4M/year combined savings',
+        tl5_pill1: 'M&euro;+/year combined savings',
         tl5_pill2: 'AI-driven cost reduction',
         tl6_desc: 'Managed the Data Science team and developed a volatility index for web ranking analysis at this e-commerce competitive intelligence startup.',
         tl6_pill1: 'DS team management',
@@ -3030,7 +3135,7 @@
         tl7_pill2: 'Big Data &amp; AI Paris speaker',
         tl8_desc: 'Built and led a team of 10–15 data scientists. Delivered high-impact projects in predictive maintenance (mining industry, ERAMET) and fraud detection for financial services clients.',
         tl8_pill1: '80% reduction in service stops',
-        tl8_pill2: '>€500K fraud detection project',
+        tl8_pill2: 'Significant fraud detection engagement',
         tl8_pill3: 'Team of 10–15 DS',
         tl9_desc: 'Built a Big Data platform for real-time financial reporting and Basel II/III regulatory compliance.',
         tl9_pill1: 'Real-time financial reporting',
@@ -3074,7 +3179,7 @@
         proj8_title: 'Recipe &amp; Supplier Cost Optimization',
         proj8_problem: 'Danone\'s European operations needed to reduce industrial costs without impacting product quality — across thousands of product recipes and supplier contracts.',
         proj8_approach: 'Developed two optimization engines: one for algorithmic recipe harmonization across product lines, another for supplier selection and negotiation. Both validated and adopted by R&amp;D and Procurement teams.',
-        proj8_result: '&euro;2M/year on recipes &middot; &euro;2M/year on suppliers',
+        proj8_result: 'M&euro;+/year on recipes &middot; M&euro;+/year on suppliers',
         proj9_title: 'Vigile — Strategic Intelligence',
         proj9_client: 'Personal Project',
         proj9_problem: 'Strategic intelligence is either manual and time-consuming, or delegated to expensive enterprise tools costing thousands per month. No affordable middle ground exists.',
@@ -3091,10 +3196,10 @@
         impact_heading: 'Results that <em>speak for themselves.</em>',
         impact_intro: 'Every engagement is measured against real outcomes. Here are some numbers I\'m proud of.',
         impact_label1: 'Developers trained on AI at Groupe BPCE',
-        impact_label2: 'Per year in documented cost savings (2x &euro;2M) — Danone',
+        impact_label2: 'Per year in documented cost savings across engagements',
         impact_label3: 'AI prototypes and solutions deployed in production',
         impact_label4: 'Data scientists managed and mentored',
-        impact_label5: 'Reduction in unplanned service stops — ERAMET predictive maintenance',
+        impact_label5: 'Documented reduction in unplanned service stops via predictive maintenance',
         // Certifications
         cert_heading: 'Continuous learning, <em>validated expertise.</em>',
         // Contact
@@ -3112,7 +3217,7 @@
         // Form validation
         _form_alert: 'Please fill in your name, email, and message.',
         // Meta
-        _meta_description: 'Ariel IBABA — Data Science & AI Director. Bridging strategy, innovation, and execution to industrialize AI at scale. Paris, France.',
+        _meta_description: 'Ariel IBABA — Data Science & AI Director. I help large organizations deploy AI that delivers real results: M€+ in documented savings, 200+ developers trained, 15+ solutions in production. Paris, France.',
       },
       fr: {
         // Nav
@@ -3121,11 +3226,17 @@
         nav_experience: 'Expérience',
         nav_projects: 'Projets',
         // Hero
-        hero_eyebrow: 'Data Science &amp; Intelligence Artificielle',
+        hero_eyebrow: 'Ingénieur devenu leader IA &mdash; 18 ans de terrain',
         hero_title: 'Directeur Data Science &amp; IA',
-        hero_tagline: '&laquo;&nbsp;Articuler stratégie, innovation et exécution<br>pour industrialiser l\'IA à grande échelle.&nbsp;&raquo;',
-        hero_cta: 'Me Contacter',
+        hero_tagline: 'J\'accompagne les grands groupes pour transformer l\'IA en systèmes concrets qui génèrent des économies, réduisent les risques et passent à l\'échelle. De l\'architecture technique au management d\'équipe et au conseil de direction &mdash; en banque, énergie, agroalimentaire et aéronautique.',
+        hero_cta: 'Échangeons',
         hero_scroll: 'Défiler',
+        hero_kpi1_num: '4M&euro;+',
+        hero_kpi1_label: 'd\'économies annuelles documentées',
+        hero_kpi2_label: 'développeurs formés à l\'IA',
+        hero_kpi3_label: 'solutions IA en production',
+        hero_kpi4_label: 'ans en Data Science &amp; IA',
+        hero_clients_label: 'Ils m\'ont fait confiance',
         // About
         about_label: 'À propos',
         about_heading: 'Un profil hybride <em>construit à l\'intersection</em> de la science et de l\'industrie.',
@@ -3183,7 +3294,7 @@
         tl4_pill1: 'Chatbot RAG maintenance',
         tl4_pill2: 'Optimisation énergétique',
         tl5_desc: 'Pilotage d\'initiatives d\'optimisation des coûts par l\'IA sur la production et la supply chain, générant des économies significatives pour un groupe agroalimentaire mondial.',
-        tl5_pill1: '4 M€/an d\'économies combinées',
+        tl5_pill1: 'M€+/an d\'économies combinées',
         tl5_pill2: 'Réduction des coûts par l\'IA',
         tl6_desc: 'Management de l\'équipe Data Science et développement d\'un indice de volatilité pour l\'analyse de ranking web dans cette startup de veille concurrentielle e-commerce.',
         tl6_pill1: 'Management équipe DS',
@@ -3193,7 +3304,7 @@
         tl7_pill2: 'Speaker Big Data &amp; AI Paris',
         tl8_desc: 'Constitution et management d\'une équipe de 10 à 15 data scientists. Livraison de projets à fort impact en maintenance prédictive (industrie minière, ERAMET) et en détection de fraude pour des clients financiers.',
         tl8_pill1: '80 % de réduction des arrêts',
-        tl8_pill2: '&gt;500 K€ détection de fraude',
+        tl8_pill2: 'Mission significative en détection de fraude',
         tl8_pill3: 'Équipe de 10–15 DS',
         tl9_desc: 'Construction d\'une plateforme Big Data pour le reporting financier temps réel et la conformité réglementaire Bâle II/III.',
         tl9_pill1: 'Reporting financier temps réel',
@@ -3237,7 +3348,7 @@
         proj8_title: 'Optimisation des Coûts Recettes &amp; Fournisseurs',
         proj8_problem: 'Les opérations européennes de Danone devaient réduire les coûts industriels sans impacter la qualité des produits — à travers des milliers de recettes et contrats fournisseurs.',
         proj8_approach: 'Développement de deux moteurs d\'optimisation&nbsp;: un pour l\'harmonisation algorithmique des recettes à travers les gammes de produits, un autre pour la sélection et la négociation fournisseurs. Les deux validés et adoptés par les équipes R&amp;D et Achats.',
-        proj8_result: '2 M€/an sur les recettes &middot; 2 M€/an sur les fournisseurs',
+        proj8_result: 'M€+/an sur les recettes &middot; M€+/an sur les fournisseurs',
         proj9_title: 'Vigile — Intelligence Stratégique',
         proj9_client: 'Projet Personnel',
         proj9_problem: 'L\'intelligence stratégique est soit manuelle et chronophage, soit déléguée à des outils entreprise coûtant des milliers d\'euros par mois. Aucun juste milieu abordable n\'existe.',
@@ -3254,10 +3365,10 @@
         impact_heading: 'Des résultats qui <em>parlent d\'eux-mêmes.</em>',
         impact_intro: 'Chaque mission est mesurée sur des résultats concrets. Voici quelques chiffres dont je suis fier.',
         impact_label1: 'Développeurs formés à l\'IA au Groupe BPCE',
-        impact_label2: 'Par an en économies documentées (2x 2 M€) — Danone',
+        impact_label2: 'Par an en économies documentées sur l\'ensemble des missions',
         impact_label3: 'Prototypes et solutions IA déployés en production',
         impact_label4: 'Data scientists managés et mentorés',
-        impact_label5: 'Réduction des arrêts de service imprévus — Maintenance prédictive ERAMET',
+        impact_label5: 'Réduction documentée des arrêts de service imprévus via la maintenance prédictive',
         // Certifications
         cert_heading: 'Apprentissage continu, <em>expertise validée.</em>',
         // Contact
@@ -3275,7 +3386,7 @@
         // Form validation
         _form_alert: 'Veuillez renseigner votre nom, email et message.',
         // Meta
-        _meta_description: 'Ariel IBABA — Directeur Data Science & IA. Articuler stratégie, innovation et exécution pour industrialiser l\'IA à grande échelle. Paris, France.',
+        _meta_description: 'Ariel IBABA — Directeur Data Science & IA. J\'accompagne les grands groupes pour déployer une IA qui produit des résultats concrets : M€+ d\'économies documentées, 200+ développeurs formés, 15+ solutions en production. Paris, France.',
       }
     };
 
@@ -3630,11 +3741,11 @@
           context: 'Danone\'s European operations manage thousands of product recipes across multiple factories and countries, each sourcing from hundreds of suppliers with varying contract terms. Small inefficiencies in recipe formulation or supplier allocation, compounded across this scale, translate into millions in unnecessary costs — without anyone having visibility on the total optimization potential.',
           objective: 'Reduce industrial costs without impacting product quality by finding optimal recipe formulations and supplier allocations across the full product portfolio.',
           solution: 'Developed two complementary optimization engines. The first analyses recipe formulations across product lines to identify harmonization opportunities — where minor ingredient adjustments (within quality tolerances) can reduce raw material costs through volume consolidation. The second optimizes supplier allocation by modeling contract terms, volume discounts, logistics costs, and quality constraints as a combinatorial optimization problem. Both engines were validated with R&D (for recipe integrity) and Procurement teams before deployment.',
-          result: '\u20AC2M per year saved on recipe optimization. \u20AC2M per year saved on supplier optimization. Combined \u20AC4M annual savings validated and adopted by R&D and Procurement.',
+          result: 'Documented savings of several M\u20AC per year on recipe optimization. Additional savings of similar magnitude on supplier optimization. Combined multi-million annual savings validated and adopted by R&D and Procurement.',
           highlights: [
-            { value: '\u20AC2M/yr', label: 'Recipe savings' },
-            { value: '\u20AC2M/yr', label: 'Supplier savings' },
-            { value: '\u20AC4M/yr', label: 'Combined impact' },
+            { value: 'M\u20AC+/yr', label: 'Recipe savings' },
+            { value: 'M\u20AC+/yr', label: 'Supplier savings' },
+            { value: 'M\u20AC+/yr', label: 'Combined impact' },
           ],
           techInterest: [
             'Combinatorial optimization under multi-dimensional constraints (quality, regulatory, shelf-life, logistics)',
@@ -3649,10 +3760,10 @@
           context: 'Les opérations européennes de Danone gèrent des milliers de recettes produits à travers plusieurs usines et pays, chacune s\'approvisionnant auprès de centaines de fournisseurs. De petites inefficacités dans la formulation des recettes ou l\'allocation des fournisseurs, multipliées à cette échelle, se traduisent par des millions de coûts évitables.',
           objective: 'Réduire les coûts industriels sans impacter la qualité des produits en trouvant les formulations de recettes et allocations de fournisseurs optimales sur l\'ensemble du portefeuille produits.',
           solution: 'Développement de deux moteurs d\'optimisation complémentaires. Le premier analyse les formulations de recettes pour identifier les opportunités d\'harmonisation — où des ajustements mineurs d\'ingrédients (dans les tolérances qualité) peuvent réduire les coûts matières premières par consolidation de volumes. Le second optimise l\'allocation fournisseurs en modélisant les termes contractuels, remises volume, coûts logistiques et contraintes qualité. Les deux moteurs ont été validés avec la R&D et les Achats.',
-          result: '2 M\u20AC/an économisés sur les recettes. 2 M\u20AC/an économisés sur les fournisseurs. 4 M\u20AC d\'économies annuelles combinées validées et adoptées par la R&D et les Achats.',
+          result: 'Économies documentées de plusieurs M\u20AC/an sur les recettes. Économies additionnelles de même ordre de grandeur sur les fournisseurs. Économies annuelles combinées de plusieurs millions, validées et adoptées par la R&D et les Achats.',
           highlights: [
-            { value: '2 M\u20AC/an', label: 'Économies recettes' },
-            { value: '2 M\u20AC/an', label: 'Économies fournisseurs' },
+            { value: 'M\u20AC+/an', label: 'Économies recettes' },
+            { value: 'M\u20AC+/an', label: 'Économies fournisseurs' },
             { value: '4 M\u20AC/an', label: 'Impact combiné' },
           ],
           techInterest: [
@@ -3843,8 +3954,8 @@
           ],
           useCases: [
             'Predictive maintenance on sensor time series data (ERAMET — 80% fewer unplanned stops)',
-            'Fraud detection models for banking (Capgemini Invent — \u20AC500K+ project won)',
-            'Cost optimisation through algorithmic recipe harmonization (Danone — \u20AC4M/year)',
+            'Fraud detection models for banking (Capgemini Invent — scaled into significant engagement)',
+            'Cost optimisation through algorithmic recipe harmonization (Danone — documented M\u20AC+/year savings)',
             'Financial asset value prediction with real-time analytics (ActiveViam)',
             'Carbon emission estimation from financial data (DCO2 — 3 AI solutions)',
           ],
@@ -3863,7 +3974,7 @@
           ],
           useCases: [
             'Maintenance prédictive sur séries temporelles capteurs (ERAMET — 80 % d\'arrêts en moins)',
-            'Modèles de détection de fraude bancaire (Capgemini Invent — projet de +500 K\u20AC)',
+            'Modèles de détection de fraude bancaire (Capgemini Invent — mission significative)',
             'Optimisation des coûts par harmonisation algorithmique de recettes (Danone — 4 M\u20AC/an)',
             'Prédiction de valeur d\'actifs financiers en temps réel (ActiveViam)',
             'Estimation d\'émissions carbone à partir de données financières (DCO2 — 3 solutions IA)',
@@ -4246,14 +4357,14 @@
             'Validate results with R&D and Procurement teams',
           ],
           achievements: [
-            '\u20AC2M/year saved on recipe optimisation — algorithmic harmonization across product lines',
-            '\u20AC2M/year saved on supplier optimisation — volume consolidation and allocation',
-            '\u20AC4M/year combined savings validated and adopted by R&D and Procurement',
+            'Documented savings of several M\u20AC/year on recipe optimisation — algorithmic harmonization across product lines',
+            'Additional savings of similar magnitude on supplier optimisation — volume consolidation and allocation',
+            'Combined multi-million annual savings validated and adopted by R&D and Procurement',
           ],
           highlights: [
-            { value: '\u20AC2M/yr', label: 'Recipe savings' },
-            { value: '\u20AC2M/yr', label: 'Supplier savings' },
-            { value: '\u20AC4M/yr', label: 'Combined annual impact' },
+            { value: 'M\u20AC+/yr', label: 'Recipe savings' },
+            { value: 'M\u20AC+/yr', label: 'Supplier savings' },
+            { value: 'M\u20AC+/yr', label: 'Combined annual impact' },
           ],
         },
         fr: {
@@ -4268,14 +4379,14 @@
             'Construire des modèles d\'optimisation d\'allocation fournisseurs',
           ],
           achievements: [
-            '2 M\u20AC/an économisés sur les recettes — harmonisation algorithmique entre gammes produits',
-            '2 M\u20AC/an économisés sur les fournisseurs — consolidation de volumes',
-            '4 M\u20AC/an d\'économies combinées validées par la R&D et les Achats',
+            'Économies documentées de plusieurs M\u20AC/an sur les recettes — harmonisation algorithmique entre gammes produits',
+            'Économies additionnelles de même ordre de grandeur sur les fournisseurs — consolidation de volumes',
+            'Économies annuelles combinées de plusieurs millions, validées par la R&D et les Achats',
           ],
           highlights: [
-            { value: '2 M\u20AC/an', label: 'Économies recettes' },
-            { value: '2 M\u20AC/an', label: 'Économies fournisseurs' },
-            { value: '4 M\u20AC/an', label: 'Impact combiné' },
+            { value: 'M\u20AC+/an', label: 'Économies recettes' },
+            { value: 'M\u20AC+/an', label: 'Économies fournisseurs' },
+            { value: 'M\u20AC+/an', label: 'Impact combiné' },
           ],
         },
       },
@@ -4381,13 +4492,13 @@
           ],
           achievements: [
             'Predictive maintenance platform for ERAMET (600 km mining rail in Gabon) — 80% reduction in unplanned stops, millions \u20AC/year saved',
-            'Fraud detection prototype for a major French bank — \u20AC500K+ project won from the prototype',
+            'Fraud detection prototype for a major French bank — scaled into a significant engagement',
             'Team grown from 3 to 15 data scientists over 3 years',
           ],
           highlights: [
             { value: '10–15', label: 'Data scientists managed' },
             { value: '80%', label: 'Fewer unplanned stops (ERAMET)' },
-            { value: '>\u20AC500K', label: 'Fraud detection project won' },
+            { value: 'Significant', label: 'Fraud detection engagement' },
           ],
         },
         fr: {
@@ -4403,13 +4514,13 @@
           ],
           achievements: [
             'Plateforme de maintenance prédictive pour ERAMET (600 km de rail minier au Gabon) — 80 % de réduction des arrêts, millions d\'\u20AC/an économisés',
-            'Prototype de détection de fraude pour une grande banque française — projet de +500 K\u20AC gagné',
+            'Prototype de détection de fraude pour une grande banque française — étendu en mission significative',
             'Équipe passée de 3 à 15 data scientists en 3 ans',
           ],
           highlights: [
             { value: '10–15', label: 'Data scientists managés' },
             { value: '80 %', label: 'Arrêts en moins (ERAMET)' },
-            { value: '>500 K\u20AC', label: 'Projet fraude gagné' },
+            { value: 'Significatif', label: 'Mission détection de fraude' },
           ],
         },
       },
