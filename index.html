@@ -7,6 +7,25 @@
   <meta name="author" content="Ariel IBABA" />
   <title>Ariel IBABA — Data Science & AI Director</title>
 
+  <!-- Open Graph / LinkedIn / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://arielibaba.github.io/" />
+  <meta property="og:title" content="Ariel IBABA — Data Science & AI Director" />
+  <meta property="og:description" content="I help large organizations deploy AI that delivers real results: M€+ in documented savings, 200+ developers trained, 15+ solutions in production." />
+  <meta property="og:image" content="https://arielibaba.github.io/photo.png" />
+  <meta property="og:image:alt" content="Ariel IBABA — Data Science & AI Director" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ariel IBABA — Data Science & AI Director" />
+  <meta name="twitter:description" content="18 years across engineering and AI. I help large organizations turn AI into production systems that save money, reduce risk, and scale." />
+  <meta name="twitter:image" content="https://arielibaba.github.io/photo.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://arielibaba.github.io/" />
+
   <style>
     /* ============================================================
        DESIGN SYSTEM
@@ -1530,6 +1549,243 @@
     }
 
     /* ============================================================
+       TALKS & TEACHING
+    ============================================================ */
+    #talks {
+      background: var(--navy-deep);
+      color: var(--white);
+    }
+    #talks .section-heading { color: var(--white); }
+    #talks .section-heading em { color: rgba(255,255,255,0.3); }
+
+    .talks-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 16px;
+    }
+
+    .talk-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 32px 28px 28px;
+      position: relative;
+      transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+    .talk-card:hover {
+      border-color: var(--accent);
+      background: rgba(74,144,217,0.05);
+      transform: translateY(-2px);
+    }
+
+    .talk-card-cta {
+      display: block;
+      margin-top: 16px;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .talk-card:hover .talk-card-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .talk-card-cta { opacity: 1; transform: none; }
+    }
+
+    /* Modal "links" CTA footer */
+    .modal-links {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--grey-100);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .modal-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      background: var(--off-white);
+      border: 1px solid var(--grey-200);
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+    .modal-link-btn:hover {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    .modal-link-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .talk-kind {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .talk-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--white);
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .talk-org {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 18px;
+    }
+
+    .talk-desc {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .talk-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .talk-meta-pill {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.65);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 4px 12px;
+    }
+
+    @media (max-width: 960px) {
+      .talks-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 620px) {
+      .talks-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    #testimonials {
+      background: var(--off-white);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 16px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      padding: 36px 32px 30px;
+      position: relative;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .testimonial-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .testimonial-linkedin-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 22px;
+      height: 22px;
+      color: var(--grey-200);
+      transition: color 0.3s ease;
+      pointer-events: none;
+    }
+    .testimonial-card:hover .testimonial-linkedin-icon {
+      color: var(--accent);
+    }
+    .testimonial-linkedin-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+
+    .testimonial-quote-mark {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      color: var(--accent);
+      line-height: 0.5;
+      margin-bottom: 16px;
+      opacity: 0.35;
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+
+    .testimonial-attr {
+      border-top: 1px solid var(--grey-100);
+      padding-top: 16px;
+    }
+
+    .testimonial-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .testimonial-role {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .testimonials-linkedin-cta {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .testimonials-linkedin-cta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .testimonials-linkedin-cta a:hover { text-decoration: underline; }
+
+    @media (max-width: 960px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================================
        CERTIFICATIONS
     ============================================================ */
     #certifications {
@@ -1922,6 +2178,8 @@
       <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
       <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
       <li><a href="#impact">Impact</a></li>
+      <li><a href="#talks" data-i18n="nav_talks">Talks</a></li>
+      <li><a href="#testimonials" data-i18n="nav_recommendations">Recommendations</a></li>
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -2089,7 +2347,7 @@
   <section id="expertise">
     <div class="container">
       <div class="section-label reveal" data-i18n="expertise_label">Expertise</div>
-      <h2 class="section-heading reveal delay-1" data-i18n="expertise_heading">Five domains, <em>one integrated</em> practice.</h2>
+      <h2 class="section-heading reveal delay-1" data-i18n="expertise_heading">Six domains, <em>one integrated</em> practice.</h2>
 
       <div class="expertise-grid">
 
@@ -2192,6 +2450,25 @@
             <span class="expertise-tag" data-i18n="exp5_tag1">Developer Training</span>
             <span class="expertise-tag" data-i18n="exp5_tag2">Executive Awareness</span>
             <span class="expertise-tag">École Polytechnique</span>
+          </div>
+          <span class="expertise-card-cta" data-i18n="exp_cta">View details &#8594;</span>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="expertise-card reveal delay-1" data-expertise="mlops">
+          <div class="expertise-card-number">06</div>
+          <div class="expertise-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <div class="expertise-title" data-i18n="exp6_title">MLOps &amp; Production</div>
+          <div class="expertise-desc" data-i18n="exp6_desc">Industrialising AI: taking models out of notebooks and into reliable, observable, and scalable production systems.</div>
+          <div class="expertise-tags">
+            <span class="expertise-tag">CI/CD</span>
+            <span class="expertise-tag" data-i18n="exp6_tag2">Monitoring</span>
+            <span class="expertise-tag">Cloud</span>
+            <span class="expertise-tag" data-i18n="exp6_tag4">Industrialisation</span>
           </div>
           <span class="expertise-card-cta" data-i18n="exp_cta">View details &#8594;</span>
         </div>
@@ -2680,7 +2957,153 @@
           <div class="impact-icon">⚙️</div>
         </div>
 
+        <div class="impact-card reveal delay-1">
+          <div class="impact-card-bg"></div>
+          <div class="impact-number">18<sup>+</sup></div>
+          <div class="impact-label" data-i18n="impact_label6">Years combining engineering rigour and AI leadership</div>
+          <div class="impact-icon">⏱️</div>
+        </div>
+
       </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TALKS & TEACHING
+  ============================================================ -->
+  <section id="talks">
+    <div class="container">
+      <div class="section-label reveal" data-i18n="talks_label">Talks &amp; Teaching</div>
+      <h2 class="section-heading reveal delay-1" data-i18n="talks_heading">Teaching the next generation, <em>learning in the open.</em></h2>
+      <p class="impact-intro reveal delay-2" data-i18n="talks_intro" style="color: rgba(255,255,255,0.55); margin-bottom: 40px;">
+        Teaching sharpens thinking. I share what I learn through courses at top French institutions and talks at industry events.
+      </p>
+
+      <div class="talks-grid">
+
+        <div class="talk-card reveal delay-1" data-talk="polytechnique">
+          <span class="talk-kind" data-i18n="talk1_kind">Lecturer</span>
+          <div class="talk-title">École Polytechnique</div>
+          <div class="talk-org" data-i18n="talk1_org">Paris · 2018 — 2020</div>
+          <div class="talk-desc" data-i18n="talk1_desc">Lecturer in Natural Language Processing and Machine Learning within the Master Data Science for Business programme, delivering courses over two academic years.</div>
+          <div class="talk-meta">
+            <span class="talk-meta-pill">NLP</span>
+            <span class="talk-meta-pill">Machine Learning</span>
+            <span class="talk-meta-pill" data-i18n="talk1_pill3">Master DS for Business</span>
+          </div>
+          <span class="talk-card-cta" data-i18n="talk_cta">View details &#8594;</span>
+        </div>
+
+        <div class="talk-card reveal delay-2" data-talk="webstart">
+          <span class="talk-kind" data-i18n="talk2_kind">Trainer</span>
+          <div class="talk-title">Webstart</div>
+          <div class="talk-org" data-i18n="talk2_org">Paris · 2023 — Present</div>
+          <div class="talk-desc" data-i18n="talk2_desc">Multi-session GenAI programme for Bachelor students — fundamentals, acculturation, hands-on workshops with ChatGPT and Gemini, prompt engineering, and end-of-term projects.</div>
+          <div class="talk-meta">
+            <span class="talk-meta-pill">Generative AI</span>
+            <span class="talk-meta-pill" data-i18n="talk2_pill2">Prompt Engineering</span>
+            <span class="talk-meta-pill">Bachelor 1&amp;2</span>
+          </div>
+          <span class="talk-card-cta" data-i18n="talk_cta">View details &#8594;</span>
+        </div>
+
+        <div class="talk-card reveal delay-3" data-talk="bigdata-paris">
+          <span class="talk-kind" data-i18n="talk3_kind">Speaker</span>
+          <div class="talk-title">Big Data &amp; AI Paris</div>
+          <div class="talk-org" data-i18n="talk3_org">Paris · September 2021</div>
+          <div class="talk-desc" data-i18n="talk3_desc">Panel presentation on a deep-learning facial recognition system for COVID-safe mask monitoring — designed to protect, not sanction, through gentle reminder messages.</div>
+          <div class="talk-meta">
+            <span class="talk-meta-pill" data-i18n="talk3_pill1">40+ attendees</span>
+            <span class="talk-meta-pill" data-i18n="talk3_pill2">Deep Learning</span>
+            <span class="talk-meta-pill">Computer Vision</span>
+          </div>
+          <span class="talk-card-cta" data-i18n="talk_cta">View details &#8594;</span>
+        </div>
+
+        <div class="talk-card reveal delay-1" data-talk="writing">
+          <span class="talk-kind" data-i18n="talk4_kind">Writer</span>
+          <div class="talk-title">Medium</div>
+          <div class="talk-org" data-i18n="talk4_org">@aibaba2108 · 2021 — Present</div>
+          <div class="talk-desc" data-i18n="talk4_desc">Articles on AI in production, machine learning for finance, and computer vision for real-world industrial use cases — including deep-dives on the systems I've built in the field.</div>
+          <div class="talk-meta">
+            <span class="talk-meta-pill" data-i18n="talk4_pill1">AI in Production</span>
+            <span class="talk-meta-pill" data-i18n="talk4_pill2">ML for Finance</span>
+            <span class="talk-meta-pill">Computer Vision</span>
+          </div>
+          <span class="talk-card-cta" data-i18n="talk_cta">View details &#8594;</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS — Sourced from LinkedIn + direct outreach
+       (Ahmed Mosallam, 2025-07-06 · Martijn Biesheuvel, 2023-11-01 ·
+        Xuanhao HU, 2023-10-12 · Cédric Biyogo / DCO2, 2026-04 with
+        explicit approval for publication).
+  ============================================================ -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-label reveal" data-i18n="testimonials_label">Recommendations</div>
+      <h2 class="section-heading reveal delay-1" data-i18n="testimonials_heading">What colleagues, clients, <em>and teams say.</em></h2>
+
+      <div class="testimonials-grid">
+
+        <a class="testimonial-card reveal delay-1" href="https://www.linkedin.com/in/ariel-ibaba-263507107/details/recommendations/" target="_blank" rel="noopener" aria-label="View on LinkedIn">
+          <span class="testimonial-linkedin-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          </span>
+          <div class="testimonial-quote-mark">&ldquo;</div>
+          <div class="testimonial-text" data-i18n="testimonial1_text">I had the pleasure of managing Ariel as a consultant on a multimodal chatbot project leveraging RAG. He consistently exceeded expectations — from scoping to deployment — leading end-to-end execution of the pipeline and the web application. He combines deep technical expertise with a results-driven mindset.</div>
+          <div class="testimonial-attr">
+            <div class="testimonial-name" data-i18n="testimonial1_name">Ahmed Mosallam</div>
+            <div class="testimonial-role" data-i18n="testimonial1_role">Principal AI Scientist, Schlumberger (SLB)</div>
+          </div>
+        </a>
+
+        <a class="testimonial-card reveal delay-2" href="https://www.linkedin.com/in/ariel-ibaba-263507107/details/recommendations/" target="_blank" rel="noopener" aria-label="View on LinkedIn">
+          <span class="testimonial-linkedin-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          </span>
+          <div class="testimonial-quote-mark">&ldquo;</div>
+          <div class="testimonial-text" data-i18n="testimonial2_text">Ariel brought a great wealth of knowledge in mathematical optimization, writing the actual code while managing business stakeholders in a complex business environment. Aside, he's a very pleasant and professional guy to work with!</div>
+          <div class="testimonial-attr">
+            <div class="testimonial-name" data-i18n="testimonial2_name">Martijn Biesheuvel</div>
+            <div class="testimonial-role" data-i18n="testimonial2_role">Senior Manager Digital Procurement, Danone</div>
+          </div>
+        </a>
+
+        <a class="testimonial-card reveal delay-3" href="https://www.linkedin.com/in/ariel-ibaba-263507107/details/recommendations/" target="_blank" rel="noopener" aria-label="View on LinkedIn">
+          <span class="testimonial-linkedin-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          </span>
+          <div class="testimonial-quote-mark">&ldquo;</div>
+          <div class="testimonial-text" data-i18n="testimonial3_text">It was an absolute pleasure working with Ariel. His technical mastery profoundly impacted our team — he provided insightful algorithmic suggestions that significantly elevated our projects. What stands out is his skill in translating intricate data science jargon into plain language.</div>
+          <div class="testimonial-attr">
+            <div class="testimonial-name" data-i18n="testimonial3_name">Xuanhao HU</div>
+            <div class="testimonial-role" data-i18n="testimonial3_role">Lead Data Scientist, Danone</div>
+          </div>
+        </a>
+
+        <a class="testimonial-card reveal delay-1" href="https://www.linkedin.com/in/cedric-biyogo/" target="_blank" rel="noopener" aria-label="View Cédric Biyogo on LinkedIn">
+          <span class="testimonial-linkedin-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          </span>
+          <div class="testimonial-quote-mark">&ldquo;</div>
+          <div class="testimonial-text" data-i18n="testimonial4_text">Ariel built our Data Science from a blank page — team, pipeline, methodology. He combines engineering rigour with a rare clarity in making data science accessible, which allowed us to align tech, business, and financing around a shared roadmap. The result: three industrialised carbon-estimation AI solutions and a proprietary methodology that became a market differentiator.</div>
+          <div class="testimonial-attr">
+            <div class="testimonial-name" data-i18n="testimonial4_name">Cédric Biyogo</div>
+            <div class="testimonial-role" data-i18n="testimonial4_role">Co-founder &amp; CTO, DCO2</div>
+          </div>
+        </a>
+
+      </div>
+
+      <p class="testimonials-linkedin-cta reveal delay-2" data-i18n="testimonials_cta">
+        <span>Professional recommendations available on LinkedIn.</span>
+        <a href="https://www.linkedin.com/in/ariel-ibaba-263507107/" target="_blank" rel="noopener">View on LinkedIn &#8594;</a>
+      </p>
     </div>
   </section>
 
@@ -3084,7 +3507,7 @@
         about_clients: 'Notable Clients &amp; Employers',
         // Expertise
         expertise_label: 'Expertise',
-        expertise_heading: 'Five domains, <em>one integrated</em> practice.',
+        expertise_heading: 'Six domains, <em>one integrated</em> practice.',
         exp1_title: 'Machine Learning &amp; Deep Learning',
         exp1_desc: 'End-to-end ML pipelines for complex industrial problems — from feature engineering to production deployment at scale.',
         exp1_tag4: 'Predictive Maintenance',
@@ -3102,6 +3525,10 @@
         exp5_desc: 'Designing and delivering AI training programmes for developers, data teams, and executive audiences.',
         exp5_tag1: 'Developer Training',
         exp5_tag2: 'Executive Awareness',
+        exp6_title: 'MLOps &amp; Production',
+        exp6_desc: 'Industrialising AI: taking models out of notebooks and into reliable, observable, and scalable production systems.',
+        exp6_tag2: 'Monitoring',
+        exp6_tag4: 'Industrialisation',
         // Experience
         experience_label: 'Experience',
         experience_heading: 'A career defined by <em>impact,</em> not just titles.',
@@ -3200,6 +3627,48 @@
         impact_label3: 'AI prototypes and solutions deployed in production',
         impact_label4: 'Data scientists managed and mentored',
         impact_label5: 'Documented reduction in unplanned service stops via predictive maintenance',
+        impact_label6: 'Years combining engineering rigour and AI leadership',
+        // Talks & Teaching
+        nav_talks: 'Talks',
+        nav_recommendations: 'Recommendations',
+        talks_label: 'Talks &amp; Teaching',
+        talks_heading: 'Teaching the next generation, <em>learning in the open.</em>',
+        talks_intro: 'Teaching sharpens thinking. I share what I learn through courses at top French institutions and talks at industry events.',
+        talk_cta: 'View details &#8594;',
+        talk1_kind: 'Lecturer',
+        talk1_org: 'Paris &middot; 2018 &mdash; 2020',
+        talk1_desc: 'Lecturer in Natural Language Processing and Machine Learning within the Master Data Science for Business programme, delivering courses over two academic years.',
+        talk1_pill3: 'Master DS for Business',
+        talk2_kind: 'Trainer',
+        talk2_org: 'Paris &middot; 2023 &mdash; Present',
+        talk2_desc: 'Multi-session GenAI programme for Bachelor students — fundamentals, acculturation, hands-on workshops with ChatGPT and Gemini, prompt engineering, and end-of-term projects.',
+        talk2_pill2: 'Prompt Engineering',
+        talk3_kind: 'Speaker',
+        talk3_org: 'Paris &middot; September 2021',
+        talk3_desc: 'Panel presentation on a deep-learning facial recognition system for COVID-safe mask monitoring — designed to protect, not sanction, through gentle reminder messages.',
+        talk3_pill1: '40+ attendees',
+        talk3_pill2: 'Deep Learning',
+        talk4_kind: 'Writer',
+        talk4_org: '@aibaba2108 &middot; 2021 &mdash; Present',
+        talk4_desc: 'Articles on AI in production, machine learning for finance, and computer vision for real-world industrial use cases — including deep-dives on the systems I\'ve built in the field.',
+        talk4_pill1: 'AI in Production',
+        talk4_pill2: 'ML for Finance',
+        // Testimonials
+        testimonials_label: 'Recommendations',
+        testimonials_heading: 'What colleagues, clients, <em>and teams say.</em>',
+        testimonial1_text: 'I had the pleasure of managing Ariel as a consultant on a multimodal chatbot project leveraging RAG. He consistently exceeded expectations — from scoping to deployment — leading end-to-end execution of the pipeline and the web application. He combines deep technical expertise with a results-driven mindset.',
+        testimonial1_name: 'Ahmed Mosallam',
+        testimonial1_role: 'Principal AI Scientist, Schlumberger (SLB)',
+        testimonial2_text: 'Ariel brought a great wealth of knowledge in mathematical optimization, writing the actual code while managing business stakeholders in a complex business environment. Aside, he\'s a very pleasant and professional guy to work with!',
+        testimonial2_name: 'Martijn Biesheuvel',
+        testimonial2_role: 'Senior Manager Digital Procurement, Danone',
+        testimonial3_text: 'It was an absolute pleasure working with Ariel. His technical mastery profoundly impacted our team — he provided insightful algorithmic suggestions that significantly elevated our projects. What stands out is his skill in translating intricate data science jargon into plain language.',
+        testimonial3_name: 'Xuanhao HU',
+        testimonial3_role: 'Lead Data Scientist, Danone',
+        testimonial4_text: 'Ariel built our Data Science from a blank page — team, pipeline, methodology. He combines engineering rigour with a rare clarity in making data science accessible, which allowed us to align tech, business, and financing around a shared roadmap. The result: three industrialised carbon-estimation AI solutions and a proprietary methodology that became a market differentiator.',
+        testimonial4_name: 'Cédric Biyogo',
+        testimonial4_role: 'Co-founder &amp; CTO, DCO2',
+        testimonials_cta: 'More recommendations available on LinkedIn.',
         // Certifications
         cert_heading: 'Continuous learning, <em>validated expertise.</em>',
         // Contact
@@ -3253,7 +3722,7 @@
         about_clients: 'Clients &amp; Employeurs Notables',
         // Expertise
         expertise_label: 'Expertise',
-        expertise_heading: 'Cinq domaines, <em>une pratique</em> intégrée.',
+        expertise_heading: 'Six domaines, <em>une pratique</em> intégrée.',
         exp1_title: 'Machine Learning &amp; Deep Learning',
         exp1_desc: 'Pipelines ML de bout en bout pour des problèmes industriels complexes — de l\'ingénierie de features au déploiement en production à grande échelle.',
         exp1_tag4: 'Maintenance Prédictive',
@@ -3271,6 +3740,10 @@
         exp5_desc: 'Conception et animation de programmes de formation IA pour développeurs, équipes data et dirigeants.',
         exp5_tag1: 'Formation Développeurs',
         exp5_tag2: 'Sensibilisation Dirigeants',
+        exp6_title: 'MLOps &amp; Production',
+        exp6_desc: 'Industrialiser l\'IA : sortir les modèles des notebooks pour construire des systèmes de production fiables, observables et scalables.',
+        exp6_tag2: 'Monitoring',
+        exp6_tag4: 'Industrialisation',
         // Experience
         experience_label: 'Expérience',
         experience_heading: 'Une carrière définie par <em>l\'impact,</em> pas les titres.',
@@ -3369,6 +3842,48 @@
         impact_label3: 'Prototypes et solutions IA déployés en production',
         impact_label4: 'Data scientists managés et mentorés',
         impact_label5: 'Réduction documentée des arrêts de service imprévus via la maintenance prédictive',
+        impact_label6: 'Années combinant rigueur d\'ingénieur et leadership IA',
+        // Talks & Teaching
+        nav_talks: 'Interventions',
+        nav_recommendations: 'Recommandations',
+        talks_label: 'Interventions &amp; Enseignement',
+        talks_heading: 'Enseigner à la génération suivante, <em>apprendre au grand jour.</em>',
+        talks_intro: 'Enseigner affine la pensée. Je partage ce que j\'apprends à travers des cours dans des institutions françaises de premier plan et des interventions dans des événements industriels.',
+        talk_cta: 'Voir le détail &#8594;',
+        talk1_kind: 'Enseignant',
+        talk1_org: 'Paris &middot; 2018 &mdash; 2020',
+        talk1_desc: 'Chargé de cours en NLP et Machine Learning dans le Master Data Science for Business, sur deux années académiques.',
+        talk1_pill3: 'Master DS for Business',
+        talk2_kind: 'Formateur',
+        talk2_org: 'Paris &middot; 2023 &mdash; Présent',
+        talk2_desc: 'Programme IA Générative multi-sessions pour étudiants Bachelor : fondamentaux, acculturation, ateliers pratiques ChatGPT et Gemini, prompt engineering, projets de fin de formation.',
+        talk2_pill2: 'Prompt Engineering',
+        talk3_kind: 'Speaker',
+        talk3_org: 'Paris &middot; Septembre 2021',
+        talk3_desc: 'Présentation en panel d\'un système de reconnaissance faciale deep learning pour le respect du port du masque COVID — conçu pour protéger, pas pour sanctionner, via des messages de rappel.',
+        talk3_pill1: '40+ participants',
+        talk3_pill2: 'Deep Learning',
+        talk4_kind: 'Auteur',
+        talk4_org: '@aibaba2108 &middot; 2021 &mdash; Présent',
+        talk4_desc: 'Articles sur l\'IA en production, le machine learning appliqué à la finance, et la computer vision pour des cas d\'usage industriels réels — y compris des deep-dives sur les systèmes que j\'ai construits sur le terrain.',
+        talk4_pill1: 'IA en Production',
+        talk4_pill2: 'ML pour la Finance',
+        // Testimonials
+        testimonials_label: 'Recommandations',
+        testimonials_heading: 'Ce que disent collègues, clients <em>et équipes.</em>',
+        testimonial1_text: 'J\'ai eu le plaisir de manager Ariel, consultant sur un projet de chatbot multimodal basé sur la RAG. Il a constamment dépassé mes attentes — du cadrage au déploiement — en menant de bout en bout la construction du pipeline et de l\'application web. Il combine une expertise technique profonde avec un état d\'esprit orienté résultats.',
+        testimonial1_name: 'Ahmed Mosallam',
+        testimonial1_role: 'Principal AI Scientist, Schlumberger (SLB)',
+        testimonial2_text: 'Ariel a apporté une grande richesse de connaissances en optimisation mathématique, en écrivant lui-même le code tout en gérant les parties prenantes business dans un environnement complexe. Par ailleurs, c\'est quelqu\'un de très agréable et professionnel avec qui travailler !',
+        testimonial2_name: 'Martijn Biesheuvel',
+        testimonial2_role: 'Senior Manager Digital Procurement, Danone',
+        testimonial3_text: 'Ce fut un plaisir absolu de travailler avec Ariel. Sa maîtrise technique a profondément impacté notre équipe — il a apporté des suggestions algorithmiques qui ont significativement élevé nos projets. Ce qui se démarque, c\'est sa capacité à traduire le jargon data science complexe en langage clair.',
+        testimonial3_name: 'Xuanhao HU',
+        testimonial3_role: 'Lead Data Scientist, Danone',
+        testimonial4_text: 'Ariel a construit notre Data Science depuis une page blanche — équipe, pipeline, méthodologie. Il combine rigueur d\'ingénieur et clarté rare dans la vulgarisation, ce qui nous a permis d\'aligner tech, business et financement autour d\'une même roadmap. Résultat : trois solutions IA d\'estimation carbone industrialisées et une méthodologie propriétaire devenue un différenciateur marché.',
+        testimonial4_name: 'Cédric Biyogo',
+        testimonial4_role: 'Co-founder &amp; CTO, DCO2',
+        testimonials_cta: 'Plus de recommandations disponibles sur LinkedIn.',
         // Certifications
         cert_heading: 'Apprentissage continu, <em>expertise validée.</em>',
         // Contact
@@ -4150,6 +4665,46 @@
           certifications: ['Generative AI for Everyone — DeepLearning.AI', 'Generative AI with Large Language Models — DeepLearning.AI/AWS'],
         },
       },
+      mlops: {
+        en: {
+          title: 'MLOps & Production',
+          badge: 'Industrialisation',
+          tags: ['CI/CD', 'Monitoring', 'Cloud', 'Azure OpenAI', 'Scale', 'Observability'],
+          context: 'Most AI projects fail not because the model is wrong, but because nobody figured out how to run it reliably in production. After shipping 15+ AI solutions across banking, energy, and manufacturing, I\'ve learned that MLOps is where strategy meets reality — and where ROI is either earned or lost.',
+          approach: 'I treat production readiness as a first-class citizen from day one: versioned pipelines, automated tests, deployment gates, observability for both system metrics and model drift, and clear ownership. For GenAI systems specifically, this includes evaluation harnesses, hallucination monitoring, prompt versioning, and cost controls — because LLMs in production behave differently than in a notebook.',
+          highlights: [
+            { value: '15+', label: 'AI solutions shipped to production' },
+            { value: 'Azure', label: 'Primary cloud stack at BPCE' },
+            { value: 'End-to-end', label: 'From notebook to monitored service' },
+          ],
+          useCases: [
+            'Full production stack for 5 AI assistants at Groupe BPCE (Azure, monitoring, CI/CD)',
+            'End-to-end deployment of RAG chatbots for industrial maintenance (BOBST) and energy (Schlumberger SLB)',
+            'Production deployment of 3 carbon-estimation AI solutions (DCO2) with monitoring and retraining loops',
+            'Predictive maintenance models running in production for ERAMET (80% reduction in unplanned stops — documented)',
+          ],
+          certifications: ['AWS Certified Solutions Architect — Associate'],
+        },
+        fr: {
+          title: 'MLOps & Production',
+          badge: 'Industrialisation',
+          tags: ['CI/CD', 'Monitoring', 'Cloud', 'Azure OpenAI', 'Scale', 'Observabilité'],
+          context: 'La plupart des projets IA n\'échouent pas parce que le modèle est faux, mais parce que personne n\'a figuré comment le faire tourner de façon fiable en production. Après 15+ solutions IA livrées en banque, énergie et industrie, j\'ai appris que le MLOps est l\'endroit où la stratégie rencontre la réalité — et où le ROI se gagne ou se perd.',
+          approach: 'Je traite la production comme une priorité dès le jour 1 : pipelines versionnés, tests automatisés, gates de déploiement, observabilité (métriques système et drift modèle), ownership clair. Pour les systèmes GenAI en particulier, cela inclut des harness d\'évaluation, du monitoring d\'hallucinations, du versioning de prompts et du contrôle des coûts — parce que les LLM en production se comportent différemment que dans un notebook.',
+          highlights: [
+            { value: '15+', label: 'Solutions IA livrées en production' },
+            { value: 'Azure', label: 'Stack cloud principal chez BPCE' },
+            { value: 'End-to-end', label: 'Du notebook au service monitoré' },
+          ],
+          useCases: [
+            'Stack production complet pour 5 assistants IA chez Groupe BPCE (Azure, monitoring, CI/CD)',
+            'Déploiement end-to-end de chatbots RAG pour la maintenance industrielle (BOBST) et l\'énergie (Schlumberger SLB)',
+            'Déploiement en production de 3 solutions IA d\'estimation carbone (DCO2) avec monitoring et boucles de réentraînement',
+            'Modèles de maintenance prédictive en production pour ERAMET (80% de réduction des arrêts non planifiés — documenté)',
+          ],
+          certifications: ['AWS Certified Solutions Architect — Associate'],
+        },
+      },
     };
 
     /* ---- EXPERIENCE DETAILS ---- */
@@ -4615,6 +5170,190 @@
       },
     };
 
+    /* ---- TALKS & TEACHING DETAILS ---- */
+    const talksDetails = {
+      polytechnique: {
+        en: {
+          title: 'École Polytechnique',
+          badge: 'Lecturer — NLP & Machine Learning',
+          period: '2018 — 2020',
+          tags: ['NLP', 'Machine Learning', 'Master\'s Level', 'Hands-on Labs', 'Data Science for Business'],
+          context: 'École Polytechnique is France\'s most selective engineering school, training many of the country\'s future tech leaders, researchers, and executives. Teaching there is both a privilege and a sharpener — students push hard questions, and you need to be precise.',
+          approach: 'Lectures in Natural Language Processing and Machine Learning delivered to the Master "Data Science for Business" programme, across two academic years (2018–2019 and 2019–2020). The programme combined theoretical foundations with practical labs on real business datasets, bridging rigorous methods and business-oriented use cases.',
+          highlights: [
+            { value: '2', label: 'Academic years' },
+            { value: '20+', label: 'Students per cohort' },
+            { value: 'Master', label: 'Data Science for Business' },
+          ],
+          useCases: [
+            'NLP course: text preprocessing, embeddings, sequence models',
+            'Machine Learning course: supervised/unsupervised methods, evaluation, deployment',
+            'Hands-on labs with real business datasets',
+            'Two full academic years (2018–2019, 2019–2020)',
+          ],
+        },
+        fr: {
+          title: 'École Polytechnique',
+          badge: 'Enseignant — NLP & Machine Learning',
+          period: '2018 — 2020',
+          tags: ['NLP', 'Machine Learning', 'Niveau Master', 'Labs pratiques', 'Data Science for Business'],
+          context: 'L\'École Polytechnique est l\'école d\'ingénieurs la plus sélective de France, qui forme une grande partie des futurs leaders tech, chercheurs et dirigeants du pays. Y enseigner est à la fois un privilège et un exercice d\'exigence — les étudiants posent des questions très dures, il faut être précis.',
+          approach: 'Cours magistraux en Natural Language Processing et Machine Learning dans le Master "Data Science for Business", sur deux années académiques (2018–2019 et 2019–2020). Le programme associait fondements théoriques et labs pratiques sur des jeux de données business réels, pour faire le pont entre méthodes rigoureuses et cas d\'usage orientés entreprise.',
+          highlights: [
+            { value: '2', label: 'Années académiques' },
+            { value: '20+', label: 'Étudiants par promo' },
+            { value: 'Master', label: 'Data Science for Business' },
+          ],
+          useCases: [
+            'Cours NLP : préprocessing, embeddings, modèles de séquence',
+            'Cours Machine Learning : méthodes supervisées/non-supervisées, évaluation, déploiement',
+            'Labs pratiques sur jeux de données business réels',
+            'Deux années académiques complètes (2018–2019, 2019–2020)',
+          ],
+        },
+      },
+      webstart: {
+        en: {
+          title: 'Webstart',
+          badge: 'GenAI Trainer — Bachelor 1st & 2nd year',
+          period: '2023 — Present',
+          tags: ['Generative AI', 'Prompt Engineering', 'ChatGPT', 'Gemini', 'AI Privacy', 'Hands-on Workshops'],
+          context: 'Webstart is a French tech and digital school training Bachelor students to become operational in modern tech careers. I designed and deliver the AI track — making generative AI accessible, critical, and practical for students who will enter the workforce in the next 1–3 years.',
+          approach: 'The programme is multi-session and progressive: starting from AI and GenAI fundamentals, moving through acculturation (privacy, risks, ethics), real-world use cases, hands-on workshops with the main market tools (ChatGPT, Gemini, others), a dedicated prompt-engineering module, and closing with end-of-term projects where students ship something concrete.',
+          highlights: [
+            { value: '30+', label: 'Students trained' },
+            { value: 'Bachelor', label: '1st &amp; 2nd year' },
+            { value: 'Multi-session', label: 'Progressive programme' },
+          ],
+          useCases: [
+            'Introduction to AI / Generative AI (fundamentals)',
+            'Acculturation: privacy, risks, ethics of AI',
+            'AI use cases across industries',
+            'Hands-on workshops: ChatGPT, Gemini, market tools',
+            'Prompt engineering module',
+            'End-of-term student projects',
+          ],
+        },
+        fr: {
+          title: 'Webstart',
+          badge: 'Formateur IA Générative — Bachelor 1ère &amp; 2ème année',
+          period: '2023 — Présent',
+          tags: ['IA Générative', 'Prompt Engineering', 'ChatGPT', 'Gemini', 'Privacy IA', 'Ateliers pratiques'],
+          context: 'Webstart est une école française du digital et de la tech qui forme des étudiants Bachelor à devenir opérationnels dans les métiers tech modernes. J\'ai conçu et anime le track IA — pour rendre l\'IA générative accessible, critique et concrète pour des étudiants qui vont entrer sur le marché du travail dans 1 à 3 ans.',
+          approach: 'Le programme est multi-sessions et progressif : fondamentaux IA et IA Gén, acculturation (privacy, risques, éthique), cas d\'usage en entreprise, ateliers pratiques sur les principaux outils du marché (ChatGPT, Gemini et autres), module dédié au prompt engineering, et projets de fin de formation où les étudiants livrent quelque chose de concret.',
+          highlights: [
+            { value: '30+', label: 'Étudiants formés' },
+            { value: 'Bachelor', label: '1ère &amp; 2ème année' },
+            { value: 'Multi-sessions', label: 'Programme progressif' },
+          ],
+          useCases: [
+            'Introduction à l\'IA / IA Générative (fondamentaux)',
+            'Acculturation : privacy, risques, éthique de l\'IA',
+            'Cas d\'usage de l\'IA par secteur',
+            'Ateliers pratiques : ChatGPT, Gemini, outils du marché',
+            'Module prompt engineering',
+            'Projets de fin de formation',
+          ],
+        },
+      },
+      'bigdata-paris': {
+        en: {
+          title: 'Big Data &amp; AI Paris',
+          badge: 'Speaker — ActiveViam',
+          period: 'September 2021',
+          tags: ['Computer Vision', 'Deep Learning', 'Facial Recognition', 'COVID-19', 'Privacy by Design'],
+          context: 'Big Data &amp; AI Paris is the leading French industry conference on Big Data and AI, gathering industry leaders, engineers, and decision-makers. In September 2021, I presented in a panel format (conference room, 40+ attendees) on a system I had built with my team at ActiveViam.',
+          approach: 'I showcased a deep-learning facial recognition system designed to check that people in public/work spaces were wearing COVID masks correctly. The ethical framing was central to the talk: the system was not built to track or sanction people — it was built to help them, by emitting friendly reminder messages when a mask was missing or poorly worn. The goal was protecting people while respecting their dignity. I covered the architecture, the training approach, the privacy-first design choices, and the live-in-production learnings.',
+          highlights: [
+            { value: '40+', label: 'Attendees in the room' },
+            { value: 'Panel', label: 'Format' },
+            { value: 'Sep 2021', label: 'Date' },
+          ],
+          useCases: [
+            'Deep-learning facial recognition — correct COVID mask detection',
+            'Real-time reminder messages to encourage compliance with barrier measures',
+            'Privacy-first design — no tracking, no sanction, no storage of identities',
+            'Technical panel presentation to 40+ industry attendees',
+          ],
+          links: [
+            { type: 'linkedin', label: 'See the LinkedIn post (with attendee feedback)', url: 'https://www.linkedin.com/feed/update/urn:li:activity:6844637265700913152/' },
+          ],
+        },
+        fr: {
+          title: 'Big Data &amp; AI Paris',
+          badge: 'Speaker — ActiveViam',
+          period: 'Septembre 2021',
+          tags: ['Computer Vision', 'Deep Learning', 'Reconnaissance faciale', 'COVID-19', 'Privacy by Design'],
+          context: 'Big Data &amp; AI Paris est la conférence française de référence sur le Big Data et l\'IA, qui rassemble leaders industriels, ingénieurs et décideurs. En septembre 2021, je suis intervenu en format panel (salle de conférence, 40+ participants) sur un système que j\'avais conçu avec mon équipe chez ActiveViam.',
+          approach: 'J\'ai présenté un système de reconnaissance faciale en deep learning destiné à vérifier le port correct du masque COVID dans les espaces publics ou professionnels. Le cadrage éthique était central dans le talk : le système n\'était pas conçu pour traquer ou sanctionner — il était pensé pour aider, en émettant des messages de rappel bienveillants quand un masque manquait ou était mal porté. L\'objectif était de protéger les personnes tout en respectant leur dignité. J\'ai présenté l\'architecture, l\'approche d\'entraînement, les choix privacy-first, et les enseignements en production.',
+          highlights: [
+            { value: '40+', label: 'Participants en salle' },
+            { value: 'Panel', label: 'Format' },
+            { value: 'Sept. 2021', label: 'Date' },
+          ],
+          useCases: [
+            'Reconnaissance faciale deep learning — détection du port correct du masque COVID',
+            'Messages de rappel temps réel pour encourager le respect des mesures barrières',
+            'Privacy-first : pas de tracking, pas de sanction, pas de stockage des identités',
+            'Présentation technique en panel devant 40+ professionnels du secteur',
+          ],
+          links: [
+            { type: 'linkedin', label: 'Voir la publication LinkedIn (avec retours des participants)', url: 'https://www.linkedin.com/feed/update/urn:li:activity:6844637265700913152/' },
+          ],
+        },
+      },
+      writing: {
+        en: {
+          title: 'Medium — @aibaba2108',
+          badge: 'Writer',
+          period: '2021 — Present',
+          tags: ['AI in Production', 'ML for Finance', 'Computer Vision', 'Deep Learning', 'Technical Deep-dives'],
+          context: 'Writing is how I sharpen my thinking. On Medium I share technical deep-dives, applied ML for finance, and lessons from computer-vision systems deployed in real environments — the same kind of work I do with clients, made visible.',
+          approach: 'I write about what I ship: systems I\'ve built with my teams, mistakes I\'ve learned from in production, and pragmatic takes on the AI topics that dominate client conversations. A mix of deep-dive engineering articles (published on the atoti publication at ActiveViam) and field reflections on AI strategy and leadership. New articles planned on RAG in production, scaling AI in banking, and the aerospace-to-data-science journey.',
+          highlights: [
+            { value: '11+', label: 'Published articles' },
+            { value: 'atoti', label: 'Featured publication' },
+            { value: 'Active', label: 'New articles planned' },
+          ],
+          useCases: [
+            '2026-04: I Built a Knowledge Graph for Code — And Came to See It as a Missing Layer Under AI Coding Assistants (knowledge graphs for AI coding assistants)',
+            'Collateral Modelling and Simulation Using atoti and Machine Learning — ML for financial risk (Atoti publication)',
+            'Real-Time Masked Face Detection using Detectron2 — the system I presented at Big Data & AI Paris 2021',
+            'Technical deep-dives on systems built with teams at ActiveViam and beyond',
+            'Upcoming: RAG in Production, Scaling AI in a Major French Bank, Aerospace-to-Data-Science',
+          ],
+          links: [
+            { type: 'medium', label: 'Latest: I Built a Knowledge Graph for Code ↗', url: 'https://medium.com/@aibaba2108/i-built-a-knowledge-graph-for-code-why-its-a-missing-layer-under-ai-assistants-3759709f915a' },
+            { type: 'medium', label: 'Read all articles on Medium', url: 'https://medium.com/@aibaba2108' },
+          ],
+        },
+        fr: {
+          title: 'Medium — @aibaba2108',
+          badge: 'Auteur',
+          period: '2021 — Présent',
+          tags: ['IA en Production', 'ML pour la Finance', 'Computer Vision', 'Deep Learning', 'Deep-dives techniques'],
+          context: 'Écrire est ma façon d\'affiner ma pensée. Sur Medium je partage des deep-dives techniques, du ML appliqué à la finance, et des retours d\'expérience sur des systèmes de computer vision déployés en conditions réelles — le même type de travail que je fais avec mes clients, rendu visible.',
+          approach: 'J\'écris sur ce que je livre : les systèmes que j\'ai construits avec mes équipes, les erreurs dont j\'ai appris en production, et des points de vue pragmatiques sur les sujets IA qui dominent les discussions avec les clients. Un mix d\'articles deep-dive ingénieur (publiés sur la publication atoti pendant ActiveViam) et de réflexions sur la stratégie et le leadership IA. Nouveaux articles prévus sur le RAG en production, le passage à l\'échelle de l\'IA en banque, et le parcours aéronautique → data science.',
+          highlights: [
+            { value: '11+', label: 'Articles publiés' },
+            { value: 'atoti', label: 'Publication éditoriale' },
+            { value: 'Actif', label: 'Nouveaux articles prévus' },
+          ],
+          useCases: [
+            '2026-04 : I Built a Knowledge Graph for Code — And Came to See It as a Missing Layer Under AI Coding Assistants (graphes de connaissance pour assistants IA de code)',
+            'Collateral Modelling and Simulation Using atoti and Machine Learning — ML pour le risque financier (publication Atoti)',
+            'Real-Time Masked Face Detection using Detectron2 — le système que j\'ai présenté à Big Data & AI Paris 2021',
+            'Deep-dives techniques sur des systèmes construits avec mes équipes chez ActiveViam et au-delà',
+            'À venir : RAG in Production, Scaling AI in a Major French Bank, Aerospace-to-Data-Science',
+          ],
+          links: [
+            { type: 'medium', label: 'Dernier article : I Built a Knowledge Graph for Code ↗', url: 'https://medium.com/@aibaba2108/i-built-a-knowledge-graph-for-code-why-its-a-missing-layer-under-ai-assistants-3759709f915a' },
+            { type: 'medium', label: 'Voir tous les articles sur Medium', url: 'https://medium.com/@aibaba2108' },
+          ],
+        },
+      },
+    };
+
     /* ---- GENERIC MODAL RENDERER ---- */
     function openGenericModal(data) {
       const lang = currentLang || 'en';
@@ -4622,8 +5361,8 @@
       if (!d) return;
 
       const labels = lang === 'fr'
-        ? { context: 'Contexte', approach: 'Approche', responsibilities: 'Responsabilités', achievements: 'Réalisations', useCases: 'Cas d\'Usage Concrets', certifications: 'Certifications Associées', keyMetrics: 'Métriques Clés' }
-        : { context: 'Context', approach: 'Approach', responsibilities: 'Responsibilities', achievements: 'Key Achievements', useCases: 'Real-World Use Cases', certifications: 'Related Certifications', keyMetrics: 'Key Metrics' };
+        ? { context: 'Contexte', approach: 'Approche', responsibilities: 'Responsabilités', achievements: 'Réalisations', useCases: 'Cas d\'Usage Concrets', certifications: 'Certifications Associées', keyMetrics: 'Métriques Clés', links: 'Voir aussi' }
+        : { context: 'Context', approach: 'Approach', responsibilities: 'Responsibilities', achievements: 'Key Achievements', useCases: 'Real-World Use Cases', certifications: 'Related Certifications', keyMetrics: 'Key Metrics', links: 'See also' };
 
       const tagsHtml = d.tags.map(t => '<span class="modal-tag">' + t + '</span>').join('');
       const highlightsHtml = d.highlights.map(h =>
@@ -4664,6 +5403,17 @@
           d.certifications.map(c => '<li>' + c + '</li>').join('') + '</ul></div></div>';
       }
 
+      if (d.links && d.links.length > 0) {
+        const linkedInSvg = '<svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>';
+        const mediumSvg = '<svg viewBox="0 0 24 24"><path d="M4.37 7.3c.04-.35-.1-.7-.36-.93L1.3 3.08V2.6h8.26l6.39 14.02L21.57 2.6H24v.48l-2.32 2.23c-.2.15-.3.4-.26.66v16.46c-.04.25.06.5.26.66L24 25.3v.48h-11.77v-.48l2.39-2.31c.24-.24.24-.3.24-.67V9.79l-6.65 16.9h-.9L.3 9.79v11.33c-.07.5.1 1 .46 1.35L3.85 26v.48H0V26l3.09-3.53c.36-.35.52-.85.44-1.34V7.3z"/></svg>';
+        html += '<div class="modal-links">' + d.links.map(l => {
+          let icon = '';
+          if (l.type === 'linkedin') icon = linkedInSvg;
+          else if (l.type === 'medium') icon = mediumSvg;
+          return '<a class="modal-link-btn" href="' + l.url + '" target="_blank" rel="noopener">' + icon + '<span>' + l.label + '</span></a>';
+        }).join('') + '</div>';
+      }
+
       modalContent.innerHTML = html;
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -4682,6 +5432,14 @@
       item.addEventListener('click', () => {
         const id = item.dataset.experience;
         if (experienceDetails[id]) openGenericModal(experienceDetails[id]);
+      });
+    });
+
+    // Talk card click handlers
+    document.querySelectorAll('.talk-card[data-talk]').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.dataset.talk;
+        if (talksDetails[id]) openGenericModal(talksDetails[id]);
       });
     });
 
