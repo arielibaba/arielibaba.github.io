@@ -1943,172 +1943,64 @@
     #contact {
       background: var(--white);
       border-top: 1px solid var(--grey-100);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
+      text-align: center;
     }
 
     .contact-intro {
       font-size: 1rem;
       color: var(--text-muted);
       line-height: 1.75;
-      margin-bottom: 40px;
+      max-width: 640px;
+      margin: 0 auto 40px;
     }
 
-    .contact-items {
+    .contact-actions {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 20px 24px;
-      border: 1px solid var(--grey-200);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .contact-item:hover {
-      border-color: var(--accent);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .contact-item-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--text);
-      display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
       justify-content: center;
-      flex-shrink: 0;
-      transition: background 0.25s ease;
     }
 
-    .contact-item:hover .contact-item-icon { background: var(--accent); }
-
-    .contact-item-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--white);
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .contact-item-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--grey-400);
-      margin-bottom: 4px;
-    }
-
-    .contact-item-value {
-      font-size: 0.95rem;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .contact-item-link {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .contact-item-link:hover {
-      text-decoration: underline;
-    }
-
-    .contact-right {
-      padding-top: 8px;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .form-group label {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--grey-600);
-      font-weight: 600;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      border: 1px solid var(--grey-200);
-      background: var(--off-white);
-      padding: 13px 16px;
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s ease, background 0.2s ease;
-      resize: none;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-      background: var(--white);
-    }
-
-    .form-group textarea { min-height: 130px; }
-
-    .form-submit {
+    .contact-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--accent);
-      color: var(--white);
-      border: none;
-      padding: 15px 36px;
+      padding: 16px 32px;
       font-family: var(--font-sans);
       font-size: 0.78rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       font-weight: 700;
-      cursor: pointer;
-      transition: background 0.25s ease, transform 0.25s ease;
-      align-self: flex-start;
+      text-decoration: none;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
     }
 
-    .form-submit:hover {
-      background: var(--accent-dim);
+    .contact-btn-primary {
+      background: var(--text);
+      color: var(--white);
+    }
+
+    .contact-btn-primary:hover {
+      background: var(--accent);
       transform: translateY(-2px);
     }
 
-    .form-note {
-      font-size: 0.78rem;
-      color: var(--grey-400);
-      font-style: italic;
-      margin-top: 4px;
+    .contact-btn-secondary {
+      background: var(--white);
+      color: var(--text);
+      border: 1px solid var(--text);
     }
 
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-      .form-row { grid-template-columns: 1fr; }
+    .contact-btn-secondary:hover {
+      background: var(--off-white);
+      transform: translateY(-2px);
+    }
+
+    .contact-meta {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: var(--grey-400);
+      letter-spacing: 0.02em;
     }
 
     /* ============================================================
@@ -3322,89 +3214,17 @@
       <div class="section-label reveal">Contact</div>
       <h2 class="section-heading reveal delay-1" data-i18n="contact_heading">Let's build something <em>significant</em> together.</h2>
 
-      <div class="contact-grid">
+      <p class="contact-intro reveal delay-2" data-i18n="contact_intro">
+        Whether you're looking to industrialise AI within your organisation, need strategic guidance on a complex data challenge, or want to discuss a collaboration — I'd be glad to connect.
+      </p>
 
-        <div class="contact-left reveal-left">
-          <p class="contact-intro" data-i18n="contact_intro">
-            Whether you're looking to industrialise AI within your organisation, need strategic guidance on a complex data challenge, or want to discuss a collaboration — I'd be glad to connect.
-          </p>
-
-          <div class="contact-items">
-
-            <a href="mailto:ariel.ibaba@outlook.com" class="contact-item">
-              <div class="contact-item-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-              </div>
-              <div>
-                <div class="contact-item-label">Email</div>
-                <div class="contact-item-value">ariel.ibaba@outlook.com</div>
-              </div>
-            </a>
-
-            <a href="tel:+33652405159" class="contact-item">
-              <div class="contact-item-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-              </div>
-              <div>
-                <div class="contact-item-label" data-i18n="contact_phone_label">Phone</div>
-                <div class="contact-item-value">+33 (0)6 52 40 51 59</div>
-              </div>
-            </a>
-
-            <a href="https://www.linkedin.com/in/ariel-ibaba-263507107" target="_blank" rel="noopener noreferrer" class="contact-item">
-              <div class="contact-item-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-              </div>
-              <div>
-                <div class="contact-item-label">LinkedIn</div>
-                <div class="contact-item-value contact-item-link">linkedin.com/in/ariel-ibaba-263507107</div>
-              </div>
-            </a>
-
-          </div>
-        </div>
-
-        <div class="contact-right reveal-right">
-          <form class="contact-form" id="contact-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="f-name" data-i18n="form_name_label">Name</label>
-                <input type="text" id="f-name" name="name" placeholder="Your name" autocomplete="name" data-i18n-placeholder="form_name_placeholder" />
-              </div>
-              <div class="form-group">
-                <label for="f-email">Email</label>
-                <input type="email" id="f-email" name="email" placeholder="your@email.com" autocomplete="email" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="f-subject" data-i18n="form_subject_label">Subject</label>
-              <input type="text" id="f-subject" name="subject" placeholder="How can I help?" data-i18n-placeholder="form_subject_placeholder" />
-            </div>
-            <div class="form-group">
-              <label for="f-message">Message</label>
-              <textarea id="f-message" name="message" placeholder="Tell me about your project or challenge..." data-i18n-placeholder="form_message_placeholder"></textarea>
-            </div>
-            <button type="submit" class="form-submit">
-              <span data-i18n="form_submit">Send Message</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-            <p class="form-note" data-i18n="form_note">I typically respond within 24 hours.</p>
-          </form>
-        </div>
-
+      <div class="contact-actions reveal delay-3">
+        <a href="mailto:ariel.ibaba@outlook.com" class="contact-btn contact-btn-primary" data-i18n="contact_cta_email">Email me</a>
+        <a href="https://www.linkedin.com/in/ariel-ibaba-263507107" target="_blank" rel="noopener noreferrer" class="contact-btn contact-btn-secondary" data-i18n="contact_cta_linkedin">LinkedIn</a>
       </div>
+
+      <div class="contact-meta reveal delay-4" data-i18n="contact_meta">Paris, France · French (native) · English (fluent)</div>
+
     </div>
   </section>
 
@@ -3416,8 +3236,6 @@
     <span class="footer-copy">&copy; 2025 — Paris, France</span>
     <div class="footer-links">
       <a href="#certifications" data-i18n="footer_certifications">Certifications</a>
-      <a href="mailto:ariel.ibaba@outlook.com">Email</a>
-      <a href="https://www.linkedin.com/in/ariel-ibaba-263507107" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </footer>
 
@@ -3498,28 +3316,6 @@
     });
 
     revealEls.forEach(el => observer.observe(el));
-
-    /* ---- CONTACT FORM (display only — mailto fallback) ---- */
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name    = document.getElementById('f-name').value.trim();
-      const email   = document.getElementById('f-email').value.trim();
-      const subject = document.getElementById('f-subject').value.trim();
-      const message = document.getElementById('f-message').value.trim();
-
-      if (!name || !email || !message) {
-        alert(translations[currentLang]._form_alert);
-        return;
-      }
-
-      const mailtoSubject = encodeURIComponent(subject || 'Contact from arielibaba.com');
-      const mailtoBody    = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\n${message}`
-      );
-      window.location.href =
-        `mailto:ariel.ibaba@outlook.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-    });
 
     /* ---- IMPACT NUMBER COUNTER ANIMATION ---- */
     function animateCounter(el, target, suffix, duration) {
@@ -3795,17 +3591,9 @@
         // Contact
         contact_heading: 'Let\'s build something <em>significant</em> together.',
         contact_intro: 'Whether you\'re looking to industrialise AI within your organisation, need strategic guidance on a complex data challenge, or want to discuss a collaboration — I\'d be glad to connect.',
-        contact_phone_label: 'Phone',
-        form_name_label: 'Name',
-        form_subject_label: 'Subject',
-        form_submit: 'Send Message',
-        form_note: 'I typically respond within 24 hours.',
-        // Placeholders
-        form_name_placeholder: 'Your name',
-        form_subject_placeholder: 'How can I help?',
-        form_message_placeholder: 'Tell me about your project or challenge...',
-        // Form validation
-        _form_alert: 'Please fill in your name, email, and message.',
+        contact_cta_email: 'Email me',
+        contact_cta_linkedin: 'LinkedIn',
+        contact_meta: 'Paris, France · French (native) · English (fluent)',
         // Meta
         _meta_description: 'Ariel IBABA — Data Science & AI Director. I design enterprise GenAI systems and build the AI practices behind them, partnering with engineering teams to take PoCs from concept to production-ready. Banking, industry, energy. Paris, France.',
       },
@@ -4017,17 +3805,9 @@
         // Contact
         contact_heading: 'Donnons ensemble du <em>sens</em> à vos projets.',
         contact_intro: 'Que vous cherchiez à industrialiser l\'IA au sein de votre organisation, que vous ayez besoin de conseils stratégiques sur un enjeu data complexe ou que vous souhaitiez discuter d\'une collaboration — je serai ravi d\'échanger avec vous.',
-        contact_phone_label: 'Téléphone',
-        form_name_label: 'Nom',
-        form_subject_label: 'Objet',
-        form_submit: 'Envoyer mon message',
-        form_note: 'Je vous réponds généralement sous 24 heures.',
-        // Placeholders
-        form_name_placeholder: 'Nom complet',
-        form_subject_placeholder: 'En quoi puis-je vous aider ?',
-        form_message_placeholder: 'Décrivez votre projet ou vos enjeux...',
-        // Form validation
-        _form_alert: 'Merci de renseigner votre nom, votre e-mail et votre message.',
+        contact_cta_email: 'M\'écrire',
+        contact_cta_linkedin: 'LinkedIn',
+        contact_meta: 'Paris, France · français (langue maternelle) · anglais (courant)',
         // Meta
         _meta_description: 'Ariel IBABA — Directeur Data Science & IA. Je conçois des systèmes GenAI d\'entreprise et structure les pratiques IA associées, en collaboration avec les équipes d\'ingénierie pour mener les PoCs de la conception à la mise en production. Banque, industrie, énergie. Paris, France.',
       }
