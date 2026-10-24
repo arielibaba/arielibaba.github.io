@@ -2738,8 +2738,31 @@
 
       <div class="projects-grid">
 
-        <!-- 1. CodeGraphAI — flagship GenAI + GraphRAG -->
-        <div class="project-card reveal delay-1" data-project="codegraphai">
+        <!-- 1. Agentic Voice Assistant — flagship: twin repos, RAG vs LLM Wiki -->
+        <div class="project-card reveal delay-1" data-project="voice-agent">
+          <div class="project-card-header">
+            <div class="project-card-title" data-i18n="proj_voice_title">Agentic Voice Assistant — RAG vs LLM Wiki</div>
+            <div class="project-card-client" data-i18n="proj_voice_client">Personal Project</div>
+          </div>
+          <div class="project-card-problem" data-i18n="proj_voice_problem">
+            Hands-free, spoken access to a document corpus: answers must stay grounded in the documents, cite their source and arrive fast enough to feel like a conversation.
+          </div>
+          <div class="project-card-approach" data-i18n="proj_voice_approach">
+            One local-first, real-time voice engine with two interchangeable retrieval backends — hybrid RAG and LLM Wiki — built as twin repos and compared on measured data. On-device speech recognition, agentic tool loop, answers spoken as they stream; new corpora added by configuration.
+          </div>
+          <div class="project-card-result" data-i18n="proj_voice_result">Wiki 57/60 vs RAG 50/60 on quality &middot; 9.0 s vs 4.2 s to spoken answer</div>
+          <div class="project-card-tags">
+            <span class="project-tag">Pipecat</span>
+            <span class="project-tag">Parakeet</span>
+            <span class="project-tag">LightRAG</span>
+            <span class="project-tag">Gemini</span>
+            <span class="project-tag">DuckDB</span>
+          </div>
+          <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
+        </div>
+
+        <!-- 2. CodeGraphAI — GenAI + GraphRAG -->
+        <div class="project-card reveal delay-2" data-project="codegraphai">
           <div class="project-card-header">
             <div class="project-card-title">CodeGraphAI</div>
             <div class="project-card-client" data-i18n="proj1_client">Personal Project</div>
@@ -2761,8 +2784,8 @@
           <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
         </div>
 
-        <!-- 2. Agentic Document Assistant — Crédit Agricole SA (current) -->
-        <div class="project-card reveal delay-2" data-project="ca-sa">
+        <!-- 3. Agentic Document Assistant — Crédit Agricole SA (current) -->
+        <div class="project-card reveal delay-3" data-project="ca-sa">
           <div class="project-card-header">
             <div class="project-card-title" data-i18n="proj_ca_title">Agentic Document Assistant</div>
             <div class="project-card-client">Crédit Agricole SA</div>
@@ -2784,8 +2807,8 @@
           <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
         </div>
 
-        <!-- 3. Enterprise AI Platform — BPCE -->
-        <div class="project-card reveal delay-2" data-project="bpce">
+        <!-- 4. Enterprise AI Platform — BPCE -->
+        <div class="project-card reveal delay-4" data-project="bpce">
           <div class="project-card-header">
             <div class="project-card-title" data-i18n="proj2_title">Enterprise AI Platform at Scale</div>
             <div class="project-card-client">Groupe BPCE</div>
@@ -2807,8 +2830,8 @@
           <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
         </div>
 
-        <!-- 3. CogniDoc — open-source Hybrid RAG framework -->
-        <div class="project-card reveal delay-3" data-project="cognidoc">
+        <!-- 5. CogniDoc — open-source Hybrid RAG framework -->
+        <div class="project-card reveal delay-1" data-project="cognidoc">
           <div class="project-card-header">
             <div class="project-card-title">CogniDoc</div>
             <div class="project-card-client">Open Source</div>
@@ -2830,8 +2853,8 @@
           <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
         </div>
 
-        <!-- 4. Bad News Monitoring — RegTech -->
-        <div class="project-card reveal delay-4" data-project="badnews">
+        <!-- 6. Bad News Monitoring — RegTech -->
+        <div class="project-card reveal delay-2" data-project="badnews">
           <div class="project-card-header">
             <div class="project-card-title">Bad News Monitoring</div>
             <div class="project-card-client" data-i18n="proj4_client">Personal Project</div>
@@ -2853,8 +2876,8 @@
           <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
         </div>
 
-        <!-- 5. Agent Evaluation & Monitoring -->
-        <div class="project-card reveal delay-1" data-project="agent-eval">
+        <!-- 7. Agent Evaluation & Monitoring -->
+        <div class="project-card reveal delay-3" data-project="agent-eval">
           <div class="project-card-header">
             <div class="project-card-title" data-i18n="proj5_title">Agent Evaluation &amp; Monitoring</div>
             <div class="project-card-client" data-i18n="proj5_client">Personal Project</div>
@@ -2876,8 +2899,31 @@
           <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
         </div>
 
-        <!-- 6. UBO — Compliance / AML -->
-        <div class="project-card reveal delay-2" data-project="ubo">
+        <!-- 8. Offer ↔ Profile Matching — LLM Wiki -->
+        <div class="project-card reveal delay-4" data-project="matching">
+          <div class="project-card-header">
+            <div class="project-card-title" data-i18n="proj_match_title">Offer &harr; Profile Matching — LLM Wiki</div>
+            <div class="project-card-client" data-i18n="proj_match_client">Personal Project</div>
+          </div>
+          <div class="project-card-problem" data-i18n="proj_match_problem">
+            Matching incoming offers and tenders to a pool of profiles usually rests on someone's memory: slow, not reproducible, and silently incomplete. A strong profile never proposed is revenue lost without anyone noticing.
+          </div>
+          <div class="project-card-approach" data-i18n="proj_match_approach">
+            CVs and offers compiled into an interlinked LLM Wiki. Each offer becomes a typed need spec; two independent recall paths sweep the whole index, then profiles are scored in parallel on evidence quoted from the original CV. Eliminatory criteria are shown, never applied silently.
+          </div>
+          <div class="project-card-result" data-i18n="proj_match_result">Ranked shortlist in ~4 min &middot; every claim quoted from the CV</div>
+          <div class="project-card-tags">
+            <span class="project-tag">LLM Wiki</span>
+            <span class="project-tag">Agentic AI</span>
+            <span class="project-tag">Gemini</span>
+            <span class="project-tag">FastAPI</span>
+            <span class="project-tag">SQLite</span>
+          </div>
+          <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
+        </div>
+
+        <!-- 9. UBO — Compliance / AML -->
+        <div class="project-card reveal delay-1" data-project="ubo">
           <div class="project-card-header">
             <div class="project-card-title" data-i18n="proj6_title">UBO Identification System</div>
             <div class="project-card-client" data-i18n="proj6_client">Personal Project</div>
@@ -2899,8 +2945,8 @@
           <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
         </div>
 
-        <!-- 7. Predictive Maintenance — ERAMET -->
-        <div class="project-card reveal delay-3" data-project="eramet">
+        <!-- 10. Predictive Maintenance — ERAMET -->
+        <div class="project-card reveal delay-2" data-project="eramet">
           <div class="project-card-header">
             <div class="project-card-title" data-i18n="proj7_title">Predictive Maintenance for Mining Rail</div>
             <div class="project-card-client">ERAMET</div>
@@ -2921,8 +2967,8 @@
           <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
         </div>
 
-        <!-- 8. Cost Optimization — Danone -->
-        <div class="project-card reveal delay-4" data-project="danone">
+        <!-- 11. Cost Optimization — Danone -->
+        <div class="project-card reveal delay-3" data-project="danone">
           <div class="project-card-header">
             <div class="project-card-title" data-i18n="proj8_title">Recipe &amp; Supplier Cost Optimization</div>
             <div class="project-card-client">Danone</div>
@@ -2939,52 +2985,6 @@
             <span class="project-tag">Combinatorial Optimization</span>
             <span class="project-tag">Cost Modeling</span>
             <span class="project-tag">SQL</span>
-          </div>
-          <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
-        </div>
-
-        <!-- 9. Vigile — Strategic Intelligence -->
-        <div class="project-card reveal delay-1" data-project="vigile">
-          <div class="project-card-header">
-            <div class="project-card-title" data-i18n="proj9_title">Vigile — Strategic Intelligence</div>
-            <div class="project-card-client" data-i18n="proj9_client">Personal Project</div>
-          </div>
-          <div class="project-card-problem" data-i18n="proj9_problem">
-            Strategic intelligence is either manual and time-consuming, or delegated to expensive enterprise tools costing thousands per month. No affordable middle ground exists.
-          </div>
-          <div class="project-card-approach" data-i18n="proj9_approach">
-            Built a hybrid intelligence system: automated RSS/Atom collection, AI enrichment (entities, sentiment, themes), agentic RAG chatbot (LangGraph, 7 tools, 4 query modes) with Perplexity-style citations, and automated synthesis reports. Auto-discovery of new sources via DuckDuckGo + LLM scoring.
-          </div>
-          <div class="project-card-result" data-i18n="proj9_result">Agentic chatbot &middot; Automated reports &middot; Replaces enterprise tools</div>
-          <div class="project-card-tags">
-            <span class="project-tag">LangGraph</span>
-            <span class="project-tag">Streamlit</span>
-            <span class="project-tag">ChromaDB</span>
-            <span class="project-tag">Gemini</span>
-            <span class="project-tag">Docker</span>
-          </div>
-          <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
-        </div>
-
-        <!-- 10. REMS — RAG Evaluation -->
-        <div class="project-card reveal delay-2" data-project="rems">
-          <div class="project-card-header">
-            <div class="project-card-title" data-i18n="proj10_title">REMS — RAG Quality Monitor</div>
-            <div class="project-card-client" data-i18n="proj10_client">Personal Project</div>
-          </div>
-          <div class="project-card-problem" data-i18n="proj10_problem">
-            In regulatory domains, RAG chatbot errors have legal consequences. No lightweight external tool existed to continuously evaluate quality and detect hallucinations — without modifying the chatbot itself.
-          </div>
-          <div class="project-card-approach" data-i18n="proj10_approach">
-            Built an external evaluation module that plugs into any RAG chatbot via API. Uses RAGAS metrics (faithfulness, context precision, answer relevancy) to detect hallucinations, diagnose root causes, and generate actionable recommendations. Automated weekly evaluations via cron.
-          </div>
-          <div class="project-card-result" data-i18n="proj10_result">Hallucination detection &middot; Automated diagnostics &middot; PDF/HTML reports</div>
-          <div class="project-card-tags">
-            <span class="project-tag">RAGAS</span>
-            <span class="project-tag">Streamlit</span>
-            <span class="project-tag">Gemini</span>
-            <span class="project-tag">PostgreSQL</span>
-            <span class="project-tag">Cron</span>
           </div>
           <span class="project-card-cta" data-i18n="proj_cta">View details &#8594;</span>
         </div>
@@ -3643,16 +3643,16 @@
         proj8_problem: 'Danone\'s European operations needed to reduce industrial costs without impacting product quality — across thousands of product recipes and supplier contracts.',
         proj8_approach: 'Developed two optimization engines: one for algorithmic recipe harmonization across product lines, another for supplier selection and negotiation. Both validated and adopted by R&amp;D and Procurement teams.',
         proj8_result: 'M&euro;+/year on recipes &middot; M&euro;+/year on suppliers',
-        proj9_title: 'Vigile — Strategic Intelligence',
-        proj9_client: 'Personal Project',
-        proj9_problem: 'Strategic intelligence is either manual and time-consuming, or delegated to expensive enterprise tools costing thousands per month. No affordable middle ground exists.',
-        proj9_approach: 'Built a hybrid intelligence system: automated RSS/Atom collection, AI enrichment (entities, sentiment, themes), agentic RAG chatbot (LangGraph, 7 tools, 4 query modes) with Perplexity-style citations, and automated synthesis reports. Auto-discovery of new sources via DuckDuckGo + LLM scoring.',
-        proj9_result: 'Agentic chatbot &middot; Automated reports &middot; Replaces enterprise tools',
-        proj10_title: 'REMS — RAG Quality Monitor',
-        proj10_client: 'Personal Project',
-        proj10_problem: 'In regulatory domains, RAG chatbot errors have legal consequences. No lightweight external tool existed to continuously evaluate quality and detect hallucinations — without modifying the chatbot itself.',
-        proj10_approach: 'Built an external evaluation module that plugs into any RAG chatbot via API. Uses RAGAS metrics (faithfulness, context precision, answer relevancy) to detect hallucinations, diagnose root causes, and generate actionable recommendations. Automated weekly evaluations via cron.',
-        proj10_result: 'Hallucination detection &middot; Automated diagnostics &middot; PDF/HTML reports',
+        proj_voice_title: 'Agentic Voice Assistant — RAG vs LLM Wiki',
+        proj_voice_client: 'Personal Project',
+        proj_voice_problem: 'Hands-free, spoken access to a document corpus: answers must stay grounded in the documents, cite their source and arrive fast enough to feel like a conversation.',
+        proj_voice_approach: 'One local-first, real-time voice engine with two interchangeable retrieval backends — hybrid RAG and LLM Wiki — built as twin repos and compared on measured data. On-device speech recognition, agentic tool loop, answers spoken as they stream; new corpora added by configuration.',
+        proj_voice_result: 'Wiki 57/60 vs RAG 50/60 on quality &middot; 9.0 s vs 4.2 s to spoken answer',
+        proj_match_title: 'Offer &harr; Profile Matching — LLM Wiki',
+        proj_match_client: 'Personal Project',
+        proj_match_problem: 'Matching incoming offers and tenders to a pool of profiles usually rests on someone\'s memory: slow, not reproducible, and silently incomplete. A strong profile never proposed is revenue lost without anyone noticing.',
+        proj_match_approach: 'CVs and offers compiled into an interlinked LLM Wiki. Each offer becomes a typed need spec; two independent recall paths sweep the whole index, then profiles are scored in parallel on evidence quoted from the original CV. Eliminatory criteria are shown, never applied silently.',
+        proj_match_result: 'Ranked shortlist in ~4 min &middot; every claim quoted from the CV',
         proj_cta: 'View details &#8594;',
         exp_cta: 'View details &#8594;',
         // Impact
@@ -3876,16 +3876,16 @@
         proj8_problem: 'La division Europe de Danone devait réduire ses coûts industriels sans sacrifier la qualité des produits — un enjeu portant sur des milliers de recettes et de contrats fournisseurs.',
         proj8_approach: 'Développement de deux moteurs d\'optimisation&nbsp;: l\'un dédié à l\'harmonisation algorithmique des recettes entre les gammes de produits, l\'autre à la sélection et à la négociation avec les fournisseurs. Tous deux ont été validés et adoptés par les équipes R&amp;D et Achats.',
         proj8_result: 'M€+/an de chiffre d\'affaires &middot; M€+/an d\'économies fournisseurs',
-        proj9_title: 'Vigile — Veille stratégique',
-        proj9_client: 'Projet personnel',
-        proj9_problem: 'La veille stratégique est soit manuelle et chronophage, soit déléguée à des solutions d\'entreprise coûtant des milliers d\'euros par mois. Il n\'existe aucun juste milieu abordable.',
-        proj9_approach: 'Conception d\'un système d\'intelligence hybride&nbsp;: agrégation automatisée de flux RSS/Atom, enrichissement par IA (entités, analyse de sentiment, thématiques), chatbot RAG agentique (LangGraph, 7 outils, 4 modes de recherche) avec citations sourcées type Perplexity, et génération de synthèses automatisées. Détection proactive de nouvelles sources via DuckDuckGo et scoring par LLM.',
-        proj9_result: 'Chatbot agentique &middot; Rapports automatisés &middot; Remplacement des outils métier',
-        proj10_title: 'REMS — Suivi de la qualité RAG',
-        proj10_client: 'Projet personnel',
-        proj10_problem: 'Dans les secteurs réglementés, les erreurs d\'un chatbot RAG peuvent avoir de lourdes conséquences juridiques. Pourtant, il n\'existait aucun outil externe léger pour évaluer la qualité en continu et détecter les hallucinations — sans avoir à modifier le chatbot.',
-        proj10_approach: 'Développement d\'un module d\'évaluation externe s\'interfaçant avec tout chatbot RAG via API. Il exploite les métriques RAGAS (fidélité, précision du contexte, pertinence de la réponse) pour détecter les hallucinations, diagnostiquer l\'origine des erreurs et générer des recommandations concrètes. Évaluations hebdomadaires automatisées via cron.',
-        proj10_result: 'Détection d\'hallucinations &middot; Diagnostics automatisés &middot; Rapports PDF/HTML',
+        proj_voice_title: 'Assistant vocal agentique — RAG vs LLM Wiki',
+        proj_voice_client: 'Projet personnel',
+        proj_voice_problem: 'Interroger un fonds documentaire à la voix, les mains libres&nbsp;: les réponses doivent s\'appuyer sur les documents, citer leur source et arriver assez vite pour que l\'échange reste naturel.',
+        proj_voice_approach: 'Un même moteur vocal temps réel, local d\'abord, sur lequel se branchent deux couches de recherche documentaire — RAG hybride et LLM Wiki — développées en dépôts jumeaux et départagées par la mesure. Reconnaissance vocale embarquée, boucle agentique d\'outils, réponse prononcée au fil de sa génération&nbsp;; chaque nouveau corpus s\'ajoute par simple configuration.',
+        proj_voice_result: 'Qualité&nbsp;: Wiki 57/60, RAG 50/60 &middot; Réponse parlée en 9,0 s contre 4,2 s',
+        proj_match_title: 'Matching offres &harr; profils — LLM Wiki',
+        proj_match_client: 'Projet personnel',
+        proj_match_problem: 'Rapprocher les offres et appels d\'offres entrants d\'un vivier de profils repose souvent sur la mémoire de quelqu\'un&nbsp;: c\'est lent, non reproductible et incomplet sans que personne ne le voie. Un bon profil jamais proposé, c\'est du chiffre d\'affaires perdu en silence.',
+        proj_match_approach: 'CV et offres sont compilés en un LLM Wiki aux pages reliées entre elles. Chaque offre est traduite en un besoin typé&nbsp;; deux voies de rappel indépendantes balaient tout l\'index, puis les profils sont notés en parallèle sur des preuves citées mot pour mot depuis le CV. Les critères éliminatoires sont affichés, jamais appliqués en silence.',
+        proj_match_result: 'Shortlist classée en ~4 min &middot; chaque argument cité depuis le CV',
         proj_cta: 'En savoir plus &#8594;',
         exp_cta: 'En savoir plus &#8594;',
         // Impact
@@ -4386,87 +4386,91 @@
           ],
         },
       },
-      vigile: {
+      'voice-agent': {
         en: {
-          title: 'Vigile — Strategic Intelligence',
-          badge: 'Personal Project',
-          tags: ['LangGraph', 'Streamlit', 'ChromaDB', 'Gemini', 'Ollama', 'Docker', 'SQLite'],
-          context: 'Strategic intelligence — monitoring competitors, regulatory changes, market trends, and emerging technologies — is essential for informed decision-making. But it\'s typically either a manual, time-consuming effort (analysts reading dozens of sources daily) or outsourced to expensive enterprise platforms like Meltwater or Brandwatch, costing thousands of euros per month.',
-          objective: 'Build an affordable, AI-powered strategic intelligence platform that automates the full cycle: source discovery, content collection, enrichment, analysis, and report generation — with a conversational interface for ad-hoc exploration.',
-          solution: 'The platform combines automated RSS/Atom feed collection with AI-powered enrichment: entity extraction, sentiment analysis, and thematic classification on every article. A hybrid search engine (vector embeddings + BM25 with Reciprocal Rank Fusion) enables precise retrieval across the entire article corpus. The centerpiece is an agentic RAG chatbot built with LangGraph, equipped with 7 specialized tools and 4 query modes, that provides Perplexity-style cited answers. The system also auto-discovers new relevant sources via DuckDuckGo + LLM relevance scoring, and generates automated synthesis reports in PDF and Markdown.',
-          result: 'Full-stack intelligence platform replacing enterprise tools costing thousands per month. Agentic chatbot with cited answers, automated reports, and continuous source discovery.',
+          title: 'Agentic Voice Assistant — Hybrid RAG vs LLM Wiki',
+          badge: 'Personal Project — Voice AI',
+          tags: ['Pipecat', 'Parakeet', 'LightRAG', 'Gemini', 'DuckDB', 'Next.js'],
+          context: 'Some users need to query a document corpus by voice, hands-free. The answers have to stay grounded in the documents and cite their source, and they have to come fast enough for the exchange to feel like a conversation. Behind the build sits an open question: for spoken use, which retrieval approach works better — a classic hybrid RAG, or an LLM Wiki where the model navigates pages compiled from the corpus?',
+          objective: 'Build one real-time voice engine, plug in two retrieval backends that differ only in that layer, and choose between them on measured data rather than intuition.',
+          solution: 'A local-first, streaming voice pipeline built on Pipecat: wake word (openWakeWord) &rarr; voice activity detection and semantic end-of-turn (Silero, smart-turn v3) &rarr; on-device speech recognition (Parakeet-TDT 0.6B on MLX / ONNX CUDA) &rarr; query condenser &rarr; agentic tool loop with memory, plus exact SQL aggregates (DuckDB) &rarr; Gemini &rarr; Piper text-to-speech, streamed sentence by sentence. A Next.js + FastAPI web interface sits on top. The engine is multi-tenant: new corpora (regulatory compliance, moral theology, industrial maintenance…) are configured without code.<br><br>Two twin repos share this engine and differ only in retrieval. Hybrid RAG: Voyage vectors and BM25 fused by RRF over a LightRAG graph, then reranked. LLM Wiki (Karpathy pattern, agent mode): the LLM navigates interlinked Markdown pages compiled from the corpus — no vector database, human curation in Obsidian.',
+          result: 'Measured on 12 paired voice turns over a real business corpus: the LLM Wiki scored 57/60 on answer quality vs 50/60 for hybrid RAG, but took 9.0 s vs 4.2 s (median) to finish the spoken answer. A trade-off between accuracy and latency, not a winner. Both cite the exact page, and both decline to answer when the corpus does not hold the answer.',
           highlights: [
-            { value: '7', label: 'Agentic tools' },
-            { value: '4', label: 'Query modes' },
-            { value: 'Auto', label: 'Source discovery' },
+            { value: '57 vs 50', label: 'Answer quality out of 60 (Wiki vs RAG)' },
+            { value: '9.0 s vs 4.2 s', label: 'Median time to spoken answer' },
+            { value: '12', label: 'Paired voice turns measured' },
           ],
           techInterest: [
-            'LangGraph-based agentic chatbot with 7 tools and 4 query modes (factual, analytical, comparative, exploratory)',
-            'Hybrid search combining dense vector embeddings with BM25 via Reciprocal Rank Fusion for optimal retrieval',
-            'Automated source discovery: DuckDuckGo search + LLM relevance scoring to continuously expand the monitored source base',
-            'Perplexity-style cited answers with source attribution and confidence scoring',
+            'Same engine, swappable retrieval layer: the comparison isolates retrieval and nothing else',
+            'Semantic end-of-turn detection on top of voice activity detection, so the assistant answers when the user has actually finished',
+            'Exact SQL aggregates (DuckDB) alongside document retrieval: counts and totals are computed, not left to the LLM',
+            'LLM output streamed to speech sentence by sentence, so the answer starts before it is fully generated',
+            'Multi-tenant by configuration: one engine, any number of corpora, no code per corpus',
           ],
         },
         fr: {
-          title: 'Vigile — Veille Stratégique',
-          badge: 'Projet Personnel',
-          tags: ['LangGraph', 'Streamlit', 'ChromaDB', 'Gemini', 'Ollama', 'Docker', 'SQLite'],
-          context: 'La veille stratégique — surveillance des concurrents, changements réglementaires, tendances de marché — est essentielle pour la prise de décision. Mais c\'est typiquement soit un effort manuel chronophage, soit confié à des plateformes entreprise coûtant des milliers d\'euros par mois (Meltwater, Brandwatch).',
-          objective: 'Construire une plateforme de veille stratégique abordable et alimentée par l\'IA qui automatise l\'ensemble du cycle : découverte de sources, collecte, enrichissement, analyse et génération de rapports — avec une interface conversationnelle pour l\'exploration ad-hoc.',
-          solution: 'La plateforme combine la collecte automatisée de flux RSS/Atom avec un enrichissement IA : extraction d\'entités, analyse de sentiment et classification thématique. Un moteur de recherche hybride (embeddings vectoriels + BM25 avec Reciprocal Rank Fusion) permet un retrieval précis. La pièce maîtresse est un chatbot RAG agentique construit avec LangGraph, équipé de 7 outils spécialisés et 4 modes de requête, fournissant des réponses citées style Perplexity. Le système découvre aussi automatiquement de nouvelles sources via DuckDuckGo + scoring LLM.',
-          result: 'Plateforme de veille full-stack remplaçant des outils entreprise coûtant des milliers d\'euros par mois. Chatbot agentique avec réponses citées, rapports automatisés et découverte continue de sources.',
+          title: 'Assistant vocal agentique — RAG hybride vs LLM Wiki',
+          badge: 'Projet personnel — IA vocale',
+          tags: ['Pipecat', 'Parakeet', 'LightRAG', 'Gemini', 'DuckDB', 'Next.js'],
+          context: 'Certains utilisateurs ont besoin d\'interroger un fonds documentaire à la voix, sans les mains. Les réponses doivent rester fidèles aux documents et citer leur source, et arriver assez vite pour que l\'échange ressemble à une conversation. Derrière ce projet, une question ouverte&nbsp;: à l\'oral, quelle approche de recherche documentaire tient le mieux — un RAG hybride classique, ou un LLM Wiki dans lequel le modèle parcourt des pages compilées à partir du corpus&nbsp;?',
+          objective: 'Construire un seul moteur vocal temps réel, y brancher deux couches de recherche qui ne diffèrent que sur ce point, et trancher sur des mesures plutôt qu\'à l\'intuition.',
+          solution: 'Une chaîne vocale en streaming, locale d\'abord, bâtie sur Pipecat&nbsp;: mot d\'activation (openWakeWord) &rarr; détection d\'activité vocale et de fin de tour sémantique (Silero, smart-turn v3) &rarr; reconnaissance vocale embarquée (Parakeet-TDT 0.6B sur MLX / ONNX CUDA) &rarr; reformulation de la question &rarr; boucle agentique d\'outils avec mémoire, complétée par des agrégats SQL exacts (DuckDB) &rarr; Gemini &rarr; synthèse vocale Piper, phrase par phrase. Une interface web Next.js + FastAPI complète l\'ensemble. Le moteur est multi-tenant&nbsp;: chaque nouveau corpus (conformité réglementaire, théologie morale, maintenance industrielle…) se configure sans écrire de code.<br><br>Deux dépôts jumeaux partagent ce moteur et ne diffèrent que par la recherche documentaire. RAG hybride&nbsp;: vecteurs Voyage et BM25 fusionnés par RRF sur un graphe LightRAG, puis reclassement. LLM Wiki (motif proposé par Karpathy, en mode agent)&nbsp;: le LLM parcourt des pages Markdown reliées entre elles et compilées à partir du corpus — sans base vectorielle, avec une curation humaine dans Obsidian.',
+          result: 'Mesuré sur 12 tours vocaux appariés, sur un corpus métier réel&nbsp;: le LLM Wiki obtient 57/60 en qualité de réponse contre 50/60 pour le RAG hybride, mais met 9,0 s contre 4,2 s (médiane) pour terminer sa réponse parlée. Un arbitrage entre précision et latence, pas un vainqueur. Les deux citent la page exacte et refusent de répondre quand le corpus ne contient pas la réponse.',
           highlights: [
-            { value: '7', label: 'Outils agentiques' },
-            { value: '4', label: 'Modes de requête' },
-            { value: 'Auto', label: 'Découverte de sources' },
+            { value: '57 vs 50', label: 'Qualité de réponse sur 60 (Wiki vs RAG)' },
+            { value: '9,0 s vs 4,2 s', label: 'Délai médian jusqu\'à la réponse parlée' },
+            { value: '12', label: 'Tours vocaux appariés mesurés' },
           ],
           techInterest: [
-            'Chatbot agentique LangGraph avec 7 outils et 4 modes de requête (factuel, analytique, comparatif, exploratoire)',
-            'Recherche hybride combinant embeddings vectoriels denses et BM25 via Reciprocal Rank Fusion pour un retrieval optimal',
-            'Découverte automatique de sources : recherche DuckDuckGo + scoring de pertinence LLM pour étendre continuellement la base surveillée',
-            'Réponses citées style Perplexity avec attribution de sources et scoring de confiance',
+            'Même moteur, couche de recherche interchangeable&nbsp;: la comparaison isole la recherche documentaire et rien d\'autre',
+            'Détection sémantique de fin de tour en plus de la détection d\'activité vocale&nbsp;: l\'assistant répond quand l\'utilisateur a réellement fini',
+            'Agrégats SQL exacts (DuckDB) à côté de la recherche documentaire&nbsp;: comptes et totaux sont calculés, pas laissés au LLM',
+            'Sortie du LLM envoyée à la synthèse vocale phrase par phrase&nbsp;: la réponse commence avant d\'être entièrement générée',
+            'Multi-tenant par configuration&nbsp;: un seul moteur, autant de corpus que nécessaire, aucun code par corpus',
           ],
         },
       },
-      rems: {
+      matching: {
         en: {
-          title: 'REMS — RAG Quality Monitor',
-          badge: 'Personal Project — AI Quality',
-          tags: ['RAGAS', 'Streamlit', 'Gemini', 'PostgreSQL', 'Cron', 'Python'],
-          context: 'In regulated industries — banking, insurance, healthcare — chatbot errors carry legal consequences. A RAG system that hallucinates a compliance requirement or misquotes a regulation can expose the organization to real liability. Yet most teams deploy RAG chatbots without any continuous quality monitoring, relying on sporadic manual spot-checks.',
-          objective: 'Build a lightweight, external quality monitoring tool that plugs into any existing RAG chatbot via API — detecting hallucinations, diagnosing root causes, and generating actionable recommendations — without requiring any modification to the chatbot itself.',
-          solution: 'REMS operates as an external evaluation module that calls the target chatbot\'s API with curated test queries, then evaluates the responses using RAGAS metrics: faithfulness (is the answer grounded in retrieved context?), context precision (are the retrieved passages relevant?), and answer relevancy (does the answer address the question?). When faithfulness drops below 0.7, the system flags a hallucination and runs automated root cause diagnosis — distinguishing between retrieval failures (wrong documents fetched) and generation failures (correct documents, wrong answer). Results are compiled into PDF/HTML/YAML reports with specific recommendations. Automated weekly evaluations run via cron scheduling.',
-          result: 'Continuous quality assurance for regulatory RAG chatbots. Hallucination detection with automated root cause diagnosis. Automated weekly evaluations with actionable reports.',
+          title: 'Offer &harr; Profile Matching — LLM Wiki',
+          badge: 'Personal Project — Agentic AI',
+          tags: ['LLM Wiki', 'Gemini', 'FastAPI', 'SQLite', 'Python', 'OCR / VLM'],
+          context: 'When a job offer or a call for tenders comes in, finding the right profiles in a pool usually depends on someone\'s memory. It is slow, it cannot be reproduced, and what it misses goes unseen. The costs are lopsided: a weak profile proposed by mistake gets filtered out at review, while a strong profile never proposed is lost revenue that leaves no trace. False negatives cost more than false positives.',
+          objective: 'A generic engine that turns any offer into a ranked, justified shortlist of profiles — built recall-first, with every judgement traceable to the source documents.',
+          solution: 'Following the LLM Wiki pattern, CVs and offers are compiled into interlinked wiki pages (technologies, clients, role types). Each incoming offer then goes through a pipeline: extraction of a typed need spec, which fails loudly when a document holds no actual need &rarr; triage over the whole index through two independent recall paths &rarr; parallel scoring, each point backed by a verbatim quote from the original CV &rarr; arbitration. Eliminatory criteria are displayed next to each profile, never applied silently.<br><br>The engine is built for real-world inputs: offers from 87 to 1,682 words, scanned documents (OCR / VLM), duplicate and pre-anonymised CVs. It is provider-agnostic, with four LLM providers behind a single interface.',
+          result: 'A working engine that delivers a full ranked shortlist in about 4 minutes. For each top profile: a 0–100 score with confidence, a weighted 7-axis grid, cited strengths, gaps and risks, must-have coverage, why this profile over the next one, pre-qualification questions, ready-to-use pitch lines and full traceability (model, prompt version, cost, latency). Recall@K cannot be measured here by construction — only the profiles shown get judged — so recall is handled by design, through the two independent paths, and no recall figure is reported.',
           highlights: [
-            { value: '<0.7', label: 'Faithfulness = hallucination flag' },
-            { value: 'Weekly', label: 'Automated evaluations' },
-            { value: 'External', label: 'No chatbot modification needed' },
+            { value: '~4 min', label: 'Full ranked shortlist' },
+            { value: '7', label: 'Weighted scoring axes' },
+            { value: '2', label: 'Independent recall paths' },
           ],
           techInterest: [
-            'External evaluation pattern: monitors any RAG chatbot via its API without touching its internals',
-            'Automated root cause diagnosis distinguishing retrieval failures from generation failures',
-            'RAGAS metric pipeline (faithfulness, context precision, answer relevancy) tailored for regulatory domains',
-            'Scheduled evaluation cycles with trend tracking to detect quality degradation over time',
+            'Recall-first triage: two independent paths sweep the whole index, so a profile missed by one can still be caught by the other',
+            'Evidence-based scoring: every strength or gap is quoted verbatim from the original CV, so a reviewer can check it at a glance',
+            'Typed need spec that fails loudly when a document contains no need, instead of producing a plausible-looking ranking',
+            'Full traceability per result: model, prompt version, cost and latency',
+            'Provider-agnostic design: four LLM providers behind one protocol',
           ],
         },
         fr: {
-          title: 'REMS — Moniteur Qualité RAG',
-          badge: 'Projet Personnel — Qualité IA',
-          tags: ['RAGAS', 'Streamlit', 'Gemini', 'PostgreSQL', 'Cron', 'Python'],
-          context: 'Dans les industries réglementées — banque, assurance, santé — les erreurs de chatbot ont des conséquences juridiques. Un système RAG qui hallucine une exigence de conformité ou cite mal un règlement expose l\'organisation à une vraie responsabilité. Pourtant la plupart des équipes déploient leurs chatbots RAG sans monitoring de qualité continu.',
-          objective: 'Construire un outil de monitoring qualité léger et externe qui se branche sur tout chatbot RAG existant via API — détectant les hallucinations, diagnostiquant les causes racines et générant des recommandations actionnables — sans modification du chatbot.',
-          solution: 'REMS fonctionne comme un module d\'évaluation externe qui appelle l\'API du chatbot cible avec des requêtes de test curées, puis évalue les réponses avec les métriques RAGAS : fidélité (la réponse est-elle fondée sur le contexte récupéré ?), précision du contexte (les passages récupérés sont-ils pertinents ?), et pertinence de la réponse. Quand la fidélité descend sous 0.7, le système signale une hallucination et lance un diagnostic automatique de cause racine — distinguant les échecs de retrieval des échecs de génération. Les résultats sont compilés en rapports PDF/HTML/YAML. Évaluations hebdomadaires automatisées via cron.',
-          result: 'Assurance qualité continue pour chatbots RAG réglementaires. Détection d\'hallucinations avec diagnostic automatique de cause racine. Évaluations hebdomadaires automatisées avec rapports actionnables.',
+          title: 'Matching offres &harr; profils — LLM Wiki',
+          badge: 'Projet personnel — IA agentique',
+          tags: ['LLM Wiki', 'Gemini', 'FastAPI', 'SQLite', 'Python', 'OCR / VLM'],
+          context: 'Quand une offre de mission ou un appel d\'offres arrive, trouver les bons profils dans un vivier dépend le plus souvent de la mémoire de quelqu\'un. C\'est lent, impossible à reproduire, et ce qui passe à la trappe ne se voit pas. Les coûts ne sont pas symétriques&nbsp;: un profil faible proposé par erreur est écarté à la relecture, alors qu\'un bon profil jamais proposé est un chiffre d\'affaires perdu sans laisser de trace. Un faux négatif coûte plus cher qu\'un faux positif.',
+          objective: 'Un moteur générique qui transforme n\'importe quelle offre en une shortlist de profils classée et justifiée — conçu pour ne rien laisser passer, chaque jugement pouvant être relié aux documents d\'origine.',
+          solution: 'Selon le motif LLM Wiki, CV et offres sont compilés en pages reliées entre elles (technologies, clients, types de poste). Chaque offre entrante suit ensuite une chaîne de traitement&nbsp;: extraction d\'un besoin typé, qui échoue explicitement quand le document ne contient aucun besoin &rarr; tri sur l\'ensemble de l\'index par deux voies de rappel indépendantes &rarr; notation en parallèle, chaque point étayé par une citation mot pour mot du CV d\'origine &rarr; arbitrage. Les critères éliminatoires sont affichés à côté de chaque profil, jamais appliqués en silence.<br><br>Le moteur est conçu pour des données réelles, donc imparfaites&nbsp;: offres de 87 à 1&nbsp;682 mots, documents scannés (OCR / VLM), CV en double ou déjà anonymisés. Il ne dépend d\'aucun fournisseur&nbsp;: quatre fournisseurs de LLM derrière une même interface.',
+          result: 'Un moteur opérationnel qui livre une shortlist complète et classée en 4 minutes environ. Pour chaque profil retenu&nbsp;: un score de 0 à 100 avec son niveau de confiance, une grille pondérée sur 7 axes, des points forts cités, les manques et les risques, la couverture des exigences impératives, ce qui le place devant le suivant, des questions de préqualification, des arguments prêts à l\'emploi et une traçabilité complète (modèle, version du prompt, coût, latence). Le rappel@K n\'est pas mesurable ici par construction — seuls les profils présentés sont évalués — le rappel est donc traité dès la conception, par les deux voies indépendantes, et aucun chiffre de rappel n\'est avancé.',
           highlights: [
-            { value: '<0.7', label: 'Fidélité = alerte hallucination' },
-            { value: 'Hebdo', label: 'Évaluations automatisées' },
-            { value: 'Externe', label: 'Aucune modification du chatbot' },
+            { value: '~4 min', label: 'Shortlist complète et classée' },
+            { value: '7', label: 'Axes de notation pondérés' },
+            { value: '2', label: 'Voies de rappel indépendantes' },
           ],
           techInterest: [
-            'Pattern d\'évaluation externe : surveille tout chatbot RAG via son API sans toucher à ses composants internes',
-            'Diagnostic automatique de cause racine distinguant les échecs de retrieval des échecs de génération',
-            'Pipeline de métriques RAGAS (fidélité, précision du contexte, pertinence) adapté aux domaines réglementaires',
-            'Cycles d\'évaluation programmés avec suivi de tendances pour détecter la dégradation de qualité dans le temps',
+            'Tri orienté rappel&nbsp;: deux voies indépendantes balaient tout l\'index, si bien qu\'un profil manqué par l\'une peut être rattrapé par l\'autre',
+            'Notation fondée sur des preuves&nbsp;: chaque point fort ou manque est cité mot pour mot depuis le CV d\'origine, vérifiable d\'un coup d\'œil',
+            'Besoin typé qui échoue explicitement quand le document ne contient aucun besoin, plutôt que de produire un classement d\'apparence plausible',
+            'Traçabilité complète de chaque résultat&nbsp;: modèle, version du prompt, coût et latence',
+            'Indépendance vis-à-vis des fournisseurs&nbsp;: quatre fournisseurs de LLM derrière un même protocole',
           ],
         },
       },
@@ -4613,7 +4617,7 @@
             'Multimodal RAG chatbot for energy technical documentation (Schlumberger SLB)',
             'Hybrid RAG framework combining vector + graph search (CogniDoc — open source)',
             'GraphRAG-powered code analysis with 4 expert LLM agents (CodeGraphAI)',
-            'Agentic RAG chatbot with 7 tools for strategic intelligence (Vigile)',
+            'Real-time voice assistant comparing hybrid RAG and LLM Wiki retrieval on measured data (personal project)',
             'RAG chatbot for industrial maintenance documentation (BOBST)',
           ],
           certifications: ['Building Agentic RAG with LlamaIndex — DeepLearning.AI', 'Fine-Tuning Large Language Models — DeepLearning.AI', 'Functions, Tools & Agents with LangChain — DeepLearning.AI', 'LangChain for LLM Application Development — DeepLearning.AI'],
@@ -4635,7 +4639,7 @@
             'Chatbot RAG multimodal pour documentation technique énergie (Schlumberger SLB)',
             'Framework RAG Hybride vectoriel + graphe (CogniDoc — open source)',
             'Analyse de code par GraphRAG avec 4 agents LLM experts (CodeGraphAI)',
-            'Chatbot RAG agentique avec 7 outils pour la veille stratégique (Vigile)',
+            'Assistant vocal temps réel départageant RAG hybride et LLM Wiki par la mesure (projet personnel)',
             'Chatbot RAG pour documentation de maintenance industrielle (BOBST)',
           ],
           certifications: ['Building Agentic RAG with LlamaIndex — DeepLearning.AI', 'Fine-Tuning Large Language Models — DeepLearning.AI', 'Functions, Tools & Agents with LangChain — DeepLearning.AI', 'LangChain for LLM Application Development — DeepLearning.AI'],
