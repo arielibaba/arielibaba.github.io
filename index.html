@@ -564,9 +564,11 @@
     }
 
     @media (max-width: 768px) {
+      /* Stack photo above the text: in the desktop row layout the in-flow photo squeezes the text column */
+      #hero { flex-direction: column; justify-content: center; }
       .hero-circle-1, .hero-circle-2 { display: none; }
       .hero-inner {
-        padding: 100px 24px 80px;
+        padding: 0 24px 80px;
         text-align: center;
       }
       .hero-photo-wrapper {
@@ -574,7 +576,7 @@
         right: auto;
         top: auto;
         transform: none;
-        margin: 0 auto 36px;
+        margin: 96px auto 28px;
       }
       .hero-photo { width: 180px; height: 180px; }
       .hero-eyebrow { justify-content: center; }
@@ -1175,6 +1177,11 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 28px;
+    }
+
+    /* An odd last card spans the full row instead of sitting alone */
+    .projects-grid > .project-card:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
     }
 
     .project-card {
@@ -2548,7 +2555,7 @@
             </div>
             <div class="timeline-assignment-role" data-i18n="tl1b_role">Role: AI expert &amp; project lead · Corporate IT division</div>
             <div class="timeline-desc" data-i18n="tl1b_desc">
-              Led AI work for the group's corporate IT division: AI strategy, team management, and the design + path-to-production of AI solutions, in close partnership with the engineering teams who owned the deployment.
+              Led AI work for the group's corporate IT division: AI strategy, use-case identification, and the design + path-to-production of AI solutions, in close partnership with the engineering teams who owned the deployment.
             </div>
             <div class="timeline-achievements">
               <span class="achievement-pill" data-i18n="tl1_pill1">200+ developers trained on AI</span>
@@ -3558,7 +3565,7 @@
         tl1a_pill2: '4 business units onboarded',
         tl1b_period: 'Apr 2025 — Jul 2026',
         tl1b_role: 'Role: AI expert &amp; project lead · Corporate IT division',
-        tl1b_desc: 'Led AI work for the group\'s corporate IT division: AI strategy, team management, and the design + path-to-production of AI solutions, in close partnership with the engineering teams who owned the deployment.',
+        tl1b_desc: 'Led AI work for the group\'s corporate IT division: AI strategy, use-case identification, and the design + path-to-production of AI solutions, in close partnership with the engineering teams who owned the deployment.',
         tl1_pill1: '200+ developers trained on AI',
         tl1_pill2: '5 AI assistants deployed',
         tl1_pill3: '1 chatbot in production',
@@ -3791,7 +3798,7 @@
         tl1a_pill2: '4 directions embarquées',
         tl1b_period: 'Avr. 2025 — juil. 2026',
         tl1b_role: 'Rôle : Expert IA &amp; chef de projet · DSI Corporate',
-        tl1b_desc: 'Pilotage des activités IA de la DSI Corporate du groupe : stratégie, management d\'équipe et conception des solutions jusqu\'à leur industrialisation, en étroite collaboration avec les équipes d\'ingénierie chargées de la mise en production.',
+        tl1b_desc: 'Pilotage des activités IA de la DSI Corporate du groupe : stratégie, identification des cas d\'usage et conception des solutions jusqu\'à leur industrialisation, en étroite collaboration avec les équipes d\'ingénierie chargées de la mise en production.',
         tl1_pill1: 'Plus de 200 développeurs formés à l\'IA',
         tl1_pill2: '5 assistants IA opérationnels',
         tl1_pill3: '1 chatbot déployé',
@@ -4844,7 +4851,7 @@
               items: [
                 'Defined and drove the AI strategy for the group\'s IT division',
                 'Designed AI tools (chatbot, assistants, auto-documentation) and took them to production with the engineering teams',
-                'Managed the data science team and coordinated with business stakeholders',
+                'Coordinated with business stakeholders to qualify and prioritise AI use cases',
                 'Designed and delivered an AI training programme for 200+ developers',
                 '5 AI assistants in production (requirements writing, compliance, code review, test generation, documentation), 1 project-management chatbot and 1 automated code-documentation engine',
                 'Ensured compliance with banking security and data governance requirements',
@@ -4894,7 +4901,7 @@
               items: [
                 'Définition et pilotage de la stratégie IA de la DSI du groupe',
                 'Conception d\'outils IA (chatbot, assistants, auto-documentation), mis en production avec les équipes d\'ingénierie',
-                'Management de l\'équipe data science et coordination avec les parties prenantes métier',
+                'Coordination avec les parties prenantes métier pour qualifier et prioriser les cas d\'usage IA',
                 'Conception et animation d\'un programme de formation IA pour plus de 200 développeurs',
                 '5 assistants IA en production (rédaction de spécifications, conformité, revue de code, génération de tests, documentation), 1 chatbot de gestion de projet et 1 moteur d\'auto-documentation de code',
                 'Respect des exigences de sécurité bancaire et de gouvernance des données',
